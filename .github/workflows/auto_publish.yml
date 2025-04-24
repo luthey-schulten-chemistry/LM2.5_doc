@@ -12,7 +12,8 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
-
+      with:
+        fetch-depth: 0
     - name: Set up Git for GitHub Actions
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -22,6 +23,6 @@ jobs:
     - name: Install ghp-import
       run: |
         pip install ghp-import
-        ls 
+        
     - name: Run ghp-import (auto-push to gh-pages)
       run: ghp-import -n -p -f .
