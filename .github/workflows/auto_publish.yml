@@ -24,4 +24,4 @@ jobs:
         pip install ghp-import
         ls 
     - name: Run ghp-import (auto-push to gh-pages)
-      run: ghp-import -n -p -f docs
+      run: ghp-import -n -p -f .
