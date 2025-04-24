@@ -1,28 +1,37 @@
-name: Deploy docs using ghp-import style
+name: Deploy docs with ghp-import
 
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-    - name: Set up Git credentials
+    - name: Set up Git for GitHub Actions
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        
+    - name: Verify Git Repository
+      run: |
+        if [ ! -d ".git" ]; then
+          echo "ERROR: .git directory is missing. Exiting.";
+          exit 1;
+        fi
+        git status
 
     - name: Install ghp-import
-      run: pip install ghp-import
-
-    - name: Deploy built docs (like ghp-import -n -p -f docs/)
       run: |
-        ghp-import -n -f docs
-        git push origin gh-pages
+        pip install ghp-import
+
+    - name: Run ghp-import (auto-push to gh-pages)
+      run: |
+        ghp-import -n -p -f .
