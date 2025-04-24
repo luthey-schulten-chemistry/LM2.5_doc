@@ -15,6 +15,7 @@ ghp-import -n -p -f ./doc
 - [ ] Create the navigation bar
 - [ ] update the visualization part with VMD
 - [ ] introduction part update
+- [ ] add new examples for CME and RDME. 
 
 
 
@@ -28,11 +29,11 @@ ghp-import -n -p -f ./doc
 
   
 
-## 3. Maintain a developer log 
+## 3. Maintain a developer log （All developers)
 
 when you modify any important functions to accept new parameters, mention it in the developer log under`Lattice-Microbes/docs/changelog.txt`
 
-## 4. All api function check
+## 4. All api function check(Hongyi)
 
 check all API functions in `jLM`  to make sure it works as it stated. 
 
