@@ -1,0 +1,21 @@
+﻿jLM.Types
+=========
+
+.. automodule:: jLM.Types
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BuilderReaction
+      BuilderRegion
+      BuilderSpecies
+      DiffusionConst
+      RateConst
+      Reaction
+      Region
+      Species
+      TrajRegion
+      TrajSpecies
+   

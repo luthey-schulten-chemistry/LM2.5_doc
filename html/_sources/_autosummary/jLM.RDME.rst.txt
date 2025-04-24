@@ -1,0 +1,14 @@
+﻿jLM.RDME
+========
+
+.. automodule:: jLM.RDME
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      File
+      Sim
+      SpatialModel
+   

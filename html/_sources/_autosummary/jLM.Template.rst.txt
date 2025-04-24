@@ -1,0 +1,13 @@
+﻿jLM.Template
+============
+
+.. automodule:: jLM.Template
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      displayj2html
+      j2render
+   

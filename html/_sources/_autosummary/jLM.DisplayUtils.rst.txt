@@ -1,0 +1,18 @@
+﻿jLM.DisplayUtils
+================
+
+.. automodule:: jLM.DisplayUtils
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      colorWheel
+      numToStr
+      sanitizeTex
+      texUnits
+      texfmt
+      toHex
+      unicodeUnits
+   

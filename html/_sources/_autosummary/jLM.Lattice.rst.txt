@@ -1,0 +1,22 @@
+﻿jLM.Lattice
+===========
+
+.. automodule:: jLM.Lattice
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      appendParticle
+      checkParticle
+      checkSite
+      countParticlesInLattice
+      countSites
+      greedyMesh
+      hdf2lmRep
+      latticeHistogram
+      latticeStatsAll
+      latticeStatsAll_h5fmt
+      populateLattice
+   
