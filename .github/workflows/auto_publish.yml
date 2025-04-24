@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,15 +13,25 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+
     - name: Set up Git for GitHub Actions
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        
+    - name: Verify Git Repository
+      run: |
+        if [ ! -d ".git" ]; then
+          echo "ERROR: .git directory is missing. Exiting.";
+          exit 1;
+        fi
+        git status
 
     - name: Install ghp-import
       run: |
         pip install ghp-import
-        
+
     - name: Run ghp-import (auto-push to gh-pages)
-      run: ghp-import -n -p -f .
+      run: |
+        ghp-import -n -p -f .
