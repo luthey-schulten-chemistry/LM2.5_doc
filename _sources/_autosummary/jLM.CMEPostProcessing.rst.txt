@@ -1,0 +1,40 @@
+﻿jLM.CMEPostProcessing
+=====================
+
+.. automodule:: jLM.CMEPostProcessing
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      closeLMFile
+      getAvgVarTrace
+      getHistogram
+      getOccupancyKymograph
+      getPhaseSpace
+      getSpecieTrace
+      getSpecies
+      getTimesteps
+      openLMFile
+      plotAvgVar
+      plotAvgVarFromFile
+      plotOccupancyKymograph
+      plotPhaseSpace
+      plotTrace
+      plotTraceFromFile
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+      showAvgVar
+      showAvgVarFromFile
+      showOccupancyKymograph
+      showTrace
+      showTraceFromFile
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Axes3D
+   

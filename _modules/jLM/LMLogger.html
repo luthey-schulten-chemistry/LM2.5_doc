@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jLM.Template &#8212; Lattice Microbes 2.5.0 documentation</title>
+    <title>jLM.LMLogger &#8212; Lattice Microbes 2.5.0 documentation</title>
   
   
   
@@ -40,8 +40,8 @@
     <script src="../../_static/documentation_options.js?v=5574521d"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jLM/Template';</script>
-    <link rel="canonical" href="https://forxhunter.github.io/LM2.5_doc/_modules/jLM/Template.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jLM/LMLogger';</script>
+    <link rel="canonical" href="https://forxhunter.github.io/LM2.5_doc/_modules/jLM/LMLogger.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -324,7 +324,7 @@
     
     <li class="breadcrumb-item"><a href="../jLM.html" class="nav-link">jLM</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.Template</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.LMLogger</span></li>
   </ul>
 </nav>
 </div>
@@ -341,10 +341,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <h1>Source code for jLM.Template</h1><div class="highlight"><pre>
+  <h1>Source code for jLM.LMLogger</h1><div class="highlight"><pre>
 <span></span><span class="c1"># </span>
 <span class="c1"># University of Illinois Open Source License</span>
-<span class="c1"># Copyright 2016-2018 Luthey-Schulten Group,</span>
+<span class="c1"># Copyright 2008-2018 Luthey-Schulten Group,</span>
 <span class="c1"># All rights reserved.</span>
 <span class="c1"># </span>
 <span class="c1"># Developed by: Luthey-Schulten Group</span>
@@ -378,56 +378,77 @@
 <span class="c1"># ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR </span>
 <span class="c1"># OTHER DEALINGS WITH THE SOFTWARE.</span>
 <span class="c1"># </span>
-<span class="c1"># Author(s): Tyler M. Earnest</span>
+<span class="c1"># Author(s): Michael J. Hallock and Joseph R. Peterson</span>
 <span class="c1"># </span>
+<span class="c1">#</span>
 
-<span class="sd">&quot;&quot;&quot;Templating engine tools&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="c1"># Create the default LM Logger</span>
+<span class="n">LMLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;LMLogger&#39;</span><span class="p">)</span>
+
+<span class="c1"># Gracefully catch logging.NullHandler() not existing in python 2.6</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">jinja2</span>
-    <span class="n">_j2</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span><span class="n">trim_blocks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-                             <span class="n">lstrip_blocks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                             <span class="n">loader</span><span class="o">=</span><span class="n">jinja2</span><span class="o">.</span><span class="n">FileSystemLoader</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s2">&quot;templates&quot;</span><span class="p">)))</span>
-<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="n">_j2</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">nullHandlerLM</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">NullHandler</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+	<span class="k">class</span> <span class="nc">NullHandler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Handler</span><span class="p">):</span>
+		<span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+			<span class="k">pass</span>
+	<span class="n">nullHandlerLM</span> <span class="o">=</span> <span class="n">NullHandler</span><span class="p">()</span>
 
-<div class="viewcode-block" id="j2render">
-<a class="viewcode-back" href="../../_autosummary/jLM.Template.html#jLM.Template.j2render">[docs]</a>
-<span class="k">def</span> <span class="nf">j2render</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Renders a template given a context dictionary</span>
+<span class="n">LMLogger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">nullHandlerLM</span><span class="p">)</span> <span class="c1"># Set the library to initially print to nothing</span>
 
-<span class="sd">    Args:</span>
-<span class="sd">        fname (str):</span>
-<span class="sd">            template file in the &quot;templates&quot; directory</span>
-<span class="sd">        ctx (dict):</span>
-<span class="sd">            context dictionary</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        str: Rendered template</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">_j2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">_j2</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Deferred jinja2 import exception&quot;</span><span class="p">)</span></div>
+<span class="c1"># Set up the formatter</span>
+<span class="n">LMformatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1">: </span><span class="si">%(levelname)s</span><span class="s1">: </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">nullHandlerLM</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">LMformatter</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="displayj2html">
-<a class="viewcode-back" href="../../_autosummary/jLM.Template.html#jLM.Template.displayj2html">[docs]</a>
-<span class="k">def</span> <span class="nf">displayj2html</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Renders an HTML template and displays in Jupyter notebook</span>
+
+<div class="viewcode-block" id="setLMLoggerLevel">
+<a class="viewcode-back" href="../../_autosummary/jLM.LMLogger.html#jLM.LMLogger.setLMLoggerLevel">[docs]</a>
+<span class="k">def</span> <span class="nf">setLMLoggerLevel</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;Set the level of the logger for the application</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        fname (str):</span>
-<span class="sd">            template file in the &quot;templates&quot; directory</span>
-<span class="sd">        ctx (dict):</span>
-<span class="sd">            context dictionary</span>
+<span class="sd">        level:</span>
+<span class="sd">            The level the logger should report (e.g. logger.WARNING, logger.INFO, etc.)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
-    <span class="k">if</span> <span class="n">_j2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ipd</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">j2render</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">ctx</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Deferred jinja2 import exception&quot;</span><span class="p">)</span></div>
+	<span class="n">LMLogger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="setLMLogFile">
+<a class="viewcode-back" href="../../_autosummary/jLM.LMLogger.html#jLM.LMLogger.setLMLogFile">[docs]</a>
+<span class="k">def</span> <span class="nf">setLMLogFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;Set up file handler to print log to file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename:</span>
+<span class="sd">            The name of the file to log information</span>
+<span class="sd">        level:</span>
+<span class="sd">            The level of information to log</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+	<span class="n">fileH</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+	<span class="n">fileH</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+	<span class="n">fileH</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">LMformatter</span><span class="p">)</span>
+	<span class="n">LMLogger</span><span class="o">.</span><span class="n">removeHandler</span><span class="p">(</span><span class="n">nullHandlerLM</span><span class="p">)</span>
+	<span class="n">LMLogger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fileH</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="setLMLogConsole">
+<a class="viewcode-back" href="../../_autosummary/jLM.LMLogger.html#jLM.LMLogger.setLMLogConsole">[docs]</a>
+<span class="k">def</span> <span class="nf">setLMLogConsole</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;Set the logger to write to the console as the code is working</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        level:</span>
+<span class="sd">            The level of information to log</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+	<span class="n">consoleH</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span> <span class="c1"># Defaults to sys.stderr</span>
+	<span class="n">consoleH</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+	<span class="n">consoleH</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">LMformatter</span><span class="p">)</span>
+	<span class="n">LMLogger</span><span class="o">.</span><span class="n">removeHandler</span><span class="p">(</span><span class="n">nullHandlerLM</span><span class="p">)</span>
+	<span class="n">LMLogger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">consoleH</span><span class="p">)</span></div>
+
 
 </pre></div>
 

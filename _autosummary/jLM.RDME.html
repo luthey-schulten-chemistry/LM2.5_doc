@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=3c4615cf"></script>
+    <script src="../_static/documentation_options.js?v=5574521d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -47,7 +47,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="jLM.RegionBuilder" href="jLM.RegionBuilder.html" />
-    <link rel="prev" title="jLM" href="jLM.html" />
+    <link rel="prev" title="jLM.CMEPostProcessing" href="jLM.CMEPostProcessing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.5.0" />
@@ -97,7 +97,7 @@
   </button>
   
   
-  <div class="col-lg-3 navbar-header-items__start">
+  <div class=" navbar-header-items__start">
     
       <div class="navbar-item">
 
@@ -118,7 +118,7 @@
     
   </div>
   
-  <div class="col-lg-9 navbar-header-items">
+  <div class=" navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
@@ -374,7 +374,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="jLM.RDME.File">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.RDME.</span></span><span class="sig-name descname"><span class="pre">File</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/RDME.html#File"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.RDME.File" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TrajAnalysisMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">FileJupyterMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LmReadMixin</span></code>, <a class="reference internal" href="#jLM.RDME.SpatialModel" title="jLM.RDME.SpatialModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialModel</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TrajAnalysisMixin</span></code>, <a class="reference internal" href="jLM.JupyterDisplay.html#jLM.JupyterDisplay.FileJupyterMixin" title="jLM.JupyterDisplay.FileJupyterMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileJupyterMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LmReadMixin</span></code>, <a class="reference internal" href="#jLM.RDME.SpatialModel" title="jLM.RDME.SpatialModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialModel</span></code></a></p>
 <p>Load a previously defined simulation</p>
 <p>Load a RDME simulation file</p>
 <dl class="field-list simple">
@@ -1749,7 +1749,7 @@ constant.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="jLM.RDME.SpatialModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.RDME.</span></span><span class="sig-name descname"><span class="pre">SpatialModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeSpacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/RDME.html#SpatialModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.RDME.SpatialModel" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LatticeAnalysisMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">JupyterDisplayMixin</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LatticeAnalysisMixin</span></code>, <a class="reference internal" href="jLM.JupyterDisplay.html#jLM.JupyterDisplay.JupyterDisplayMixin" title="jLM.JupyterDisplay.JupyterDisplayMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">JupyterDisplayMixin</span></code></a></p>
 <p>Base RDME model</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jLM.RDME.SpatialModel.assignReaction">
@@ -2225,12 +2225,12 @@ constant.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="jLM.html"
+       href="jLM.CMEPostProcessing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">jLM</p>
+        <p class="prev-next-title">jLM.CMEPostProcessing</p>
       </div>
     </a>
     <a class="right-next"
@@ -2261,7 +2261,7 @@ constant.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.File.assignReaction"><code class="docutils literal notranslate"><span class="pre">File.assignReaction()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.File.construct"><code class="docutils literal notranslate"><span class="pre">File.construct()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.File.diffusionConst"><code class="docutils literal notranslate"><span class="pre">File.diffusionConst()</span></code></a></li>
@@ -2314,7 +2314,7 @@ constant.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.File.speciesWriteInterval"><code class="docutils literal notranslate"><span class="pre">File.speciesWriteInterval</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.Sim"><code class="docutils literal notranslate"><span class="pre">Sim</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.Sim"><code class="docutils literal notranslate"><span class="pre">Sim</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.Sim.assignReaction"><code class="docutils literal notranslate"><span class="pre">Sim.assignReaction()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.Sim.construct"><code class="docutils literal notranslate"><span class="pre">Sim.construct()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.Sim.copyParticleLattice"><code class="docutils literal notranslate"><span class="pre">Sim.copyParticleLattice()</span></code></a></li>
@@ -2365,7 +2365,7 @@ constant.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.Sim.speciesWriteInterval"><code class="docutils literal notranslate"><span class="pre">Sim.speciesWriteInterval</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.SpatialModel"><code class="docutils literal notranslate"><span class="pre">SpatialModel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.SpatialModel"><code class="docutils literal notranslate"><span class="pre">SpatialModel</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.SpatialModel.assignReaction"><code class="docutils literal notranslate"><span class="pre">SpatialModel.assignReaction()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.SpatialModel.construct"><code class="docutils literal notranslate"><span class="pre">SpatialModel.construct()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.RDME.SpatialModel.diffusionConst"><code class="docutils literal notranslate"><span class="pre">SpatialModel.diffusionConst()</span></code></a></li>

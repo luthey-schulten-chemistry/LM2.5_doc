@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=3c4615cf"></script>
+    <script src="_static/documentation_options.js?v=5574521d"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -97,7 +97,7 @@
   </button>
   
   
-  <div class="col-lg-3 navbar-header-items__start">
+  <div class=" navbar-header-items__start">
     
       <div class="navbar-item">
 
@@ -118,7 +118,7 @@
     
   </div>
   
-  <div class="col-lg-9 navbar-header-items">
+  <div class=" navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
@@ -296,16 +296,21 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.html">jLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.CME.html">jLM.CME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.CMEPostProcessing.html">jLM.CMEPostProcessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.RDME.html">jLM.RDME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.RegionBuilder.html">jLM.RegionBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.Solvers.html">jLM.Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.Lattice.html">jLM.Lattice</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.Types.html">jLM.Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.BaseTypes.html">jLM.BaseTypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.ColorGen.html">jLM.ColorGen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.DisplayUtils.html">jLM.DisplayUtils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.Lattice.html">jLM.Lattice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.JupyterDisplay.html">jLM.JupyterDisplay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.units.html">jLM.units</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.Template.html">jLM.Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.TexFmt.html">jLM.TexFmt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/jLM.LMLogger.html">jLM.LMLogger</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/lm.html">lm</a></li>
@@ -377,6 +382,12 @@ For a quick introduction to jLM, please see the <a class="reference external" hr
 <tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.html#module-jLM" title="jLM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM</span></code></a></p></td>
 <td><p>jLM top level.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.CME.html#module-jLM.CME" title="jLM.CME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.CME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.CMEPostProcessing.html#module-jLM.CMEPostProcessing" title="jLM.CMEPostProcessing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.CMEPostProcessing</span></code></a></p></td>
+<td><p></p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.RDME.html#module-jLM.RDME" title="jLM.RDME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.RDME</span></code></a></p></td>
 <td><p>Spatial model</p></td>
 </tr>
@@ -386,26 +397,35 @@ For a quick introduction to jLM, please see the <a class="reference external" hr
 <tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.Solvers.html#module-jLM.Solvers" title="jLM.Solvers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.Solvers</span></code></a></p></td>
 <td><p>Generic RDME solvers</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.Types.html#module-jLM.Types" title="jLM.Types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.Types</span></code></a></p></td>
-<td><p>Simulation objects.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.BaseTypes.html#module-jLM.BaseTypes" title="jLM.BaseTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.BaseTypes</span></code></a></p></td>
-<td><p>Simulation object base class and collections</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.ColorGen.html#module-jLM.ColorGen" title="jLM.ColorGen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.ColorGen</span></code></a></p></td>
-<td><p>Defines ColorSeq, the color scheme generator</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.DisplayUtils.html#module-jLM.DisplayUtils" title="jLM.DisplayUtils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.DisplayUtils</span></code></a></p></td>
-<td><p>Auxiliary helper functions for presentation</p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.Lattice.html#module-jLM.Lattice" title="jLM.Lattice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.Lattice</span></code></a></p></td>
 <td><p>Cythonized lattice manipulation functions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.Types.html#module-jLM.Types" title="jLM.Types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.Types</span></code></a></p></td>
+<td><p>Simulation objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.BaseTypes.html#module-jLM.BaseTypes" title="jLM.BaseTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.BaseTypes</span></code></a></p></td>
+<td><p>Simulation object base class and collections</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.ColorGen.html#module-jLM.ColorGen" title="jLM.ColorGen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.ColorGen</span></code></a></p></td>
+<td><p>Defines ColorSeq, the color scheme generator</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.DisplayUtils.html#module-jLM.DisplayUtils" title="jLM.DisplayUtils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.DisplayUtils</span></code></a></p></td>
+<td><p>Auxiliary helper functions for presentation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.JupyterDisplay.html#module-jLM.JupyterDisplay" title="jLM.JupyterDisplay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.JupyterDisplay</span></code></a></p></td>
+<td><p>SpatialModel mixins for rich display in Jupyter</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.units.html#module-jLM.units" title="jLM.units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.units</span></code></a></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.Template.html#module-jLM.Template" title="jLM.Template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.Template</span></code></a></p></td>
 <td><p>Templating engine tools</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/jLM.TexFmt.html#module-jLM.TexFmt" title="jLM.TexFmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.TexFmt</span></code></a></p></td>
 <td><p>Dump simulation parameters as LaTeX</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/jLM.LMLogger.html#module-jLM.LMLogger" title="jLM.LMLogger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jLM.LMLogger</span></code></a></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>

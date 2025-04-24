@@ -1,0 +1,14 @@
+﻿jLM.LMLogger
+============
+
+.. automodule:: jLM.LMLogger
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+   

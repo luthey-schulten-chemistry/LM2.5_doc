@@ -1,0 +1,19 @@
+﻿jLM.JupyterDisplay
+==================
+
+.. automodule:: jLM.JupyterDisplay
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      showVolumeStack
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      FileJupyterMixin
+      JupyterDisplayMixin
+   
