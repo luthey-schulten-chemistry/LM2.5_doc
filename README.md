@@ -3,15 +3,13 @@ This is the documentation for Lattice Microbe v2.5
 
 ## How to update
 
-```bash
-ghp-import -n -p -f ./doc
-```
+Simply push the latest html files to the main branch, and the documentation webpages will be updated automatically.
 
 # To-do List
 
 ## 1.Finish clean up the html-docs for LM2.5.
 
-- [ ] update the installation procedure (Hongyi)
+- [x] update the installation procedure (Hongyi)
 - [ ] Create the navigation bar
 - [ ] update the visualization part with VMD
 - [ ] introduction part update
