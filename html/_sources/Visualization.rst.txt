@@ -8,43 +8,78 @@ automatically. VMD has excellent `documentation
 <http://www.ks.uiuc.edu/Research/vmd/current/docs.html>`_,  so only LM specific
 features of the plugin will be discussed here.
 
-After loading a trajectory, both the site type lattice and the RDME particles
-will be displayed as points. Since this will be cluttered and hard to
-interpret, the ``atomselect`` syntax used in the Representations dialog can be
-used to select which components of the simulation to display. The lattice
-geometry can be visualized using the selector ``segname SITE``, where as the
-chemical particles can be visualized using ``segname RDME``. For example, for a
-cell :math:`1\;\mu\mathrm{m}` thick with its  longest dimension aligned with
-the :math:`z` axis, the ``atomselect`` syntax to show only the bottom part of
-the cell is
+As noted in the Installation section, LM needs to be built, installed and run inside
+a conda environment, which is created by a .yml file in Lattice-Microbes/conda_envs. 
+Suppose we've used Lattice-Microbes/conda_envs/lm_precomp.yml to create a conda environment 
+py37_lm. We can then type the two lines below to launch VMD:
 
-.. code-block:: none
+.. code-block:: bash
 
-    segname SITE and name membrane and y < 5000
+    conda activate py37_lm
+    vmd
 
-where the name of the membrane site type is ``membrane``, and we display only
-the bottom :math:`500\;\mathrm{nm}` of the  cell. Note that units in VMD are in
-Ångstroms, not nanometers. 
+Upon a successful launch, we should be able to get the windows in the picture below. 
+The window on the left is the **display window**, where our simulation trajectory visualization 
+eventually shows up. The window on the bottom right is the **control window**, where 
+we can load trajectory files and adjust visualization properties.
 
-Consider the system
+.. image:: pictures/vmd_launch.png
+   :width: 700px
+   :height: 400px
+   :align: center
 
-.. math::
-    \mathrm{A} + \mathrm{B} &\to \mathrm{AB}\\
-    \mathrm{A} + \mathrm{C} &\to \mathrm{AC}
+Assume we have an RDME simulation output file *gpu1byte.lm*. To load it, we can click the 
+*File* dropdown and select *New Molecule...* in the **control window**, as shown below.
 
-To view only the dimers in the simulation volume, one could write
+.. image:: pictures/load_files.png
+   :width: 700px
+   :height: 400px
+   :align: center
 
-.. code-block:: none
+A **Molecule File Browser** window shown below will pop up, and we should select *Browse...*. 
+In the pop-up window on the right, we can then navigate to *gpu1byte.lm* and click *OK*. 
+Finally, we should click *Load* in the **Molecule File Browser** window on the left.
 
-    segname RDME and (name AB or name AC)
+.. image:: pictures/browse.png
+   :width: 700px
+   :height: 400px
+   :align: center
 
-or instead use a regular expression
+Upon a successful load, we should be able to see the cell in the **display window** shown below.
 
-.. code-block:: none
+.. image:: pictures/load_success.png
+   :width: 700px
+   :height: 700px
+   :align: center
 
-    segname RDME and name "A[BC]"
+To adjust visualization parameters, we can select *Representations...* in the *Graphics* dropdown 
+of the **control window**.
 
-By combining multiple representations with different ``atomselect`` statements
-and drawing methods, it is possible to quickly create interactively
-visualizations in VMD which allow the dynamics of interest to be investigated.
+.. image:: pictures/representation.png
+   :width: 700px
+   :height: 400px
+   :align: center
 
+In the pop-up window, we can first go to the *Selections* tab, select the type of molecules we 
+want to see from the *Singlewords* menu, and then click *Apply*.
+
+.. image:: pictures/selection.png
+   :width: 300px
+   :height: 700px
+   :align: center
+
+We can then go to the *Draw style* tab, select our desired *Coloring Method* and *Drawing Method*, 
+and click *Apply* at the bottom.
+
+.. image:: pictures/drawing.png
+   :width: 300px
+   :height: 700px
+   :align: center
+
+We can also adjust the orientations of the axes in the **display window**, by going to *Axes* 
+in the *Display* dropdown of the **control window**.
+
+.. image:: pictures/axis.png
+   :width: 700px
+   :height: 400px
+   :align: center

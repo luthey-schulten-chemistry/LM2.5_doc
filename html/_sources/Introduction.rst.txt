@@ -57,8 +57,4 @@ TODO
 
 Command line
 
-Python: pyLM
-
 Python: jLM
-
-

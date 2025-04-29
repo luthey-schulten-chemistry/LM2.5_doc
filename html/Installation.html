@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Installation &#8212; Lattice Microbes 2.5.0 documentation</title>
+    <title>Installation &#8212; Lattice Microbes 2.4.0 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=5574521d"></script>
+    <script src="_static/documentation_options.js?v=31bb8259"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Installation';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="Introduction" href="Introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="2.5.0" />
+  <meta name="docsearch:version" content="2.4.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">Lattice Microbes 2.5.0 documentation</p>
+    <p class="title logo__title">Lattice Microbes 2.4.0 documentation</p>
   
 </a></div>
     
@@ -362,8 +362,7 @@
 Python stack. (<em>Optional Python support</em>)</p></li>
 <li><p><a class="reference external" href="http://www.swig.org">Swig</a>  (<em>Optional Python support</em>)</p></li>
 <li><p><a class="reference external" href="https://developer.nvidia.com/cuda-zone">CUDA</a>, 11.4 or newer. (<em>Optional MPD-RDME support</em>)</p></li>
-<li><p><a class="reference external" href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>, current release tested,
-please report trouble with other versions (<em>Optional VMD plugin</em>)</p></li>
+<li><p><a class="reference external" href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>, Any version before 2.0 is supported. (<em>Optional VMD plugin</em>)</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -375,8 +374,9 @@ please report trouble with other versions (<em>Optional VMD plugin</em>)</p></li
 <a class="reference external" href="https://developer.nvidia.com/cuda-downloads">https://developer.nvidia.com/cuda-downloads</a></p>
 <p>Add the following line at the end of /.bashrc so LM can find CUDA. If path to CUDA is different, export path to where CUDA is installed:
 export PATH=”/usr/local/cuda/bin/:$PATH”</p>
-<section id="establish-conda-environment-through-yaml-files-recommended">
-<h3>Establish Conda Environment through Yaml Files (recommended)<a class="headerlink" href="#establish-conda-environment-through-yaml-files-recommended" title="Link to this heading">#</a></h3>
+</section>
+<section id="establish-conda-environment">
+<h2>Establish Conda Environment<a class="headerlink" href="#establish-conda-environment" title="Link to this heading">#</a></h2>
 <p>The conda environment can be created from the yml files in Lattice-Microbes/conda_envs. Specifically, different yaml files are for
 different uses:</p>
 <blockquote>
@@ -396,41 +396,6 @@ conda<span class="w"> </span>activate<span class="w"> </span>envname
 </pre></div>
 </div>
 <p>or simply close the terminal window.</p>
-</section>
-<section id="establish-conda-environment-through-manual-settings-not-recommended">
-<h3>Establish Conda Environment through Manual Settings (not recommended)<a class="headerlink" href="#establish-conda-environment-through-manual-settings-not-recommended" title="Link to this heading">#</a></h3>
-<p>You can also make your Anaconda environment with your choice of name “envname” and Python version through the following procedure:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>envname<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.3
-conda<span class="w"> </span>activate<span class="w"> </span>envname
-
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-y<span class="w"> </span><span class="nv">git</span><span class="o">==</span><span class="m">2</span>.33.1<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span>gcc_linux-64<span class="o">==</span><span class="m">7</span>.3.0<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span>gxx_linux-64<span class="o">==</span><span class="m">7</span>.3.0<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span>binutils_linux-64<span class="o">==</span><span class="m">2</span>.31.1<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span>libstdcxx-ng<span class="o">==</span><span class="m">11</span>.2.0<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span>libgcc-ng<span class="o">==</span><span class="m">11</span>.2.0
-
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>anaconda<span class="w"> </span><span class="nv">hdf5</span><span class="o">==</span><span class="m">1</span>.10.4<span class="w"> </span><span class="nv">h5py</span><span class="o">==</span><span class="m">2</span>.10.0<span class="w"> </span><span class="nv">protobuf</span><span class="o">==</span><span class="m">3</span>.13.0.1
-
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-y<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.19.2<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">cython</span><span class="o">==</span><span class="m">0</span>.29.4<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">cmake</span><span class="o">==</span><span class="m">3</span>.14.0<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">xlrd</span><span class="o">==</span><span class="m">1</span>.2.0<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">swig</span><span class="o">==</span><span class="m">4</span>.0.2<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">jupyter</span><span class="o">==</span><span class="m">1</span>.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">matplotlib</span><span class="o">==</span><span class="m">3</span>.4.3<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">ipywidgets</span><span class="o">==</span><span class="m">7</span>.6.5<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">tqdm</span><span class="o">==</span><span class="m">4</span>.62.3<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">pillow</span><span class="o">==</span><span class="m">8</span>.3.2<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">jinja2</span><span class="o">==</span><span class="m">3</span>.0.2<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.5.2<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">pybind11</span><span class="o">==</span><span class="m">2</span>.8.1<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">pandas</span><span class="o">==</span><span class="m">1</span>.3.4<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">pytables</span><span class="o">==</span><span class="m">3</span>.5.2<span class="w"> </span><span class="se">\</span>
-<span class="w">                                </span><span class="nv">biopython</span><span class="o">==</span><span class="m">1</span>.79
-</pre></div>
-</div>
-</section>
 </section>
 <section id="build">
 <h2>Build<a class="headerlink" href="#build" title="Link to this heading">#</a></h2>
@@ -558,11 +523,8 @@ or 16 particles are valid choices.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-conda-environment-through-yaml-files-recommended">Establish Conda Environment through Yaml Files (recommended)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-conda-environment-through-manual-settings-not-recommended">Establish Conda Environment through Manual Settings (not recommended)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-conda-environment">Establish Conda Environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
 </ul>

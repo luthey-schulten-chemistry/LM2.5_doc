@@ -17,8 +17,7 @@ Dependencies
 
  * `CUDA <https://developer.nvidia.com/cuda-zone>`_, 11.4 or newer. (*Optional MPD-RDME support*)
 
- * `VMD <http://www.ks.uiuc.edu/Research/vmd/>`_, current release tested,
-   please report trouble with other versions (*Optional VMD plugin*)
+ * `VMD <http://www.ks.uiuc.edu/Research/vmd/>`_, Any version before 2.0 is supported. (*Optional VMD plugin*)
 
 
 Preparation
@@ -33,8 +32,8 @@ https://developer.nvidia.com/cuda-downloads
 Add the following line at the end of /.bashrc so LM can find CUDA. If path to CUDA is different, export path to where CUDA is installed:
 export PATH="/usr/local/cuda/bin/:$PATH"
 
-Establish Conda Environment through Yaml Files (recommended)
-~~~~~~~~~~~~~~~~~~~
+Establish Conda Environment
+---------------------------
 
 The conda environment can be created from the yml files in Lattice-Microbes/conda_envs. Specifically, different yaml files are for
 different uses:
@@ -57,44 +56,6 @@ When your are done using the Conda environment either run
     conda deactivate
 
 or simply close the terminal window.
-
-
-Establish Conda Environment through Manual Settings (not recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can also make your Anaconda environment with your choice of name "envname" and Python version through the following procedure:
-
-.. code-block:: bash
-
-    conda create -n envname -c conda-forge python=3.7.3
-    conda activate envname
-
-    conda install -c conda-forge -y git==2.33.1 \
-                                    gcc_linux-64==7.3.0 \
-                                    gxx_linux-64==7.3.0 \
-                                    binutils_linux-64==2.31.1 \
-                                    libstdcxx-ng==11.2.0 \
-                                    libgcc-ng==11.2.0
-
-    conda install -c anaconda hdf5==1.10.4 h5py==2.10.0 protobuf==3.13.0.1
-
-    conda install -c conda-forge -y numpy==1.19.2 \
-                                    cython==0.29.4 \
-                                    cmake==3.14.0 \
-                                    xlrd==1.2.0 \
-                                    swig==4.0.2 \
-                                    jupyter==1.0.0 \
-                                    matplotlib==3.4.3 \
-                                    ipywidgets==7.6.5 \
-                                    tqdm==4.62.3 \
-                                    pillow==8.3.2 \
-                                    jinja2==3.0.2 \
-                                    scipy==1.5.2 \
-                                    pybind11==2.8.1 \
-                                    pandas==1.3.4 \
-                                    pytables==3.5.2 \
-                                    biopython==1.79
-
 
 Build
 -----
