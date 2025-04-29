@@ -11,7 +11,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 
 - [x] update the installation procedure (Hongyi)
 - [x] Create the navigation bar
-- [ ] update the visualization part with VMD(Hongyi)
+- [x] update the visualization part with VMD(Hongyi)
 - [ ] introduction part update 
 - [ ] add new examples for CME and RDME. 
 
