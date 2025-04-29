@@ -10,9 +10,9 @@ Simply push the latest html files to the main branch, and the documentation webp
 ## 1.Finish clean up the html-docs for LM2.5.
 
 - [x] update the installation procedure (Hongyi)
-- [ ] Create the navigation bar
-- [ ] update the visualization part with VMD
-- [ ] introduction part update
+- [x] Create the navigation bar
+- [ ] update the visualization part with VMD(Hongyi)
+- [ ] introduction part update 
 - [ ] add new examples for CME and RDME. 
 
 
@@ -23,7 +23,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 
 + [ ] Include the  function to discretize the trajectory by frame to reduce the size (Hongyi)
 
-+ [ ] Include a function to directly import species and reactions from SBML model. (quite standard check `stochpy`  )
++ [ ] Include a function to directly import species and reactions from SBML model. (quite standard check `stochpy`  ) (Hongyi)
 
   
 
@@ -34,12 +34,12 @@ when you modify any important functions to accept new parameters, mention it in 
 ## 4. All api function check(Hongyi)
 
 check all API functions in `jLM`  to make sure it works as it stated. 
-+ [ ] Add documentation and explanation for CME realted package in API.
++ [ ] Add documentation and explanation for CME realted package in API. (Hongyi)
 
 ## 5. RDME functions 
 
 + [ ] optimize the kernel to ignore the empty region 
-+ [ ] add a diffusion type to allow exclusively diffuse.
++ [ ] add a diffusion type to allow exclusively diffuse. 
 + [ ] add particle size to fully reflect the size of particles in the site lattice, to decide how many particles can actually be in the one lattice. 
 
 
