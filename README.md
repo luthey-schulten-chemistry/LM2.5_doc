@@ -34,6 +34,7 @@ when you modify any important functions to accept new parameters, mention it in 
 ## 4. All api function check(Hongyi)
 
 check all API functions in `jLM`  to make sure it works as it stated. 
++ [ ] Add documentation and explanation for CME realted package in API.
 
 ## 5. RDME functions 
 
