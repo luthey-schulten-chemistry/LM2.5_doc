@@ -1,5 +1,8 @@
 # LM2.5_doc
 This is the documentation for Lattice Microbe v2.5
+## User feedback
+
+Please create a new issue in the issues session and we will work on it ASAP.
 
 ## How to update
 
