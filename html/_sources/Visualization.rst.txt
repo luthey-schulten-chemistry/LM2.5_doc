@@ -83,3 +83,11 @@ in the *Display* dropdown of the **control window**.
    :width: 700px
    :height: 400px
    :align: center
+
+If we want to change the location of axes and thus choose *UpperLeft*, the **display window** will 
+look like below:
+
+.. image:: pictures/different_location.png
+   :width: 700px
+   :height: 700px
+   :align: center
