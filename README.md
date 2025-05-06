@@ -16,7 +16,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 - [x] Create the navigation bar
 - [x] update the visualization part with VMD(Hongyi)
 - [ ] introduction part update 
-- [ ] add new examples for CME and RDME. 
+- [ ] add new examples for CME and RDME. (Hongyi, tutorial can use the one in summer school)
 
 
 
