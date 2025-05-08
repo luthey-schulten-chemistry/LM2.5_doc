@@ -22,7 +22,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 
 ## 2. Include several new python functions
 
-+ [ ] Include the function to preprocess the trajectory before loading into the VMD using CPU multi cores (Hongyi)
++ [x] Include the function to preprocess the trajectory before loading into the VMD using CPU multi cores (Hongyi)
 
 + [ ] Include the  function to discretize the trajectory by frame to reduce the size (Hongyi)
 
