@@ -17,7 +17,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 - [x] update the visualization part with VMD(Hongyi)
 - [ ] introduction part update 
 - [ ] add new examples for CME and RDME. (Hongyi, tutorial can use the one in summer school)
-- [ ] change the LM document version from 2.4 to 2.5(Hongyi)
+- [x] change the LM document version from 2.4 to 2.5(Hongyi)
 
 
 ## 2. Include several new python functions
