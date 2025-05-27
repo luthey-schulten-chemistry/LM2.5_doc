@@ -46,6 +46,7 @@ check all API functions in `jLM`  to make sure it works as it stated.
 + [ ] add particle size to fully reflect the size of particles in the site lattice, to decide how many particles can actually be in the one lattice.  (Hongyi)
 + [ ] Change the way to save the stoichiometry matrix
 
-
+## 6. jLM python 3.10
++ [ ] Displaygeometry function not work. 
 
 
