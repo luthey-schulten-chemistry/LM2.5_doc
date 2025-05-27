@@ -27,6 +27,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 + [x] Include the function to discretize the trajectory by frame to reduce the size (Hongyi)
 
 + [ ] Include a function to directly import species and reactions from SBML model. (quite standard check `stochpy`  ) (Hongyi)
+     check pyLM, there is it somewhere in CME
 
 + [ ] Add blender function(Tianyu )
   
