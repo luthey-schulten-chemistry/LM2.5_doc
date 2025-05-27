@@ -28,6 +28,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 
 + [ ] Include a function to directly import species and reactions from SBML model. (quite standard check `stochpy`  ) (Hongyi)
 
++ [ ] Add blender function(Tianyu )
   
 
 ## 3. Maintain a developer log （All developers)
