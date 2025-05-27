@@ -40,7 +40,7 @@ when you modify any important functions to accept new parameters, mention it in 
 
 check all API functions in `jLM`  to make sure it works as it stated. 
 + [ ] Add documentation and explanation for CME realted package in API. (Hongyi)
-
++ [ ] Displaygeometry function not work in python 3.10
 ## 5. RDME functions 
 
 + [ ] optimize the kernel to ignore the empty region 
@@ -48,7 +48,5 @@ check all API functions in `jLM`  to make sure it works as it stated.
 + [ ] add particle size to fully reflect the size of particles in the site lattice, to decide how many particles can actually be in the one lattice.  (Hongyi)
 + [ ] Change the way to save the stoichiometry matrix
 
-## 6. jLM python 3.10
-+ [ ] Displaygeometry function not work. 
 
 
