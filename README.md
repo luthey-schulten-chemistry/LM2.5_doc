@@ -47,6 +47,6 @@ check all API functions in `jLM`  to make sure it works as it stated.
 + [ ] add a diffusion type to allow exclusively diffuse.  (Hongyi)
 + [ ] add particle size to fully reflect the size of particles in the site lattice, to decide how many particles can actually be in the one lattice.  (Hongyi)
 + [ ] Change the way to save the stoichiometry matrix
-
++ [ ] GPU threads not synchronized on Delta AI
 
 
