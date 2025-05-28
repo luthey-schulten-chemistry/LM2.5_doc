@@ -94,6 +94,31 @@ This will install the Python modules and executables to your virtual
 environment prefix. The `make install` should have also picked up the VMD
 executable from your path and installed the molfile plugin properly.
 
+Build and Install in a Container
+--------------------------------
+
+In `Lattice-Microbes/containers_build`, there are three files for building
+a container that has Lattice Microbes installed. Specifically, the file `Dockerfile`
+is for building a Docker container. To build a Docker container `lm25`, we can run:
+
+.. code-block:: bash
+
+    docker build -t lm25 .
+
+The file `apptainer.def` is for building an Apptainer container that runs on an `x86_64`
+architecture (like Delta), and we should use the command:
+
+.. code-block:: bash
+
+    apptainer build your-container.sif apptainer.def
+
+The file `apptainer-dtai.def` is for building an Apptainer container that runs on an `aarch64`
+architecture (like Delta AI), and we should use the command:
+
+.. code-block:: bash
+
+    apptainer build your-container.sif apptainer-dtai.def
+
 Advanced Build Configuration
 ============================
 

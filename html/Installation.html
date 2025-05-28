@@ -427,6 +427,25 @@ cmake<span class="w"> </span>../Lattice-Microbes/src/<span class="w"> </span>-D<
 environment prefix. The <cite>make install</cite> should have also picked up the VMD
 executable from your path and installed the molfile plugin properly.</p>
 </section>
+<section id="build-and-install-in-a-container">
+<h2>Build and Install in a Container<a class="headerlink" href="#build-and-install-in-a-container" title="Link to this heading">#</a></h2>
+<p>In <cite>Lattice-Microbes/containers_build</cite>, there are three files for building
+a container that has Lattice Microbes installed. Specifically, the file <cite>Dockerfile</cite>
+is for building a Docker container. To build a Docker container <cite>lm25</cite>, we can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>lm25<span class="w"> </span>.
+</pre></div>
+</div>
+<p>The file <cite>apptainer.def</cite> is for building an Apptainer container that runs on an <cite>x86_64</cite>
+architecture (like Delta), and we should use the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>build<span class="w"> </span>your-container.sif<span class="w"> </span>apptainer.def
+</pre></div>
+</div>
+<p>The file <cite>apptainer-dtai.def</cite> is for building an Apptainer container that runs on an <cite>aarch64</cite>
+architecture (like Delta AI), and we should use the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>build<span class="w"> </span>your-container.sif<span class="w"> </span>apptainer-dtai.def
+</pre></div>
+</div>
+</section>
 </section>
 <section id="advanced-build-configuration">
 <h1>Advanced Build Configuration<a class="headerlink" href="#advanced-build-configuration" title="Link to this heading">#</a></h1>
@@ -527,6 +546,7 @@ or 16 particles are valid choices.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-conda-environment">Establish Conda Environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-install-in-a-container">Build and Install in a Container</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-build-configuration">Advanced Build Configuration</a></li>
