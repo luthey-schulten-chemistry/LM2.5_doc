@@ -16,7 +16,7 @@ Simply push the latest html files to the main branch, and the documentation webp
 - [x] Create the navigation bar
 - [x] update the visualization part with VMD(Hongyi)
 - [ ] introduction part update (citations)
-- [ ] add new examples for CME and RDME. Add the galactose example (Tianyu, tutorial can use the one in summer school)
+- [x] add new examples for CME and RDME. Add the galactose example (Tianyu, tutorial can use the one in summer school)
 - [x] change the LM document version from 2.4 to 2.5(Hongyi)
 - [ ] add the performance plot somewhere to show the benchmark. (Tianyu WU)
 
