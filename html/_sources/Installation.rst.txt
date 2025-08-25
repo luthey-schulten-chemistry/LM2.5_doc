@@ -11,9 +11,9 @@ Dependencies
  * `HDF5 <https://www.hdfgroup.org/solutions/hdf5/>`_
 
  * `Python <https://www.python.org>`_ 3.7 or newer, and the standard scientific
-   Python stack. (*Optional Python support*)
+   Python stack.
 
- * `Swig <http://www.swig.org>`_  (*Optional Python support*)
+ * `Swig <http://www.swig.org>`_
 
  * `CUDA <https://developer.nvidia.com/cuda-zone>`_, 11.4 or newer. (*Optional MPD-RDME support*)
 
