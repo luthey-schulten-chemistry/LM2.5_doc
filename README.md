@@ -44,9 +44,9 @@ check all API functions in `jLM`  to make sure it works as it stated.
 ## 5. RDME functions 
 
 + [ ] optimize the kernel to ignore the empty region
-+ [ ] GPU memory not freed when running multiple replicates in CME.
++ [X] GPU memory not freed when running multiple replicates in CME.
 + [ ] add particle size to fully reflect the size of particles in the site lattice, to decide how many particles can actually be in the one lattice.
 + [ ] Change the way to save the stoichiometry matrix
-+ [ ] GPU threads not synchronized on Delta AI.
++ [X] GPU threads not synchronized on Delta AI.
 
 
