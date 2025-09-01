@@ -40,7 +40,7 @@ when you modify any important functions to accept new parameters, mention it in 
 
 check all API functions in `jLM`  to make sure it works as it stated. 
 + [ ] Add documentation and explanation for CME realted package in API. (Hongyi)
-+ [x] Displaygeometry function not work in python 3.10 (Tianyu, fixed, the problem is np.int is depreciated)
++ [x] Display geometry function not work in python 3.10 (Tianyu, fixed, the problem is np.int is depreciated)
 ## 5. RDME functions 
 
 + [ ] optimize the kernel to ignore the empty region
