@@ -1,5 +1,5 @@
-jLM Interactive Examples
-~~~~~~~~~~~~~~~~~~~~~~~~
+Examples
+============
 
 The following interactive Jupyter notebook examples demonstrate the capabilities
 of the jLM Python interface for `Lattice Microbes <https://lattice-microbes.org>`_.

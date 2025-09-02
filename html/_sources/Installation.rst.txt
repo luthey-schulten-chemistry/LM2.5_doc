@@ -71,6 +71,11 @@ When your are done using the virtual environment either run
 
 or simply close the terminal window.
 
+Next Steps
+----------
+
+After installation, you can get started with interactive examples by visiting the :doc:`Examples <jLM Examples>` page, which contains ready-to-run Jupyter notebook tutorials.
+
 
 Python Virtualenv or Global Install (advanced)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

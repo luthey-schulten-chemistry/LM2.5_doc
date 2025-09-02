@@ -1,4 +1,4 @@
-Lattice Microbes API Reference
+API Reference
 ==============================
 
 .. include:: jLM.rst

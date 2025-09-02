@@ -1,5 +1,5 @@
-Visualization using VMD
-~~~~~~~~~~~~~~~~~~~~~~~
+Visualization
+============
 
 `Visual Molecular Dynamics <http://www.ks.uiuc.edu/Research/vmd/>`_ can be used
 to visualize RDME simulation output. If LM was built and installed with VMD

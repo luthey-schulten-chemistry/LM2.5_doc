@@ -61,4 +61,14 @@ Python: pyLM
 
 Python: jLM
 
+Interactive Examples
+~~~~~~~~~~~~~~~~~~~
+
+For hands-on tutorials and examples of jLM usage, see the :doc:`Examples <jLM Examples>` page, which contains interactive Jupyter notebook examples covering:
+
+* Basic chemical kinetics and bimolecular reactions
+* Enzymatic reactions (Michaelis-Menten kinetics)
+* Population dynamics (predator-prey systems)
+* Gene regulation and cellular processes
+* Advanced simulation techniques
 
