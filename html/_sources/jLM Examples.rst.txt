@@ -14,13 +14,13 @@ Basic Chemical Kinetics
 
 The bimolecular reaction examples demonstrate fundamental chemical kinetics:
 
-* :download:`bimol.html <_static/bimol.html>` - Basic bimolecular reaction :math:`A + B \to C`
-* :download:`bimolConc.html <_static/bimolConc.html>` - Bimolecular reactions with concentration effects
-* :download:`bimol-pp.html <_static/bimol-pp.html>` - Post-processing analysis of bimolecular systems
+* `bimol.html <_static/bimol.html>`_ - Basic bimolecular reaction :math:`A + B \to C`
+* `bimolConc.html <_static/bimolConc.html>`_ - Bimolecular reactions with concentration effects
+* `bimol-pp.html <_static/bimol-pp.html>`_ - Post-processing analysis of bimolecular systems
 
 **Enzymatic Reactions**
 
-* :download:`MichaelisMenten.html <_static/MichaelisMenten.html>` - Classic Michaelis-Menten enzyme kinetics
+* `MichaelisMenten.html <_static/MichaelisMenten.html>`_ - Classic Michaelis-Menten enzyme kinetics
 
 .. math::
     E + S &\rightleftharpoons ES \\
@@ -34,7 +34,7 @@ Population Dynamics
 
 **Predator-Prey Systems**
 
-* :download:`LotkaVolterra.html <_static/LotkaVolterra.html>` - Classic Lotka-Volterra predator-prey dynamics
+* `LotkaVolterra.html <_static/LotkaVolterra.html>`_ - Classic Lotka-Volterra predator-prey dynamics
 
 The Lotka-Volterra system models population oscillations:
 
@@ -50,12 +50,12 @@ Gene Regulation and Cellular Processes
 
 **Gene Expression Models**
 
-* :download:`rnaprotein.html <_static/rnaprotein.html>` - RNA transcription and protein translation dynamics
-* :download:`lac2state.html <_static/lac2state.html>` - Two-state lac operon gene regulation model
+* `rnaprotein.html <_static/rnaprotein.html>`_ - RNA transcription and protein translation dynamics
+* `lac2state.html <_static/lac2state.html>`_ - Two-state lac operon gene regulation model
 
 **Developmental Biology**
 
-* :download:`minde.html <_static/minde.html>` - MinDE system for bacterial cell division dynamics
+* `minde.html <_static/minde.html>`_ - MinDE system for bacterial cell division dynamics
 
 The MinDE system demonstrates protein oscillations crucial for proper cell division
 positioning in bacteria.
@@ -66,8 +66,8 @@ Advanced Simulation Techniques
 
 **Model Extension and Customization**
 
-* :download:`extendcme.html <_static/extendcme.html>` - Extending CME simulations with custom solvers
-* :download:`extendrdme.html <_static/extendrdme.html>` - Extending RDME simulations for spatial systems
+* `extendcme.html <_static/extendcme.html>`_ - Extending CME simulations with custom solvers
+* `extendrdme.html <_static/extendrdme.html>`_ - Extending RDME simulations for spatial systems
 
 
 Getting Started
@@ -75,7 +75,7 @@ Getting Started
 
 **Interactive Documentation**
 
-* :download:`notebook.html <_static/jLM-doc.html>` - General jLM documentation and tutorial notebook
+* `notebook.html <_static/jLM-doc.html>`_ - General jLM documentation and tutorial notebook
 
 This comprehensive notebook provides an introduction to the jLM interface,
 covering basic concepts, simulation setup, and result analysis workflows.
