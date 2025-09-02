@@ -46,7 +46,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="jLM.RegionBuilder" href="jLM.RegionBuilder.html" />
-    <link rel="prev" title="jLM" href="jLM.html" />
+    <link rel="prev" title="jLM.CMEPostProcessing" href="jLM.CMEPostProcessing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.5" />
@@ -383,7 +383,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="jLM.RDME.File">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.RDME.</span></span><span class="sig-name descname"><span class="pre">File</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/RDME.html#File"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.RDME.File" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TrajAnalysisMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">FileJupyterMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LmReadMixin</span></code>, <a class="reference internal" href="#jLM.RDME.SpatialModel" title="jLM.RDME.SpatialModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="jLM.Analysis.html#jLM.Analysis.TrajAnalysisMixin" title="jLM.Analysis.TrajAnalysisMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajAnalysisMixin</span></code></a>, <a class="reference internal" href="jLM.JupyterDisplay.html#jLM.JupyterDisplay.FileJupyterMixin" title="jLM.JupyterDisplay.FileJupyterMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileJupyterMixin</span></code></a>, <a class="reference internal" href="jLM.LmInteract.html#jLM.LmInteract.LmReadMixin" title="jLM.LmInteract.LmReadMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LmReadMixin</span></code></a>, <a class="reference internal" href="#jLM.RDME.SpatialModel" title="jLM.RDME.SpatialModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialModel</span></code></a></p>
 <p>Load a previously defined simulation</p>
 <p>Load a RDME simulation file</p>
 <dl class="field-list simple">
@@ -1085,7 +1085,7 @@ constant.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="jLM.RDME.Sim">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.RDME.</span></span><span class="sig-name descname"><span class="pre">Sim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeSpacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regionName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/RDME.html#Sim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.RDME.Sim" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LmWriteMixin</span></code>, <a class="reference internal" href="#jLM.RDME.SpatialModel" title="jLM.RDME.SpatialModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="jLM.LmInteract.html#jLM.LmInteract.LmWriteMixin" title="jLM.LmInteract.LmWriteMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LmWriteMixin</span></code></a>, <a class="reference internal" href="#jLM.RDME.SpatialModel" title="jLM.RDME.SpatialModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialModel</span></code></a></p>
 <p>Define and run an RDME simulation</p>
 <p>Create new RDME object</p>
 <dl class="field-list simple">
@@ -1695,7 +1695,7 @@ constant.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="jLM.RDME.SpatialModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.RDME.</span></span><span class="sig-name descname"><span class="pre">SpatialModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeSpacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticeType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/RDME.html#SpatialModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.RDME.SpatialModel" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LatticeAnalysisMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">JupyterDisplayMixin</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="jLM.Analysis.html#jLM.Analysis.LatticeAnalysisMixin" title="jLM.Analysis.LatticeAnalysisMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LatticeAnalysisMixin</span></code></a>, <a class="reference internal" href="jLM.JupyterDisplay.html#jLM.JupyterDisplay.JupyterDisplayMixin" title="jLM.JupyterDisplay.JupyterDisplayMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">JupyterDisplayMixin</span></code></a></p>
 <p>Base RDME model</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jLM.RDME.SpatialModel.assignReaction">
@@ -2173,12 +2173,12 @@ constant.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="jLM.html"
+       href="jLM.CMEPostProcessing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">jLM</p>
+        <p class="prev-next-title">jLM.CMEPostProcessing</p>
       </div>
     </a>
     <a class="right-next"
