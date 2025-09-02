@@ -19,6 +19,7 @@ For help and general discussion please sign up for the Lattice Microbes
 
    Introduction
    Installation
+   jLM Examples
    Visualization
    API
    Citations

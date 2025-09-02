@@ -136,6 +136,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    jLM Interactive Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Visualization.html">
     Visualization using VMD
   </a>
@@ -148,13 +155,23 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../Citations.html">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../Citations.html">
     Citations
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -236,6 +253,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Installation.html">
     Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    jLM Interactive Examples
   </a>
 </li>
 
@@ -821,7 +845,7 @@
 <div class="viewcode-block" id="SpatialModel.run">
 <a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.SpatialModel.run">[docs]</a>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solver</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">replicate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="n">cudaDevices</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">checkpointInterval</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">verbosity</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="n">cudaDevices</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">checkpointInterval</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
             <span class="n">sample_frame</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">max_frames</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the RDME simulation</span>
 
@@ -836,14 +860,6 @@
 <span class="sd">                List of CUDA device indexes</span>
 <span class="sd">            checkpointInterval (int):</span>
 <span class="sd">                Number of seconds between checkpoints</span>
-<span class="sd">            verbosity (int):</span>
-<span class="sd">                Verbosity level</span>
-<span class="sd">                1: FATAL</span>
-<span class="sd">                2: ERROR</span>
-<span class="sd">                3: WARNING</span>
-<span class="sd">                4: INFO</span>
-<span class="sd">                9: DEBUG</span>
-<span class="sd">                10: VERBOSE_DEBUG</span>
 <span class="sd">            sample_frame (bool):</span>
 <span class="sd">                Sample frames or not</span>
 <span class="sd">            max_frames (int):</span>
@@ -862,11 +878,7 @@
             <span class="n">f</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">simulationFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">setParameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">))</span>
             <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">verbosity</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Setting verbosity level to </span><span class="si">{</span><span class="n">verbosity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            
-            <span class="n">lm</span><span class="o">.</span><span class="n">setVerbosityLevel</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
-        
+
         <span class="n">lm</span><span class="o">.</span><span class="n">runSolver</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">replicate</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">cudaDevices</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">checkpointInterval</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">File</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>

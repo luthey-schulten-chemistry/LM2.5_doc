@@ -3,7 +3,7 @@ jLM
 
 jLM is an alternate interface to Lattice Microbes through the Jupyter notebook.
 For a quick introduction to jLM, please see the `example notebook
-<_static/notebook.html>`_.
+<_static/jLM-doc.html>`_.
 
 .. autosummary::
     :toctree: _autosummary

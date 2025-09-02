@@ -136,6 +136,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    jLM Interactive Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Visualization.html">
     Visualization using VMD
   </a>
@@ -148,13 +155,23 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../Citations.html">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../Citations.html">
     Citations
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -236,6 +253,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Installation.html">
     Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    jLM Interactive Examples
   </a>
 </li>
 
@@ -610,52 +634,6 @@
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\textasciicircum</span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">s</span></div>
 
-
-<div class="viewcode-block" id="writeTable">
-<a class="viewcode-back" href="../../_autosummary/jLM.DisplayUtils.html#jLM.DisplayUtils.writeTable">[docs]</a>
-<span class="k">def</span> <span class="nf">writeTable</span><span class="p">(</span><span class="n">columnNames</span><span class="p">,</span><span class="n">rows</span><span class="p">):</span>
-	<span class="c1"># Table definitions</span>
-	<span class="n">cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">columnNames</span><span class="p">)</span>
-	<span class="n">headerStyle</span> <span class="o">=</span> <span class="s1">&#39;&lt;td style=&quot;text-align:</span><span class="si">%s</span><span class="s1">&quot;&gt;&lt;b&gt;</span><span class="si">%s</span><span class="s1">&lt;/b&gt;&lt;/td&gt;&#39;</span>
-	<span class="n">rowStyle</span>    <span class="o">=</span> <span class="s1">&#39;&lt;td style=&quot;text-align:</span><span class="si">%s</span><span class="s1">&quot;&gt;</span><span class="si">%s</span><span class="s1">&lt;/td&gt;&#39;</span>
-	<span class="k">def</span> <span class="nf">align</span><span class="p">(</span><span class="n">idx</span><span class="p">):</span>
-		<span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-			<span class="k">return</span> <span class="s2">&quot;left&quot;</span>
-		<span class="k">return</span> <span class="s2">&quot;center&quot;</span>
-	<span class="n">s</span>  <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-	<span class="c1"># Write header</span>
-	<span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;&lt;table&gt;&#39;</span>
-	<span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;&lt;tr&gt;</span><span class="si">%s</span><span class="s1">&lt;/tr&gt;&#39;</span><span class="o">%</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">headerStyle</span><span class="o">%</span><span class="p">(</span><span class="n">align</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">columnNames</span><span class="p">)]))</span>
-	<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
-		<span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;&lt;tr&gt;</span><span class="si">%s</span><span class="s1">&lt;/tr&gt;&#39;</span><span class="o">%</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">rowStyle</span><span class="o">%</span><span class="p">(</span><span class="n">align</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">)]))</span>
-	<span class="c1"># Write footer</span>
-	<span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;&lt;/table&gt;&#39;</span>
-	<span class="k">return</span> <span class="n">s</span></div>
-
-
-<div class="viewcode-block" id="getReactionString">
-<a class="viewcode-back" href="../../_autosummary/jLM.DisplayUtils.html#jLM.DisplayUtils.getReactionString">[docs]</a>
-<span class="k">def</span> <span class="nf">getReactionString</span><span class="p">(</span><span class="n">rct</span><span class="p">,</span> <span class="n">prd</span><span class="p">,</span> <span class="n">rate</span><span class="p">):</span>
-	<span class="n">rxnStr</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rct</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-		<span class="k">if</span> <span class="n">rct</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-			<span class="n">rct</span> <span class="o">=</span> <span class="s1">&#39;∅&#39;</span>
-		<span class="n">rct</span> <span class="o">=</span> <span class="p">[</span><span class="n">rct</span><span class="p">]</span>
-	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prd</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-		<span class="k">if</span> <span class="n">prd</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-			<span class="n">prd</span> <span class="o">=</span> <span class="s1">&#39;∅&#39;</span>
-		<span class="n">prd</span> <span class="o">=</span> <span class="p">[</span><span class="n">prd</span><span class="p">]</span>
-	<span class="n">rxnStr</span> <span class="o">+=</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rct</span><span class="p">)</span> 
-	<span class="n">rxnStr</span> <span class="o">+=</span> <span class="s2">&quot; ⟶ &quot;</span>
-	<span class="n">rxnStr</span> <span class="o">+=</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prd</span><span class="p">)</span>
-	<span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;?&quot;</span>
-	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rct</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-		<span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;molecules/s&quot;</span>
-	<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">rct</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-		<span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;s⁻¹&quot;</span>
-	<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">rct</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-		<span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;molecule⁻¹sec⁻¹&quot;</span>
-	<span class="k">return</span> <span class="n">rxnStr</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">units</span></div>
 
 </pre></div>
 

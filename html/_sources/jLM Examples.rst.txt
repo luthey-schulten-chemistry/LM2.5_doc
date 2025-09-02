@@ -1,0 +1,111 @@
+jLM Interactive Examples
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following interactive Jupyter notebook examples demonstrate the capabilities
+of the jLM Python interface for `Lattice Microbes <https://lattice-microbes.org>`_.
+These examples cover both Chemical Master Equation (CME) and Reaction-Diffusion 
+Master Equation (RDME) simulations, showcasing various biochemical systems and
+modeling approaches.
+
+Basic Chemical Kinetics
+-----------------------
+
+**Bimolecular Reactions**
+
+The bimolecular reaction examples demonstrate fundamental chemical kinetics:
+
+* :download:`bimol.html <_static/bimol.html>` - Basic bimolecular reaction :math:`A + B \to C`
+* :download:`bimolConc.html <_static/bimolConc.html>` - Bimolecular reactions with concentration effects
+* :download:`bimol-pp.html <_static/bimol-pp.html>` - Post-processing analysis of bimolecular systems
+
+**Enzymatic Reactions**
+
+* :download:`MichaelisMenten.html <_static/MichaelisMenten.html>` - Classic Michaelis-Menten enzyme kinetics
+
+.. math::
+    E + S &\rightleftharpoons ES \\
+    ES &\to E + P
+
+where :math:`E` is enzyme, :math:`S` is substrate, :math:`ES` is the enzyme-substrate
+complex, and :math:`P` is the product.
+
+Population Dynamics
+-------------------
+
+**Predator-Prey Systems**
+
+* :download:`LotkaVolterra.html <_static/LotkaVolterra.html>` - Classic Lotka-Volterra predator-prey dynamics
+
+The Lotka-Volterra system models population oscillations:
+
+.. math::
+    X &\to 2X \\
+    X + Y &\to 2Y \\
+    Y &\to \emptyset
+
+where :math:`X` represents prey and :math:`Y` represents predators.
+
+Gene Regulation and Cellular Processes
+--------------------------------------
+
+**Gene Expression Models**
+
+* :download:`rnaprotein.html <_static/rnaprotein.html>` - RNA transcription and protein translation dynamics
+* :download:`lac2state.html <_static/lac2state.html>` - Two-state lac operon gene regulation model
+
+**Developmental Biology**
+
+* :download:`minde.html <_static/minde.html>` - MinDE system for bacterial cell division dynamics
+
+The MinDE system demonstrates protein oscillations crucial for proper cell division
+positioning in bacteria.
+
+
+Advanced Simulation Techniques  
+-----------------------------
+
+**Model Extension and Customization**
+
+* :download:`extendcme.html <_static/extendcme.html>` - Extending CME simulations with custom solvers
+* :download:`extendrdme.html <_static/extendrdme.html>` - Extending RDME simulations for spatial systems
+
+
+Getting Started
+--------------
+
+**Interactive Documentation**
+
+* :download:`notebook.html <_static/jLM-doc.html>` - General jLM documentation and tutorial notebook
+
+This comprehensive notebook provides an introduction to the jLM interface,
+covering basic concepts, simulation setup, and result analysis workflows.
+
+Running the Examples
+-------------------
+
+To run these examples locally, ensure you have jLM installed with Jupyter support:
+
+.. code-block:: bash
+
+    # Install jLM with notebook dependencies
+    pip install jLM[notebook]
+    
+    # Start Jupyter notebook server
+    jupyter notebook
+
+The HTML files provided here are static exports of interactive Jupyter notebooks.
+For the full interactive experience with live code execution, download the 
+corresponding ``.ipynb`` files from the jLM examples repository.
+
+Each example includes:
+
+* **Model definition** using jLM's Python API
+* **Simulation parameter setup** including solver selection and runtime options  
+* **Result visualization** with matplotlib and other plotting libraries
+* **Analysis workflows** demonstrating post-processing techniques
+
+For spatial simulations (RDME), examples also demonstrate:
+
+* **Geometric region construction** using jLM's RegionBuilder tools
+* **Species placement and diffusion** parameter specification
+* **Spatial visualization** of concentration profiles and particle trajectories

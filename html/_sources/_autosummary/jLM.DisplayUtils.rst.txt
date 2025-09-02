@@ -9,12 +9,10 @@
    .. autosummary::
    
       colorWheel
-      getReactionString
       numToStr
       sanitizeTex
       texUnits
       texfmt
       toHex
       unicodeUnits
-      writeTable
    

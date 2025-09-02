@@ -136,6 +136,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    jLM Interactive Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Visualization.html">
     Visualization using VMD
   </a>
@@ -148,13 +155,23 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../Citations.html">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../Citations.html">
     Citations
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -236,6 +253,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Installation.html">
     Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    jLM Interactive Examples
   </a>
 </li>
 
@@ -341,7 +365,7 @@
                 <article class="bd-article">
                   
   <h1>Source code for jLM.BaseTypes</h1><div class="highlight"><pre>
-<span></span><span class="c1">#</span>
+<span></span><span class="c1"># </span>
 <span class="c1"># University of Illinois Open Source License</span>
 <span class="c1"># Copyright 2016-2018 Luthey-Schulten Group,</span>
 <span class="c1"># All rights reserved.</span>
@@ -395,7 +419,10 @@
 <div class="viewcode-block" id="Namespace">
 <a class="viewcode-back" href="../../_autosummary/jLM.BaseTypes.html#jLM.BaseTypes.Namespace">[docs]</a>
 <span class="k">class</span> <span class="nc">Namespace</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convienence class for TAB completing simulation objects&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function simply creates and returns a new Namespace object wrapping </span>
+<span class="sd">        the current SimObjs container. The main purpose is to provide a more user-friendly </span>
+<span class="sd">        interface for accessing simulation objects through tab completion.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sos</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convienence class for TAB completing simulation objects</span>
 
@@ -469,9 +496,9 @@
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_idbase</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">)))</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">idbase</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_cls</span> <span class="o">=</span> <span class="bp">cls</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_sim</span> <span class="o">=</span> <span class="n">sim</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_idbase</span> <span class="o">=</span> <span class="n">idbase</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cls</span> <span class="o">=</span> <span class="bp">cls</span>      <span class="c1"># Class type for the objects being stored</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sim</span> <span class="o">=</span> <span class="n">sim</span>      <span class="c1"># Reference to simulation instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_idbase</span> <span class="o">=</span> <span class="n">idbase</span>  <span class="c1"># Starting index for object IDs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_id2name</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_id2obj</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>

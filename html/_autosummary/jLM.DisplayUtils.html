@@ -44,8 +44,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/jLM.DisplayUtils';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="jLM.Lattice" href="jLM.Lattice.html" />
-    <link rel="prev" title="jLM.ColorGen" href="jLM.ColorGen.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.5" />
@@ -139,6 +137,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../jLM%20Examples.html">
+    jLM Interactive Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Visualization.html">
     Visualization using VMD
   </a>
@@ -151,13 +156,23 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../Citations.html">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Citations.html">
     Citations
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -241,6 +256,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../Installation.html">
     Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../jLM%20Examples.html">
+    jLM Interactive Examples
   </a>
 </li>
 
@@ -331,9 +353,6 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../API.html" class="nav-link">Lattice Microbes API Reference</a></li>
-    
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.DisplayUtils</span></li>
   </ul>
 </nav>
@@ -360,29 +379,23 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.colorWheel" title="jLM.DisplayUtils.colorWheel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">colorWheel</span></code></a>(h)</p></td>
 <td><p>RGB triple at a particular hue</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.DisplayUtils.getReactionString" title="jLM.DisplayUtils.getReactionString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getReactionString</span></code></a>(rct, prd, rate)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.numToStr" title="jLM.DisplayUtils.numToStr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numToStr</span></code></a>(val[, unit, scale, n, smallest_exp])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.DisplayUtils.numToStr" title="jLM.DisplayUtils.numToStr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numToStr</span></code></a>(val[, unit, scale, n, smallest_exp])</p></td>
 <td><p>Pretty print a number</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.DisplayUtils.sanitizeTex" title="jLM.DisplayUtils.sanitizeTex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sanitizeTex</span></code></a>(st)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.sanitizeTex" title="jLM.DisplayUtils.sanitizeTex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sanitizeTex</span></code></a>(st)</p></td>
 <td><p>Replace control characters with escaped versions</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.texUnits" title="jLM.DisplayUtils.texUnits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">texUnits</span></code></a>(s)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.DisplayUtils.texUnits" title="jLM.DisplayUtils.texUnits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">texUnits</span></code></a>(s)</p></td>
 <td><p>Reformat ascii number as TeX</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.DisplayUtils.texfmt" title="jLM.DisplayUtils.texfmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">texfmt</span></code></a>(xx[, n, tex_escape, smallest_exp])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.texfmt" title="jLM.DisplayUtils.texfmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">texfmt</span></code></a>(xx[, n, tex_escape, smallest_exp])</p></td>
 <td><p>Format a float in LaTeXified scientific notation.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.toHex" title="jLM.DisplayUtils.toHex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">toHex</span></code></a>(c)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.DisplayUtils.toHex" title="jLM.DisplayUtils.toHex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">toHex</span></code></a>(c)</p></td>
 <td><p>RGB triple to hex string</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.DisplayUtils.unicodeUnits" title="jLM.DisplayUtils.unicodeUnits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unicodeUnits</span></code></a>(s)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.unicodeUnits" title="jLM.DisplayUtils.unicodeUnits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unicodeUnits</span></code></a>(s)</p></td>
 <td><p>Reformat ascii number as unicode</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.DisplayUtils.writeTable" title="jLM.DisplayUtils.writeTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">writeTable</span></code></a>(columnNames, rows)</p></td>
-<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -403,11 +416,6 @@
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="jLM.DisplayUtils.getReactionString">
-<span class="sig-prename descclassname"><span class="pre">jLM.DisplayUtils.</span></span><span class="sig-name descname"><span class="pre">getReactionString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/DisplayUtils.html#getReactionString"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.DisplayUtils.getReactionString" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jLM.DisplayUtils.numToStr">
@@ -532,11 +540,6 @@ scientific notation.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="jLM.DisplayUtils.writeTable">
-<span class="sig-prename descclassname"><span class="pre">jLM.DisplayUtils.</span></span><span class="sig-name descname"><span class="pre">writeTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnNames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/DisplayUtils.html#writeTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.DisplayUtils.writeTable" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 </section>
 
 
@@ -549,24 +552,6 @@ scientific notation.</p></li>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="jLM.ColorGen.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">jLM.ColorGen</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="jLM.Lattice.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">jLM.Lattice</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -587,14 +572,12 @@ scientific notation.</p></li>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.colorWheel"><code class="docutils literal notranslate"><span class="pre">colorWheel()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.getReactionString"><code class="docutils literal notranslate"><span class="pre">getReactionString()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.numToStr"><code class="docutils literal notranslate"><span class="pre">numToStr()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.sanitizeTex"><code class="docutils literal notranslate"><span class="pre">sanitizeTex()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.texUnits"><code class="docutils literal notranslate"><span class="pre">texUnits()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.texfmt"><code class="docutils literal notranslate"><span class="pre">texfmt()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.toHex"><code class="docutils literal notranslate"><span class="pre">toHex()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.unicodeUnits"><code class="docutils literal notranslate"><span class="pre">unicodeUnits()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.DisplayUtils.writeTable"><code class="docutils literal notranslate"><span class="pre">writeTable()</span></code></a></li>
 </ul>
   </nav></div>
 
