@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jLM.Analysis &#8212; Lattice Microbes 2.5_dev documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5d3ef798"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jLM/Analysis';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.5" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Lattice Microbes</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Visualization.html">
+    Visualization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API.html">
+    API Reference
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../Citations.html">
+    Citations
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Visualization.html">
+    Visualization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Citations.html">
+    Citations
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../jLM.html" class="nav-link">jLM</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.Analysis</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jLM.Analysis</h1><div class="highlight"><pre>
+<span></span><span class="c1"># </span>
+<span class="c1"># University of Illinois Open Source License</span>
+<span class="c1"># Copyright 2016-2018 Luthey-Schulten Group,</span>
+<span class="c1"># All rights reserved.</span>
+<span class="c1"># </span>
+<span class="c1"># Developed by: Luthey-Schulten Group</span>
+<span class="c1">#                           University of Illinois at Urbana-Champaign</span>
+<span class="c1">#                           http://www.scs.uiuc.edu/~schulten</span>
+<span class="c1"># </span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy of</span>
+<span class="c1"># this software and associated documentation files (the Software), to deal with </span>
+<span class="c1"># the Software without restriction, including without limitation the rights to </span>
+<span class="c1"># use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies </span>
+<span class="c1"># of the Software, and to permit persons to whom the Software is furnished to </span>
+<span class="c1"># do so, subject to the following conditions:</span>
+<span class="c1"># </span>
+<span class="c1"># - Redistributions of source code must retain the above copyright notice, </span>
+<span class="c1"># this list of conditions and the following disclaimers.</span>
+<span class="c1"># </span>
+<span class="c1"># - Redistributions in binary form must reproduce the above copyright notice, </span>
+<span class="c1"># this list of conditions and the following disclaimers in the documentation </span>
+<span class="c1"># and/or other materials provided with the distribution.</span>
+<span class="c1"># </span>
+<span class="c1"># - Neither the names of the Luthey-Schulten Group, University of Illinois at</span>
+<span class="c1"># Urbana-Champaign, nor the names of its contributors may be used to endorse or</span>
+<span class="c1"># promote products derived from this Software without specific prior written</span>
+<span class="c1"># permission.</span>
+<span class="c1"># </span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR </span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, </span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL </span>
+<span class="c1"># THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR </span>
+<span class="c1"># OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, </span>
+<span class="c1"># ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR </span>
+<span class="c1"># OTHER DEALINGS WITH THE SOFTWARE.</span>
+<span class="c1"># </span>
+<span class="c1"># Author(s): Tyler M. Earnest</span>
+<span class="c1"># </span>
+
+<span class="sd">&quot;&quot;&quot;Simulation analysis mixins for SpatialModel&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">h5py</span> <span class="kn">import</span> <span class="n">File</span> <span class="k">as</span> <span class="n">H5File</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Lattice</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Types</span>
+
+<div class="viewcode-block" id="LatticeAnalysisMixin">
+<a class="viewcode-back" href="../../_autosummary/jLM.Analysis.html#jLM.Analysis.LatticeAnalysisMixin">[docs]</a>
+<span class="k">class</span> <span class="nc">LatticeAnalysisMixin</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LatticeAnalysisMixin.particleStatistics">
+<a class="viewcode-back" href="../../_autosummary/jLM.Analysis.html#jLM.Analysis.LatticeAnalysisMixin.particleStatistics">[docs]</a>
+    <span class="k">def</span> <span class="nf">particleStatistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">particleLattice</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">siteLattice</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute properties of the particle lattice</span>
+
+<span class="sd">        Dictionary keys</span>
+
+<span class="sd">        countBySpeciesRegion</span>
+<span class="sd">           Particle counts for each species type for each region.</span>
+
+<span class="sd">        concBySpeciesRegion</span>
+<span class="sd">           Concentration for each species type for each region.</span>
+
+<span class="sd">        countByRegion</span>
+<span class="sd">           Total particle counts for each region.</span>
+
+<span class="sd">        concByRegion</span>
+<span class="sd">           Total concentration for each region.</span>
+<span class="sd">         </span>
+<span class="sd">        countBySpecies</span>
+<span class="sd">           Total particle counts for each species.</span>
+
+<span class="sd">        concBySpecies</span>
+<span class="sd">           Total concentration of each species, averaged over </span>
+<span class="sd">           simulation volume</span>
+
+<span class="sd">        count</span>
+<span class="sd">           Total particle count</span>
+
+<span class="sd">        conc</span>
+<span class="sd">           Total concentration, averaged over simulation volume</span>
+
+<span class="sd">        vol</span>
+<span class="sd">           Total simulation volume </span>
+
+<span class="sd">        siteCount</span>
+<span class="sd">           Total number of subvolumes</span>
+
+<span class="sd">        regionVol</span>
+<span class="sd">           Volume of each region</span>
+
+<span class="sd">        regionCounts</span>
+<span class="sd">           Number of subvolumes in each region</span>
+<span class="sd">          </span>
+<span class="sd">        Returns: </span>
+<span class="sd">            dict:</span>
+<span class="sd">               Particle lattice statistics</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">particleLattice</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">particleLattice</span> <span class="k">if</span> <span class="n">particleLattice</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">particleLattice</span>
+        <span class="n">siteLattice</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">siteLattice</span> <span class="k">if</span> <span class="n">siteLattice</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">siteLattice</span>
+        
+        <span class="k">if</span> <span class="n">particleLattice</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pCount</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sCount</span> <span class="o">=</span> <span class="n">Lattice</span><span class="o">.</span><span class="n">latticeStatsAll</span><span class="p">(</span><span class="n">particleLattice</span><span class="p">,</span> <span class="n">siteLattice</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">particleLattice</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pCount</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sCount</span> <span class="o">=</span> <span class="n">Lattice</span><span class="o">.</span><span class="n">latticeStatsAll_h5fmt</span><span class="p">(</span><span class="n">particleLattice</span><span class="p">,</span> <span class="n">siteLattice</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Wrong number of dimensions for particle lattice&quot;</span><span class="p">)</span>
+
+        <span class="n">regionCounts</span> <span class="o">=</span> <span class="p">{</span><span class="n">rt</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sCount</span><span class="p">[</span><span class="n">rt</span><span class="o">.</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">}</span>
+        <span class="n">regionVol</span> <span class="o">=</span> <span class="p">{</span><span class="n">rt</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">siteV</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_sCount</span><span class="p">[</span><span class="n">rt</span><span class="o">.</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">}</span>
+        <span class="n">concScl</span> <span class="o">=</span> <span class="p">{</span><span class="n">rt</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">NA</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">siteV</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">siteV</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_sCount</span><span class="p">[</span><span class="n">rt</span><span class="o">.</span><span class="n">idx</span><span class="p">])</span> <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">}</span>
+        <span class="n">siteCount</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">regionCounts</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">vol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">siteV</span><span class="o">*</span><span class="n">siteCount</span>
+        <span class="n">countBySpeciesRegion</span>  <span class="o">=</span> <span class="p">{</span> <span class="n">sp</span><span class="p">:{</span> <span class="n">rt</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pCount</span><span class="p">[</span><span class="n">rt</span><span class="o">.</span><span class="n">idx</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span> <span class="p">}</span> <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="p">}</span>
+        <span class="n">countBySpecies</span> <span class="o">=</span> <span class="p">{</span> <span class="n">sp</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pCount</span><span class="p">[:,</span><span class="n">sp</span><span class="o">.</span><span class="n">idx</span><span class="p">])</span> <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span> <span class="p">}</span>
+        <span class="n">countByRegion</span> <span class="o">=</span> <span class="p">{</span> <span class="n">rt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pCount</span><span class="p">[</span><span class="n">rt</span><span class="o">.</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">:])</span> <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span> <span class="p">}</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pCount</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="n">conc</span> <span class="o">=</span> <span class="n">count</span><span class="o">/</span><span class="p">(</span><span class="n">vol</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+        <span class="n">concBySpecies</span> <span class="o">=</span> <span class="p">{</span><span class="n">sp</span><span class="p">:</span> <span class="n">ct</span><span class="o">/</span><span class="p">(</span><span class="n">vol</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span> <span class="k">for</span> <span class="n">sp</span><span class="p">,</span><span class="n">ct</span> <span class="ow">in</span> <span class="n">countBySpecies</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="n">concByRegion</span>  <span class="o">=</span> <span class="p">{</span><span class="n">rt</span><span class="p">:</span> <span class="n">ct</span><span class="o">*</span><span class="n">concScl</span><span class="p">[</span><span class="n">rt</span><span class="p">]</span> <span class="k">for</span> <span class="n">rt</span><span class="p">,</span><span class="n">ct</span> <span class="ow">in</span> <span class="n">countByRegion</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="n">concBySpeciesRegion</span>  <span class="o">=</span> <span class="p">{</span> <span class="n">sp</span><span class="p">:{</span> <span class="n">rt</span><span class="p">:</span> <span class="n">countBySpeciesRegion</span><span class="p">[</span><span class="n">sp</span><span class="p">][</span><span class="n">rt</span><span class="p">]</span><span class="o">*</span><span class="n">concScl</span><span class="p">[</span><span class="n">rt</span><span class="p">]</span> <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span> <span class="p">}</span> <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">countBySpeciesRegion</span><span class="o">=</span><span class="n">countBySpeciesRegion</span><span class="p">,</span>
+                    <span class="n">countByRegion</span><span class="o">=</span><span class="n">countByRegion</span><span class="p">,</span>
+                    <span class="n">countBySpecies</span><span class="o">=</span><span class="n">countBySpecies</span><span class="p">,</span>
+                    <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="p">,</span>
+                    <span class="n">siteCount</span><span class="o">=</span><span class="n">siteCount</span><span class="p">,</span>
+                    <span class="n">vol</span><span class="o">=</span><span class="n">vol</span><span class="p">,</span>
+                    <span class="n">regionVol</span><span class="o">=</span><span class="n">regionVol</span><span class="p">,</span>
+                    <span class="n">regionCounts</span><span class="o">=</span><span class="n">regionCounts</span><span class="p">,</span>
+                    <span class="n">concBySpeciesRegion</span><span class="o">=</span><span class="n">concBySpeciesRegion</span><span class="p">,</span>
+                    <span class="n">concByRegion</span><span class="o">=</span><span class="n">concByRegion</span><span class="p">,</span>
+                    <span class="n">concBySpecies</span><span class="o">=</span><span class="n">concBySpecies</span><span class="p">,</span>
+                    <span class="n">conc</span><span class="o">=</span><span class="n">conc</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TrajAnalysisMixin">
+<a class="viewcode-back" href="../../_autosummary/jLM.Analysis.html#jLM.Analysis.TrajAnalysisMixin">[docs]</a>
+<span class="k">class</span> <span class="nc">TrajAnalysisMixin</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">_speciesIdParse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">startIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parse and convert species identifiers to a list of integer indices.</span>
+
+<span class="sd">            This function handles different ways of specifying species:</span>
+<span class="sd">            1. Using a regex pattern to match species names</span>
+<span class="sd">            2. A single Species object</span>
+<span class="sd">            3. A single species name as a string</span>
+<span class="sd">            4. A list of Species objects</span>
+<span class="sd">            5. A list of species names as strings</span>
+<span class="sd">            6. A list of integer indices</span>
+
+<span class="sd">            The function returns a list of integer indices representing the species,</span>
+<span class="sd">            adjusted by the startIndex.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                regex (str): A regular expression to match species names</span>
+<span class="sd">                species (Species, str, list): Species specification</span>
+<span class="sd">                startIndex (int): An offset to add to the returned indices</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                list: A list of integer indices representing the specified species</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                RuntimeError: If both or neither regex and species are provided,</span>
+<span class="sd">                            or if the species specification is unrecognized</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">regex</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">species</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;`regex` and `species` are mutually exclusive&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">regex</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">startIndex</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="o">.</span><span class="n">matchRegex</span><span class="p">(</span><span class="n">regex</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="n">Types</span><span class="o">.</span><span class="n">Species</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">species</span><span class="o">.</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">startIndex</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="p">[</span><span class="n">species</span><span class="p">]</span><span class="o">.</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">startIndex</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Types</span><span class="o">.</span><span class="n">Species</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">startIndex</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">species</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">startIndex</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">species</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">species</span>
+
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Unrecognized species specification&quot;</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">_regionIdParse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">regex</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">region</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;`regex` xor `region` must be defined&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">regex</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">idx</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="o">.</span><span class="n">matchRegex</span><span class="p">(</span><span class="n">regex</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">Types</span><span class="o">.</span><span class="n">Region</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">region</span><span class="o">.</span><span class="n">idx</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">[</span><span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">idx</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Types</span><span class="o">.</span><span class="n">Region</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">idx</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">region</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">idx</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">region</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">region</span>
+
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Unrecognized region specification&quot;</span><span class="p">)</span>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_frameParse</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">,</span> <span class="n">timeStart</span><span class="p">,</span> <span class="n">timeEnd</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">frameStart</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">timeStart</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Specify either frameStart or timeStart&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">frameEnd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">timeEnd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Specify either frameStart or timeStart&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">timeStart</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ts</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">t</span><span class="o">&gt;</span><span class="n">timeStart</span><span class="p">:</span>
+                    <span class="n">frameStart</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
+                    <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">timeEnd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">ts</span><span class="p">))):</span>
+                <span class="k">if</span> <span class="n">t</span><span class="o">&lt;</span><span class="n">timeEnd</span><span class="p">:</span>
+                    <span class="n">frameEnd</span> <span class="o">=</span> <span class="n">i</span>
+                    <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">frameStart</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">frameStart</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">frameEnd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">frameEnd</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">frameStart</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">frameStart</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">frameEnd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">frameEnd</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="o">+</span><span class="mi">1</span>
+
+
+    <span class="k">def</span> <span class="nf">_replicateParse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">replicate</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">replicate</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">replicates</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">replicate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">replicate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replicate</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">replicate</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span> <span class="n">replicate</span> <span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">replicate</span><span class="p">]</span>
+
+<div class="viewcode-block" id="TrajAnalysisMixin.getNumberTrajectory">
+<a class="viewcode-back" href="../../_autosummary/jLM.Analysis.html#jLM.Analysis.TrajAnalysisMixin.getNumberTrajectory">[docs]</a>
+    <span class="k">def</span> <span class="nf">getNumberTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">species</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">frameStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">frameEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">timeStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">timeEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate particle number trajectories</span>
+
+<span class="sd">        The time course of the particle numbers in the simulation can </span>
+<span class="sd">        be queried with this function.  Species can be selected </span>
+<span class="sd">        individually with the `species` key. If a list of species are </span>
+<span class="sd">        given instead the sum of the particle numbers for those species </span>
+<span class="sd">        types will be returned. A regular expression can also be used </span>
+<span class="sd">        to select the species to return. Species types or species names </span>
+<span class="sd">        in the form of a string are both acceptible to use in the </span>
+<span class="sd">        `species` key. The `regex` and `species` options are mutually </span>
+<span class="sd">        exclusive.  Instead of returning the entire trajectory, a</span>
+<span class="sd">        segment can be selected either through the frame numbers </span>
+<span class="sd">        (`frameStart`, `frameEnd`) or through the simulation time </span>
+<span class="sd">        (`timeStart`, `timeEnd`).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            regex (str):</span>
+<span class="sd">                Regular expression matching species names. Multiple </span>
+<span class="sd">                matches will be summed.</span>
+<span class="sd">            species ([:py:class:`~jLM.Types.Species`]):</span>
+<span class="sd">                Species</span>
+<span class="sd">            replicate (int):</span>
+<span class="sd">                Replicate to return, default is current replicate.</span>
+<span class="sd">            frameStart (int):</span>
+<span class="sd">                Starting frame</span>
+<span class="sd">            frameEnd (int):</span>
+<span class="sd">                Ending frame</span>
+<span class="sd">            timeStart (int):</span>
+<span class="sd">                Starting time</span>
+<span class="sd">            timeEnd (int):</span>
+<span class="sd">                Ending Time</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (:py:class:`~numpy.ndarray(shape=(nt,), dtype=float)`, :py:class:`~numpy.ndarray(shape=(nt,), dtype=float)`):</span>
+<span class="sd">                The evaluation times and particle counts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spIdList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speciesIdParse</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">startIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">replicate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicateParse</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;only one replicate may be specified&quot;</span><span class="p">)</span>
+
+        <span class="n">replicate</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:07d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">replicate</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">ts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="n">replicate</span><span class="p">][</span><span class="s1">&#39;SpeciesCountTimes&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span>
+
+        <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frameParse</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">,</span> <span class="n">timeStart</span><span class="p">,</span> <span class="n">timeEnd</span><span class="p">)</span>
+
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span><span class="p">[</span><span class="n">frameStart</span><span class="p">:</span><span class="n">frameEnd</span><span class="p">]</span>
+        <span class="n">traj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="n">ys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="n">replicate</span><span class="p">][</span><span class="s1">&#39;SpeciesCounts&#39;</span><span class="p">][</span><span class="n">frameStart</span><span class="p">:</span><span class="n">frameEnd</span><span class="p">,</span><span class="o">...</span><span class="p">]</span>
+
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">spIdList</span><span class="p">:</span>
+            <span class="n">traj</span> <span class="o">+=</span> <span class="n">ys</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">ts</span><span class="p">,</span> <span class="n">traj</span></div>
+
+
+<div class="viewcode-block" id="TrajAnalysisMixin.getNumberTrajectoryFromRegion">
+<a class="viewcode-back" href="../../_autosummary/jLM.Analysis.html#jLM.Analysis.TrajAnalysisMixin.getNumberTrajectoryFromRegion">[docs]</a>
+    <span class="k">def</span> <span class="nf">getNumberTrajectoryFromRegion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spRegex</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">species</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regRegex</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                            <span class="n">frameStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frameEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frameDownScale</span><span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">timeStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeDownScale</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate particle number trajectories for specific regions</span>
+
+<span class="sd">        The time course of the particle numbers in the simulation </span>
+<span class="sd">        within specific regions can be queried with this function.  </span>
+<span class="sd">        Species can be selected individually with the species key. If </span>
+<span class="sd">        a list of species are given instead the sum of the particle </span>
+<span class="sd">        numbers for those species types will be returned. A regular </span>
+<span class="sd">        expression can also be used to select the species to return. </span>
+<span class="sd">        Species types or species names in the form of a string are </span>
+<span class="sd">        both acceptible to use in the `species` key. The `spRegex` and</span>
+<span class="sd">        `species` options are mutually exclusive.  Instead of </span>
+<span class="sd">        returning the entire trajectory, a segment can be selected </span>
+<span class="sd">        either through the frame numbers (`frameStart`, `frameEnd`) or </span>
+<span class="sd">        through the simulation time (`timeStart`, `timeEnd`).If both given, the frame numbers will be used. </span>
+<span class="sd">        The regions to compute particle numbers over are selected similar </span>
+<span class="sd">        to the species through the options `regRegex` and `region`.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            spRegex (str):</span>
+<span class="sd">                Regular expression matching species names. Multiple </span>
+<span class="sd">                matches will be summed.</span>
+<span class="sd">            species ([:py:class:`~jLM.Types.Species`]):</span>
+<span class="sd">                Species</span>
+<span class="sd">            regRegex (str):</span>
+<span class="sd">                Regular expression matching region names. Multiple </span>
+<span class="sd">                matches will be summed.</span>
+<span class="sd">            region ([:py:class:`~jLM.Types.Region`]):</span>
+<span class="sd">                Region</span>
+<span class="sd">            replicate (int):</span>
+<span class="sd">                Replicate to return, default is current replicate.</span>
+<span class="sd">            frameStart (int):</span>
+<span class="sd">                Starting frame</span>
+<span class="sd">            frameEnd (int):</span>
+<span class="sd">                Ending frame</span>
+<span class="sd">            timeStart (int):</span>
+<span class="sd">                Starting time</span>
+<span class="sd">            timeEnd (int):</span>
+<span class="sd">                Ending Time</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (:py:class:`~numpy.ndarray(shape=(nt,), dtype=float)`, :py:class:`~numpy.ndarray(shape=(nt,), dtype=float)`):</span>
+<span class="sd">                The evaluation times and particle counts</span>
+<span class="sd">          </span>
+<span class="sd">        Note:</span>
+<span class="sd">            Since this calculation requires reading the entire </span>
+<span class="sd">            particle lattice trajectory, it can be slow.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spIdList</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_speciesIdParse</span><span class="p">(</span><span class="n">spRegex</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">startIndex</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="n">regIdList</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_regionIdParse</span><span class="p">(</span><span class="n">regRegex</span><span class="p">,</span> <span class="n">region</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="n">replicate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicateParse</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;only one replicate may be specified&quot;</span><span class="p">)</span>
+        
+        <span class="n">replicate</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:07d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">replicate</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="c1"># if input is time, convert to frame</span>
+        <span class="k">if</span> <span class="n">frameStart</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">timeStart</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">timeEnd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dt</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Parameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">])</span>
+            <span class="n">frameStart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">timeStart</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+            <span class="n">frameEnd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">timeEnd</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+            <span class="c1"># here we support downscale for time</span>
+            <span class="k">if</span> <span class="n">timeDownScale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">frameDownScale</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">timeDownScale</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">frameStart</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">timeStart</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either frameStart, frameEnd or timeStart, timeEnd must be specified&quot;</span><span class="p">)</span>    
+        
+        <span class="c1"># Here we need to choose between frame or time steps</span>
+        <span class="k">if</span> <span class="n">frameStart</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">frameEnd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Check if the frameStart and frameEnd are within the bounds of the lattice times</span>
+            <span class="n">lattice_times_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="n">replicate</span><span class="p">][</span><span class="s1">&#39;LatticeTimes&#39;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">frameStart</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;frameStart (</span><span class="si">{</span><span class="n">frameStart</span><span class="si">}</span><span class="s2">) is less than 0, which exceeds the lower boundary of the lattice times.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">frameEnd</span> <span class="o">&gt;</span> <span class="n">lattice_times_length</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;frameEnd (</span><span class="si">{</span><span class="n">frameEnd</span><span class="si">}</span><span class="s2">) exceeds the upper boundary (</span><span class="si">{</span><span class="n">lattice_times_length</span><span class="si">}</span><span class="s2">) of the lattice times.&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># not exceed the bounds of the lattice times</span>
+            <span class="n">ts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="n">replicate</span><span class="p">][</span><span class="s1">&#39;LatticeTimes&#39;</span><span class="p">][</span><span class="n">frameStart</span><span class="p">:</span><span class="n">frameEnd</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">frameDownScale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">frameDownScale</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">frameDownScale</span> <span class="o">&lt;</span> <span class="n">lattice_times_length</span><span class="p">:</span>
+                <span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span><span class="p">[::</span><span class="n">frameDownScale</span><span class="p">]</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either you must give frameStart and frameEnd or timeStart and timeEnd&quot;</span><span class="p">)</span>    
+    
+        <span class="c1"># get the region types in the lattice, and species types in the lattice </span>
+        <span class="n">max_regions</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model/Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;numberSiteTypes&#39;</span><span class="p">])</span>
+        <span class="n">max_species</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model/Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;numberSpecies&#39;</span><span class="p">])</span>
+        <span class="n">actual_regions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">regIdList</span><span class="p">)</span>
+        <span class="n">actual_species</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">spIdList</span><span class="p">)</span>
+
+        <span class="n">cacheKey</span> <span class="o">=</span> <span class="s2">&quot;SiteParticleCount&quot;</span><span class="p">,</span> <span class="n">replicate</span>
+        <span class="n">spc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachedResult</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">spc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sCount</span><span class="p">,</span> <span class="n">spc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_postprocess_siteparticlecounts</span><span class="p">(</span><span class="n">rep</span><span class="o">=</span><span class="n">replicate</span><span class="p">,</span>
+                                                               <span class="n">reg_num</span><span class="o">=</span><span class="n">actual_regions</span><span class="p">,</span>
+                                                               <span class="n">spe_num</span><span class="o">=</span><span class="n">actual_species</span><span class="p">,</span>
+                                                               <span class="n">max_regions</span><span class="o">=</span><span class="n">max_regions</span><span class="p">,</span>
+                                                               <span class="n">max_species</span><span class="o">=</span><span class="n">max_species</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cachedResult</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">,</span> <span class="n">spc</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cachedResult</span><span class="p">((</span><span class="s2">&quot;SiteCount&quot;</span><span class="p">,</span> <span class="n">replicate</span><span class="p">),</span> <span class="n">sCount</span><span class="p">)</span>
+        
+        <span class="c1"># cartesian product over sites and particles</span>
+        <span class="n">rs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">regIdList</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">spIdList</span><span class="p">))</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">spIdList</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">regIdList</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">traj</span> <span class="o">=</span> <span class="n">spc</span><span class="p">[:,</span><span class="n">rs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ss</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">traj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">spc</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">regIdList</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">spIdList</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">spIdList</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">regIdList</span><span class="p">))],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ts</span><span class="p">,</span> <span class="n">traj</span></div>
+
+
+
+<div class="viewcode-block" id="TrajAnalysisMixin.getLatticeTrajectory">
+<a class="viewcode-back" href="../../_autosummary/jLM.Analysis.html#jLM.Analysis.TrajAnalysisMixin.getLatticeTrajectory">[docs]</a>
+    <span class="k">def</span> <span class="nf">getLatticeTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">species</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">integrated</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                             <span class="n">frameStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frameEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the spatial distribution of particles versus time</span>
+
+<span class="sd">        Species can be selected individually with the species key. If </span>
+<span class="sd">        a list of species are given instead the sum of the particle </span>
+<span class="sd">        numbers for those species types will be returned. A regular </span>
+<span class="sd">        expression can also be used to select the species to return.</span>
+<span class="sd">        Species types or species names in the form of a string are </span>
+<span class="sd">        both acceptible to use in the `species` key. The `regex` and </span>
+<span class="sd">        `species` options are mutually exclusive.  Instead of </span>
+<span class="sd">        returning the entire trajectory, a segment can be selected </span>
+<span class="sd">        either through the frame numbers (`frameStart`, `frameEnd`) or</span>
+<span class="sd">        through the simulation time (`timeStart`, `timeEnd`). If the </span>
+<span class="sd">        full 3-D lattice is not needed, any of the directions can be </span>
+<span class="sd">        integrated out.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            regex (str):</span>
+<span class="sd">                Regular expression matching species names. Multiple</span>
+<span class="sd">                matches will be summed.</span>
+<span class="sd">            species ([:py:class:`~jLM.Types.Species`]):</span>
+<span class="sd">                Species</span>
+<span class="sd">            integrated (str):</span>
+<span class="sd">                Combination of &#39;x&#39;, &#39;y&#39;, &#39;z&#39; specifying the directions </span>
+<span class="sd">                to integrate out</span>
+<span class="sd">            replicate (int):</span>
+<span class="sd">                Replicate to return, default is current replicate.</span>
+<span class="sd">            frameStart (int):</span>
+<span class="sd">                Starting frame</span>
+<span class="sd">            frameEnd (int):</span>
+<span class="sd">                Ending frame</span>
+<span class="sd">            timeStart (int):</span>
+<span class="sd">                Starting time</span>
+<span class="sd">            timeEnd (int):</span>
+<span class="sd">                Ending Time</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (:py:class:`~numpy.ndarray(shape=(nt,), dtype=float)`, :py:class:`~numpy.ndarray(dtype=float)`):</span>
+<span class="sd">                The evaluation times and particle counts</span>
+<span class="sd">          </span>
+<span class="sd">        Note:</span>
+<span class="sd">            Since this calculation requires reading the entire particle</span>
+<span class="sd">            lattice trajectory, it can be slow.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spIdList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speciesIdParse</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">startIndex</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">replicateList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicateParse</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">replicateList</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;only one replicate may be specified&quot;</span><span class="p">)</span>
+        <span class="n">replicate</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:07d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">replicateList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">ts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="n">replicate</span><span class="p">][</span><span class="s1">&#39;LatticeTimes&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span>
+
+        <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frameParse</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">,</span> <span class="n">timeStart</span><span class="p">,</span> <span class="n">timeEnd</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">hdfLattice</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="n">replicate</span><span class="p">][</span><span class="s1">&#39;Lattice&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="si">{:010d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+
+        <span class="n">hdfData</span> <span class="o">=</span> <span class="n">hdfLattice</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">latticeDims</span> <span class="o">=</span> <span class="n">hdfData</span><span class="o">.</span><span class="n">shape</span>
+            
+        <span class="n">nFrames</span> <span class="o">=</span> <span class="n">frameEnd</span><span class="o">-</span><span class="n">frameStart</span>
+
+        <span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="n">nFrames</span><span class="p">]</span>
+        <span class="n">integratedDims</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;xyz&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">integrated</span><span class="p">:</span>
+                <span class="n">shape</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">latticeDims</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">integratedDims</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="n">shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+        
+        <span class="n">integratedDims</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># integrate over the occupancy</span>
+        <span class="n">integratedDims</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># integrate higher number axes first to ensure that lower axes do not shift</span>
+
+        <span class="n">cacheKey</span> <span class="o">=</span> <span class="s2">&quot;getLatticeTrajectory&quot;</span><span class="p">,</span> <span class="n">replicate</span><span class="p">,</span> <span class="n">spIdList</span><span class="p">,</span> <span class="p">[</span><span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">],</span> <span class="n">integratedDims</span>
+
+        <span class="n">traj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachedResult</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">traj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">traj</span><span class="o">=</span><span class="p">[]</span>
+
+            <span class="k">def</span> <span class="nf">latticeGen</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span><span class="n">f1</span><span class="p">):</span>
+                <span class="n">hdfData</span> <span class="o">=</span> <span class="n">hdfLattice</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">buf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">hdfData</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">hdfData</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span><span class="n">f1</span><span class="p">):</span>
+                    <span class="n">hdfLattice</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">read_direct</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+                    <span class="k">yield</span> <span class="n">buf</span>
+
+            <span class="k">for</span> <span class="n">lattice</span> <span class="ow">in</span> <span class="n">latticeGen</span><span class="p">(</span><span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">):</span>
+                <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">latticeDims</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">spId</span> <span class="ow">in</span> <span class="n">spIdList</span><span class="p">:</span>
+                    <span class="n">ind</span> <span class="o">+=</span> <span class="n">lattice</span><span class="o">==</span><span class="n">spId</span>
+                <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">integratedDims</span><span class="p">:</span>
+                    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+                <span class="n">traj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+            <span class="n">traj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cachedResult</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">,</span> <span class="n">traj</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ts</span><span class="p">[</span><span class="n">frameStart</span><span class="p">:</span><span class="n">frameEnd</span><span class="p">],</span> <span class="n">traj</span></div>
+
+
+<div class="viewcode-block" id="TrajAnalysisMixin.getLatticeHistogram">
+<a class="viewcode-back" href="../../_autosummary/jLM.Analysis.html#jLM.Analysis.TrajAnalysisMixin.getLatticeHistogram">[docs]</a>
+    <span class="k">def</span> <span class="nf">getLatticeHistogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">species</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">integrated</span><span class="o">=</span><span class="s2">&quot;xyz&quot;</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                            <span class="n">frameStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frameEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeStart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">timeEnd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the spatial distribution of particles over an interval</span>
+
+<span class="sd">        Species can be selected individually with the species key. If </span>
+<span class="sd">        a list of species are given instead the sum of the particle </span>
+<span class="sd">        numbers for those species types will be returned. A regular </span>
+<span class="sd">        expression can also be used to select the species to return. </span>
+<span class="sd">        Species types or species names in the form of a string are </span>
+<span class="sd">        both acceptible to use in the `species` key. The `regex` and </span>
+<span class="sd">        `species` options are mutually exclusive.  The interval of</span>
+<span class="sd">        time in which the histogram is computed can be selected either</span>
+<span class="sd">        through the frame numbers (`frameStart`, `frameEnd`) or </span>
+<span class="sd">        through the simulation time (`timeStart`, `timeEnd`). If the </span>
+<span class="sd">        full 3-D lattice is not needed, any of the directions can be </span>
+<span class="sd">        integrated out.  </span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            regex (str):</span>
+<span class="sd">                Regular expression matching species names. Multiple </span>
+<span class="sd">                matches will be summed.</span>
+<span class="sd">            species ([:py:class:`~jLM.Types.Species`]):</span>
+<span class="sd">                Species</span>
+<span class="sd">            integrated (str):</span>
+<span class="sd">                Combination of &#39;x&#39;, &#39;y&#39;, &#39;z&#39; specifying the directions</span>
+<span class="sd">                to integrate out</span>
+<span class="sd">            replicate (int):</span>
+<span class="sd">                Replicate to return, default is current replicate.</span>
+<span class="sd">            frameStart (int):</span>
+<span class="sd">                Starting frame</span>
+<span class="sd">            frameEnd (int):</span>
+<span class="sd">                Ending frame</span>
+<span class="sd">            timeStart (int):</span>
+<span class="sd">                Starting time</span>
+<span class="sd">            timeEnd (int):</span>
+<span class="sd">                Ending Time</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :py:class:`~numpy.ndarray(dtype=float)`:</span>
+<span class="sd">                The average particle counts</span>
+<span class="sd">          </span>
+<span class="sd">        Note:</span>
+<span class="sd">            Since this calculation requires reading the entire particle </span>
+<span class="sd">            lattice trajectory, it can be slow.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spIdList</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_speciesIdParse</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">startIndex</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">spIdList</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">replicateList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicateParse</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">hdfLattice</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">f</span><span class="p">):</span> 
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations/</span><span class="si">{:07d}</span><span class="s1">/Lattice/</span><span class="si">{:010d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">f</span><span class="p">)]</span>
+
+        <span class="k">def</span> <span class="nf">hdfLatticeTimes</span><span class="p">(</span><span class="n">r</span><span class="p">):</span> 
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Simulations/</span><span class="si">{:07d}</span><span class="s1">/LatticeTimes&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">)]</span>
+
+
+        <span class="n">integratedDims</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;xyz&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">integrated</span><span class="p">]</span>
+
+        <span class="n">hist</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">replicateList</span><span class="p">:</span>
+            <span class="n">hdfData</span> <span class="o">=</span> <span class="n">hdfLatticeTimes</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">hdfData</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">hdfData</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+            <span class="n">hdfData</span><span class="o">.</span><span class="n">read_direct</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+            <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frameParse</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">,</span> <span class="n">timeStart</span><span class="p">,</span> <span class="n">timeEnd</span><span class="p">)</span>
+
+            <span class="n">cacheKey</span> <span class="o">=</span> <span class="s2">&quot;getLatticeHistogram&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{:07d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">spIdList</span><span class="p">,</span> <span class="p">[</span><span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">],</span> <span class="n">integratedDims</span>
+            <span class="n">cachedHist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachedResult</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cachedHist</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">frameStart</span><span class="p">,</span> <span class="n">frameEnd</span><span class="p">):</span>
+                    <span class="n">lattice</span> <span class="o">=</span> <span class="n">hdfLattice</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">hist</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">latticeTmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">lattice</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">lattice</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+                        <span class="n">lattice</span><span class="o">.</span><span class="n">read_direct</span><span class="p">(</span><span class="n">latticeTmp</span><span class="p">)</span>
+                        <span class="n">hist</span> <span class="o">=</span> <span class="n">Lattice</span><span class="o">.</span><span class="n">latticeHistogram</span><span class="p">(</span><span class="n">latticeTmp</span><span class="p">,</span> <span class="n">spIdList</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">integratedDims</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">lattice</span><span class="o">.</span><span class="n">read_direct</span><span class="p">(</span><span class="n">latticeTmp</span><span class="p">)</span>
+                        <span class="n">Lattice</span><span class="o">.</span><span class="n">latticeHistogram</span><span class="p">(</span><span class="n">latticeTmp</span><span class="p">,</span> <span class="n">spIdList</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">integratedDims</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">hist</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cachedResult</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">,</span> <span class="n">hist</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">hist</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">hist</span> <span class="o">=</span> <span class="n">cachedHist</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">hist</span> <span class="o">+=</span> <span class="n">cachedHist</span>
+
+
+        <span class="k">return</span> <span class="n">hist</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">replicateList</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">frameEnd</span><span class="o">-</span><span class="n">frameStart</span><span class="p">))</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_postprocess_siteparticlecounts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rep</span><span class="p">,</span> <span class="n">reg_num</span> <span class="o">=</span> <span class="mi">16384</span><span class="p">,</span> <span class="n">spe_num</span> <span class="o">=</span> <span class="mi">16384</span><span class="p">,</span> <span class="n">max_regions</span><span class="o">=</span><span class="mi">16384</span><span class="p">,</span> <span class="n">max_species</span><span class="o">=</span><span class="mi">16384</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        This function is used to generate the site-particle counts for a given replicate.</span>
+<span class="sd">        It is used to cache the results of the site-particle counts so that they can be used</span>
+<span class="sd">        to generate the site-particle counts for a given replicate.</span>
+<span class="sd">        return: </span>
+<span class="sd">            sCount: The site counts</span>
+<span class="sd">            pCounts: The particle counts</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">traj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span>
+        <span class="n">siteLattice</span> <span class="o">=</span> <span class="n">traj</span><span class="p">[</span><span class="s1">&#39;/Model/Diffusion/LatticeSites&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span>
+
+        <span class="n">npl</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">traj</span><span class="p">[</span><span class="s1">&#39;/Simulations/&#39;</span><span class="o">+</span><span class="n">rep</span><span class="o">+</span><span class="s1">&#39;/Lattice&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">rep</span> <span class="ow">in</span> <span class="n">traj</span><span class="p">[</span><span class="s1">&#39;/Simulations&#39;</span><span class="p">])</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Generating Site/Particle counts for </span><span class="si">{}</span><span class="s2"> frames&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">npl</span><span class="p">))</span>
+
+        <span class="n">particleLattice</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">frames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">traj</span><span class="p">[</span><span class="s1">&#39;Simulations/&#39;</span><span class="o">+</span><span class="n">rep</span><span class="o">+</span><span class="s2">&quot;/Lattice&quot;</span><span class="p">])</span>
+        <span class="n">nframes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
+
+        <span class="n">pCounts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nframes</span><span class="p">,</span> <span class="n">reg_num</span><span class="p">,</span> <span class="n">spe_num</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">frames</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">particleLattice</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">traj</span><span class="p">[</span><span class="s1">&#39;Simulations/&#39;</span><span class="o">+</span><span class="n">rep</span><span class="o">+</span><span class="s2">&quot;/Lattice/&quot;</span><span class="o">+</span><span class="n">frame</span><span class="p">]</span><span class="o">.</span><span class="n">read_direct</span><span class="p">(</span><span class="n">particleLattice</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">particleLattice</span> <span class="o">=</span> <span class="n">traj</span><span class="p">[</span><span class="s1">&#39;Simulations/&#39;</span><span class="o">+</span><span class="n">rep</span><span class="o">+</span><span class="s2">&quot;/Lattice/&quot;</span><span class="o">+</span><span class="n">frame</span><span class="p">][</span><span class="o">...</span><span class="p">]</span>
+
+            <span class="n">pCount</span><span class="p">,</span> <span class="n">sCount</span> <span class="o">=</span> <span class="n">Lattice</span><span class="o">.</span><span class="n">latticeStatsAll_h5fmt</span><span class="p">(</span><span class="n">particleLattice</span><span class="p">,</span> <span class="n">siteLattice</span><span class="p">)</span>
+            
+            <span class="n">pCounts</span><span class="p">[</span><span class="n">i</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">pCount</span><span class="p">[:</span><span class="n">reg_num</span><span class="p">,:</span><span class="n">spe_num</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">sCount</span><span class="p">,</span> <span class="n">pCounts</span>
+
+    <span class="k">def</span> <span class="nf">_cachedResult</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">call</span><span class="p">,</span> <span class="n">rep</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="n">base</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">cacheFile</span> <span class="o">=</span> <span class="n">base</span><span class="o">+</span><span class="s2">&quot;-jlmcache.h5&quot;</span>
+        <span class="n">argKey</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">)</span> <span class="k">for</span> <span class="n">xs</span> <span class="ow">in</span> <span class="n">rest</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">argKey</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="n">call</span><span class="p">,</span> <span class="n">argKey</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="n">call</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">H5File</span><span class="p">(</span><span class="n">cacheFile</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">libver</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">:</span>
+                    <span class="n">h5</span><span class="p">[</span><span class="n">path</span><span class="p">][</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">h5</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">val</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">,</span> <span class="n">compression_opts</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_postprocCache&quot;</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_postprocCache</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">rep</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_postprocCache</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_postprocCache</span><span class="p">[</span><span class="n">rep</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">call</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_postprocCache</span><span class="p">[</span><span class="n">rep</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_postprocCache</span><span class="p">[</span><span class="n">rep</span><span class="p">][</span><span class="n">call</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_postprocCache</span><span class="p">[</span><span class="n">rep</span><span class="p">][</span><span class="n">call</span><span class="p">][</span><span class="n">argKey</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">h5</span><span class="p">[</span><span class="n">path</span><span class="p">][</span><span class="o">...</span><span class="p">]</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Luthey-Schulten Lab.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

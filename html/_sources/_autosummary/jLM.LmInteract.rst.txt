@@ -1,0 +1,19 @@
+﻿jLM.LmInteract
+==============
+
+.. automodule:: jLM.LmInteract
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      contextmanager
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      LmReadMixin
+      LmWriteMixin
+   

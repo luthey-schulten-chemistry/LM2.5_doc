@@ -1,0 +1,14 @@
+﻿jLM.Analysis
+============
+
+.. automodule:: jLM.Analysis
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      H5File
+      LatticeAnalysisMixin
+      TrajAnalysisMixin
+   

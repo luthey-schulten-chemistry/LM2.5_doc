@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jLM.CME &#8212; Lattice Microbes 2.5 documentation</title>
+    <title>jLM.CME &#8212; Lattice Microbes 2.5_dev documentation</title>
   
   
   
@@ -37,11 +37,10 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=1a347c9b"></script>
+    <script src="../../_static/documentation_options.js?v=5d3ef798"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jLM/CME';</script>
-    <link rel="canonical" href="https://forxhunter.github.io/LM2.5_doc/_modules/jLM/CME.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -108,7 +107,7 @@
   
   
   
-    <p class="title logo__title">Lattice Microbes 2.5 documentation</p>
+    <p class="title logo__title">Lattice Microbes</p>
   
 </a></div>
     
@@ -137,25 +136,42 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Visualization.html">
-    Visualization using VMD
+    Visualization
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../API.html">
-    Lattice Microbes API Reference
+    API Reference
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../Citations.html">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../Citations.html">
     Citations
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -174,14 +190,6 @@
 </button>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
     </div>
     
@@ -242,15 +250,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Visualization.html">
-    Visualization using VMD
+    Visualization
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../API.html">
-    Lattice Microbes API Reference
+    API Reference
   </a>
 </li>
 
@@ -268,18 +283,6 @@
       </div>
     
     
-    
-      <div class="sidebar-header-items__end">
-        
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
-      </div>
     
   </div>
   
@@ -706,7 +709,7 @@
 
 <div class="viewcode-block" id="CMESimulation.run">
 <a class="viewcode-back" href="../../_autosummary/jLM.CME.html#jLM.CME.CMESimulation.run">[docs]</a>
-	<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">replicates</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">cudaDevices</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">checkpointInterval</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">replicates</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cudaDevices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">		</span><span class="sd">&quot;&quot;&quot;Run the simulation using the specified solver the specified amount of time</span>
 
 <span class="sd">        Args:</span>
@@ -717,23 +720,20 @@
 <span class="sd">            replicates:</span>
 <span class="sd">                The number of replicates to serially run</span>
 <span class="sd">            seed:</span>
-<span class="sd">                A seed for the random number generator to use when running the simulation;</span>
-<span class="sd">				None indicates default</span>
-<span class="sd">			cudaDevices:</span>
-<span class="sd">				The index list of CUDA devices</span>
-<span class="sd">			checkpointInterval:</span>
-<span class="sd">				The time interval between check points</span>
+<span class="sd">                A seed for the random number generator to use when running the simulation; None indicates default</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+
+		<span class="k">if</span> <span class="n">cudaDevices</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">cudaDevices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
 		<span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 			<span class="n">f</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">SimulationFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-			<span class="n">f</span><span class="o">.</span><span class="n">setParameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">))</span>
+			<span class="n">f</span><span class="o">.</span><span class="n">setParameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">))</span>
 			<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-		<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">replicates</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ascii</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">replicates</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">ascii</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 			<span class="n">lm</span><span class="o">.</span><span class="n">runSimulation</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">cudaDevices</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="p">)</span>
-			<span class="c1"># Update internal state with replicates that have been run</span>
+			<span class="c1"># update internal state with replicates that have been run</span>
 			<span class="bp">self</span><span class="o">.</span><span class="n">replicates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-			
 		<span class="c1"># Update the filename</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span></div>
 

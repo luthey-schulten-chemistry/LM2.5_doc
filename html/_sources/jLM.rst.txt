@@ -9,6 +9,8 @@ For a quick introduction to jLM, please see the `example notebook
     :toctree: _autosummary
 
     jLM
+    jLM.CME
+    jLM.CMEPostProcessing
     jLM.RDME
     jLM.RegionBuilder
     jLM.Solvers
@@ -16,6 +18,10 @@ For a quick introduction to jLM, please see the `example notebook
     jLM.BaseTypes
     jLM.ColorGen
     jLM.DisplayUtils
+    jLM.JupyterDisplay
+    jLM.LmInteract
     jLM.Lattice
+    jLM.LMLogger
+    jLM.Analysis
     jLM.Template
     jLM.TexFmt

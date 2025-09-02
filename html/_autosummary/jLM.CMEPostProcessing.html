@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>jLM.CMEPostProcessing &#8212; Lattice Microbes 2.5 documentation</title>
+    <title>jLM.CMEPostProcessing &#8212; Lattice Microbes 2.5_dev documentation</title>
   
   
   
@@ -38,11 +38,10 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=1a347c9b"></script>
+    <script src="../_static/documentation_options.js?v=5d3ef798"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/jLM.CMEPostProcessing';</script>
-    <link rel="canonical" href="https://forxhunter.github.io/LM2.5_doc/_autosummary/jLM.CMEPostProcessing.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="jLM.RDME" href="jLM.RDME.html" />
@@ -111,7 +110,7 @@
   
   
   
-    <p class="title logo__title">Lattice Microbes 2.5 documentation</p>
+    <p class="title logo__title">Lattice Microbes</p>
   
 </a></div>
     
@@ -140,25 +139,42 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Visualization.html">
-    Visualization using VMD
+    Visualization
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../API.html">
-    Lattice Microbes API Reference
+    API Reference
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../Citations.html">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Citations.html">
     Citations
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -177,14 +193,6 @@
 </button>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
     </div>
     
@@ -247,15 +255,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Visualization.html">
-    Visualization using VMD
+    Visualization
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../API.html">
-    Lattice Microbes API Reference
+    API Reference
   </a>
 </li>
 
@@ -273,18 +288,6 @@
       </div>
     
     
-    
-      <div class="sidebar-header-items__end">
-        
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
-      </div>
     
   </div>
   
@@ -333,7 +336,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../API.html" class="nav-link">Lattice Microbes API Reference</a></li>
+    <li class="breadcrumb-item"><a href="../API.html" class="nav-link">API Reference</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.CMEPostProcessing</span></li>
   </ul>
@@ -357,14 +360,38 @@
 <p class="rubric">Functions</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.closeLMFile" title="jLM.CMEPostProcessing.closeLMFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">closeLMFile</span></code></a>(f)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">autocurve</span></code>(graph[, attribute, default])</p></td>
+<td><p>Calculates curvature values for each of the edges in the graph to make sure that multiple edges are shown properly on a graph plot.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.closeLMFile" title="jLM.CMEPostProcessing.closeLMFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">closeLMFile</span></code></a>(f)</p></td>
 <td><p>Close a Lattice Microbes File</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getAvgVarTrace" title="jLM.CMEPostProcessing.getAvgVarTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAvgVarTrace</span></code></a>(f, specie[, doublingTime])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_name_to_rgb</span></code>(color[, palette])</p></td>
+<td><p>Converts a color given in one of the supported color formats to R-G-B values.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_name_to_rgba</span></code>(color[, palette])</p></td>
+<td><p>Converts a color given in one of the supported color formats to R-G-B-A values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">community_to_membership</span></code>(merges, nodes, steps)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare_communities</span></code>(comm1, comm2[, method, ...])</p></td>
+<td><p>Compares two community structures using various distance measures.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">convex_hull</span></code>(vs[, coords])</p></td>
+<td><p>Calculates the convex hull of a given point set.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">disjoint_union</span></code>(graphs)</p></td>
+<td><p>Graph disjoint union.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getAvgVarTrace" title="jLM.CMEPostProcessing.getAvgVarTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAvgVarTrace</span></code></a>(f, specie[, doublingTime])</p></td>
 <td><p>Get the average and variance of the specie trace over time</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getHistogram" title="jLM.CMEPostProcessing.getHistogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHistogram</span></code></a>(f, species)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getHistogram" title="jLM.CMEPostProcessing.getHistogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHistogram</span></code></a>(f, species)</p></td>
 <td><p>Get the histogram for a specie</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getNumTrajectories" title="jLM.CMEPostProcessing.getNumTrajectories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumTrajectories</span></code></a>(f)</p></td>
+<td><p>Get the number of trajectories (replicates) in the file</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getOccupancyKymograph" title="jLM.CMEPostProcessing.getOccupancyKymograph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOccupancyKymograph</span></code></a>(f[, species, replicate])</p></td>
 <td><p>Compute the specie density(occupancy) among a slice of the simulation domain as a function over time for the given direciton</p></td>
@@ -373,7 +400,7 @@
 <td><p>Get the nD phase space associated with the traces of species.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getSpecieTrace" title="jLM.CMEPostProcessing.getSpecieTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpecieTrace</span></code></a>(f, specie[, replicate, ...])</p></td>
-<td><p>Extract data for a particular specie for the specified replicate</p></td>
+<td><p>Extract data for a particular specie for the specified replicate(s)</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getSpecies" title="jLM.CMEPostProcessing.getSpecies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpecies</span></code></a>(f)</p></td>
 <td><p>Exract the species names</p></td>
@@ -381,8 +408,56 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getTimesteps" title="jLM.CMEPostProcessing.getTimesteps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTimesteps</span></code></a>(f)</p></td>
 <td><p>Extract the timestep times</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.getTrajectory" title="jLM.CMEPostProcessing.getTrajectory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTrajectory</span></code></a>(f, replicate, specie)</p></td>
+<td><p>Get trajectory data for a specific replicate and species</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_include</span></code>()</p></td>
+<td><p>Returns the folder that contains the C API headers of the Python interface of igraph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hsl_to_rgb</span></code>(h, s, l)</p></td>
+<td><p>Converts a color given by its HSL coordinates (hue, saturation, lightness) to RGB coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hsla_to_rgba</span></code>(h, s, l[, alpha])</p></td>
+<td><p>Converts a color given by its HSLA coordinates (hue, saturation, lightness, alpha) to RGBA coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hsv_to_rgb</span></code>(h, s, v)</p></td>
+<td><p>Converts a color given by its HSV coordinates (hue, saturation, value) to RGB coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hsva_to_rgba</span></code>(h, s, v[, alpha])</p></td>
+<td><p>Converts a color given by its HSVA coordinates (hue, saturation, value, alpha) to RGB coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersection</span></code>(graphs[, byname, keep_all_vertices])</p></td>
+<td><p>Graph intersection.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_bigraphical</span></code>(degrees1, degrees2[, multiple])</p></td>
+<td><p>Returns whether two sequences of integers can be the degree sequences of a bipartite graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_degree_sequence</span></code>(out_deg[, in_deg])</p></td>
+<td><p>Deprecated since 0.9 in favour of L{is_graphical()}.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_graphical</span></code>(out_deg[, in_deg, loops, multiple])</p></td>
+<td><p>Returns whether a list of degrees can be a degree sequence of some graph, with or without multiple and loop edges, depending on the allowed edge types in the remaining arguments.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_graphical_degree_sequence</span></code>(out_deg[, in_deg])</p></td>
+<td><p>Deprecated since 0.9 in favour of L{is_graphical()}.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code>(filename, *args, **kwds)</p></td>
+<td><p>Loads a graph from the given filename.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>(xs)</p></td>
+<td><p>Returns the mean of an iterable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code>(xs[, sort])</p></td>
+<td><p>Returns the median of an unsorted or sorted numeric vector.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.openLMFile" title="jLM.CMEPostProcessing.openLMFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">openLMFile</span></code></a>(filename)</p></td>
 <td><p>Open a Lattice Microbes File for reading</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">percentile</span></code>(xs[, p, sort])</p></td>
+<td><p>Returns the pth percentile of an unsorted or sorted numeric vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code>(obj[, target, bbox])</p></td>
+<td><p>Plots the given object to the given target.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotAvgVar" title="jLM.CMEPostProcessing.plotAvgVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotAvgVar</span></code></a>(f[, species, filename])</p></td>
 <td><p>Plot a specific species average over time and variance</p></td>
@@ -390,17 +465,47 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotAvgVarFromFile" title="jLM.CMEPostProcessing.plotAvgVarFromFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotAvgVarFromFile</span></code></a>(filename, species, ...)</p></td>
 <td><p>Plot species from an output file</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotOccupancyKymograph" title="jLM.CMEPostProcessing.plotOccupancyKymograph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotOccupancyKymograph</span></code></a>(f[, species, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotCMEReactionNetwork" title="jLM.CMEPostProcessing.plotCMEReactionNetwork"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotCMEReactionNetwork</span></code></a>(sim, filename[, ...])</p></td>
+<td><p>Plot the reaction scheme as a network</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotOccupancyKymograph" title="jLM.CMEPostProcessing.plotOccupancyKymograph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotOccupancyKymograph</span></code></a>(f[, species, ...])</p></td>
 <td><p>Plot a specific specie density(occupancy) among a slice of the simulation domain as a function of a direction over time</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotPhaseSpace" title="jLM.CMEPostProcessing.plotPhaseSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotPhaseSpace</span></code></a>(f[, species, replicate, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotPhaseSpace" title="jLM.CMEPostProcessing.plotPhaseSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotPhaseSpace</span></code></a>(f[, species, replicate, ...])</p></td>
 <td><p>Plot the 2D or 3D phase space associated with the given species over the replicates indicated</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotTrace" title="jLM.CMEPostProcessing.plotTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotTrace</span></code></a>(f[, species, replicate, filename])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotTrace" title="jLM.CMEPostProcessing.plotTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotTrace</span></code></a>(f[, species, replicate, filename])</p></td>
 <td><p>Plot a specific species trace</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotTraceFromFile" title="jLM.CMEPostProcessing.plotTraceFromFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotTraceFromFile</span></code></a>(filename, species, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.plotTraceFromFile" title="jLM.CMEPostProcessing.plotTraceFromFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotTraceFromFile</span></code></a>(filename, species, ...)</p></td>
 <td><p>Plot species from an output file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">power_law_fit</span></code>(data[, xmin, method, p_precision])</p></td>
+<td><p>Fitting a power-law distribution to empirical data</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code>(xs[, q, sort])</p></td>
+<td><p>Returns the qth quantile of an unsorted or sorted numeric vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code>(filename, *args, **kwds)</p></td>
+<td><p>Loads a graph from the given filename.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale</span></code>(values[, out_range, in_range, ...])</p></td>
+<td><p>Rescales a list of numbers into a given range.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rgb_to_hsl</span></code>(r, g, b)</p></td>
+<td><p>Converts a color given by its RGB coordinates to HSL coordinates (hue, saturation, lightness).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rgb_to_hsv</span></code>(r, g, b)</p></td>
+<td><p>Converts a color given by its RGB coordinates to HSV coordinates (hue, saturation, value).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rgba_to_hsla</span></code>(r, g, b[, alpha])</p></td>
+<td><p>Converts a color given by its RGBA coordinates to HSLA coordinates (hue, saturation, lightness, alpha).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rgba_to_hsva</span></code>(r, g, b[, alpha])</p></td>
+<td><p>Converts a color given by its RGBA coordinates to HSVA coordinates (hue, saturation, value, alpha).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code>(graph, filename, *args, **kwds)</p></td>
+<td><p>Saves a graph to the given file.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLogConsole</span></code>([level])</p></td>
 <td><p>Set the logger to write to the console as the code is working</p></td>
@@ -411,20 +516,44 @@
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLoggerLevel</span></code>(level)</p></td>
 <td><p>Set the level of the logger for the application</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showAvgVar" title="jLM.CMEPostProcessing.showAvgVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showAvgVar</span></code></a>(f, species, **kwargs)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_progress_handler</span></code>(handler)</p></td>
+<td><p>Sets the handler to be called when igraph is performing a long operation. &#64;param handler: the progress handler function. It must accept two   arguments, the first is the message informing the user about   what igraph is doing right now, the second is the actual   progress information (a percentage).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_random_number_generator</span></code>(generator)</p></td>
+<td><p>Sets the random number generator used by igraph. &#64;param generator: the generator to be used. It must be a Python object   with at least three attributes: C{random}, C{randint} and C{gauss}. Each of them must be callable and their signature and behaviour   must be identical to C{random.random}, C{random.randint} and   C{random.gauss}. Optionally, the object can provide a function named   C{getrandbits} with a signature identical to C{randpm.getrandbits}   that provides a given number of random bits on demand. By default,   igraph uses the C{random} module for random number generation, but   you can supply your alternative implementation here. If the given   generator is C{None}, igraph reverts to the default PCG32 generator   implemented in the C layer, which might be slightly faster than   calling back to Python for random numbers, but you cannot set its   seed or save its state.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_status_handler</span></code>(handler)</p></td>
+<td><p>Sets the handler to be called when igraph tries to display a status message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showAvgVar" title="jLM.CMEPostProcessing.showAvgVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showAvgVar</span></code></a>(f, species, **kwargs)</p></td>
 <td><p>Show a specific species average over time and variance</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showAvgVarFromFile" title="jLM.CMEPostProcessing.showAvgVarFromFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showAvgVarFromFile</span></code></a>(filename, species, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showAvgVarFromFile" title="jLM.CMEPostProcessing.showAvgVarFromFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showAvgVarFromFile</span></code></a>(filename, species, **kwargs)</p></td>
 <td><p>Show species from an output file :param filename: The name of an HDF5 output file generated by LatticeMicrobes :param species: A list of species to plot :param kwargs: Additional arguments to be passed on to matplotlib.plot.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showOccupancyKymograph" title="jLM.CMEPostProcessing.showOccupancyKymograph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showOccupancyKymograph</span></code></a>(f[, species, replicate])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showOccupancyKymograph" title="jLM.CMEPostProcessing.showOccupancyKymograph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showOccupancyKymograph</span></code></a>(f[, species, replicate])</p></td>
 <td><p>Show a specific specie density(occupancy) among a slice of the simulation domain as a function of a direction over time</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showTrace" title="jLM.CMEPostProcessing.showTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showTrace</span></code></a>(f, species, replicate, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showTrace" title="jLM.CMEPostProcessing.showTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showTrace</span></code></a>(f, species, replicate, **kwargs)</p></td>
 <td><p>Show a specific species trace</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showTraceFromFile" title="jLM.CMEPostProcessing.showTraceFromFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showTraceFromFile</span></code></a>(filename, species, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.CMEPostProcessing.showTraceFromFile" title="jLM.CMEPostProcessing.showTraceFromFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showTraceFromFile</span></code></a>(filename, species, ...)</p></td>
 <td><p>Show species trace from a particular replicate</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_join_distance</span></code>(comm1, comm2[, remove_none])</p></td>
+<td><p>Calculates the split-join distance between two community structures.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">summary</span></code>(obj[, stream])</p></td>
+<td><p>Prints a summary of object o to a given stream</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">umap_compute_weights</span></code>(graph, dist)</p></td>
+<td><p>Compute undirected UMAP weights from directed distance graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">union</span></code>(graphs[, byname])</p></td>
+<td><p>Graph union.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code>(graph, filename, *args, **kwds)</p></td>
+<td><p>Saves a graph to the given file.</p></td>
 </tr>
 </tbody>
 </table>
@@ -432,8 +561,140 @@
 <p class="rubric">Classes</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes3D</span></code>(fig[, rect, elev, azim, roll, ...])</p></td>
-<td><p>3D Axes object.</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ARPACKOptions</span></code></p></td>
+<td><p>Class representing the parameters of the ARPACK module.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">AdvancedGradientPalette</span></code>(colors[, indices, n])</p></td>
+<td><p>Advanced gradient that consists of more than two base colors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">BFSIter</span></code>()</p></td>
+<td><p>igraph BFS iterator object</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingBox</span></code>(*args)</p></td>
+<td><p>Class representing a bounding box (a rectangular area) that encloses some objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CairoGraphDrawer</span></code>(context[, bbox, ...])</p></td>
+<td><p>Class implementing the default visualisation of a graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ClusterColoringPalette</span></code>(n)</p></td>
+<td><p>A palette suitable for coloring vertices when plotting a clustering.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Clustering</span></code>(membership[, params])</p></td>
+<td><p>Class representing a clustering of an arbitrary ordered set.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CohesiveBlocks</span></code>(graph[, blocks, cohesion, parent])</p></td>
+<td><p>The cohesive block structure of a graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Configuration</span></code>([filename])</p></td>
+<td><p>Class representing igraph configuration details.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cover</span></code>(clusters[, n])</p></td>
+<td><p>Class representing a cover of an arbitrary ordered set.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cut</span></code>(graph[, value, cut, partition, partition2])</p></td>
+<td><p>A cut of a given graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DFSIter</span></code>()</p></td>
+<td><p>igraph DFS iterator object</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DefaultGraphDrawer</span></code></p></td>
+<td><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">CairoGraphDrawer</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dendrogram</span></code>(merges)</p></td>
+<td><p>The hierarchical clustering (dendrogram) of some dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DyadCensus</span></code>([iterable])</p></td>
+<td><p>Dyad census of a graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Edge</span></code></p></td>
+<td><p>Class representing a single edge in a graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">EdgeSeq</span></code></p></td>
+<td><p>Class representing a sequence of edges in the graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">FittedPowerLaw</span></code>(continuous, alpha, xmin, L, D, p)</p></td>
+<td><p>Result of fitting a power-law to a vector of samples</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Flow</span></code>(graph, value, flow, cut, partition)</p></td>
+<td><p>A flow of a given graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GradientPalette</span></code>(color1, color2[, n])</p></td>
+<td><p>Base class for gradient palettes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph</span></code>(*args, **kwds)</p></td>
+<td><p>Generic graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphBase</span></code></p></td>
+<td><p>Low-level representation of a graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphSummary</span></code>(graph[, verbosity, width, ...])</p></td>
+<td><p>Summary representation of a graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Histogram</span></code>([bin_width, data])</p></td>
+<td><p>Generic histogram class for real numbers</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layout</span></code>([coords, dim])</p></td>
+<td><p>Represents the layout of a graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matching</span></code>(graph, matching[, types])</p></td>
+<td><p>A matching of vertices in a graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatplotlibGraphDrawer</span></code>(ax[, ...])</p></td>
+<td><p>Graph drawer that uses a pyplot.Axes as context</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix</span></code>([data])</p></td>
+<td><p>Simple matrix data type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Palette</span></code>(n)</p></td>
+<td><p>Base class of color palettes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Plot</span></code></p></td>
+<td><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">CairoPlot</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point</span></code>(x, y)</p></td>
+<td><p>Class representing a point on the 2D plane.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrecalculatedPalette</span></code>(items)</p></td>
+<td><p>A palette that returns colors from a pre-calculated list of colors</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">RainbowPalette</span></code>([n, s, v, start, end, alpha])</p></td>
+<td><p>A palette that varies the hue of the colors along a scale.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rectangle</span></code>(*args)</p></td>
+<td><p>Class representing a rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">RunningMean</span></code>([items, n, mean, sd])</p></td>
+<td><p>Running mean calculator.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">TriadCensus</span></code>([iterable])</p></td>
+<td><p>Triad census of a graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">UniqueIdGenerator</span></code>([id_generator, initial])</p></td>
+<td><p>A dictionary-like class that can be used to assign unique IDs to names (say, vertex names).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vertex</span></code></p></td>
+<td><p>Class representing a single vertex in a graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">VertexClustering</span></code>(graph[, membership, ...])</p></td>
+<td><p>The clustering of the vertex set of a graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">VertexCover</span></code>(graph[, clusters])</p></td>
+<td><p>The cover of the vertex set of a graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">VertexDendrogram</span></code>(graph, merges[, ...])</p></td>
+<td><p>The dendrogram resulting from the hierarchical clustering of the vertex set of a graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">VertexSeq</span></code></p></td>
+<td><p>Class representing a sequence of vertices in the graph.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Exceptions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">InternalError</span></code></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -487,6 +748,23 @@ effectively normalizing against cell size. Default: no averaging is performed</p
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="jLM.CMEPostProcessing.getNumTrajectories">
+<span class="sig-prename descclassname"><span class="pre">jLM.CMEPostProcessing.</span></span><span class="sig-name descname"><span class="pre">getNumTrajectories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/CMEPostProcessing.html#getNumTrajectories"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.CMEPostProcessing.getNumTrajectories" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of trajectories (replicates) in the file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>f</strong> – The HDF5 file handle to extract from or the name of a file to open</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of trajectories/replicates in the file</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="jLM.CMEPostProcessing.getOccupancyKymograph">
 <span class="sig-prename descclassname"><span class="pre">jLM.CMEPostProcessing.</span></span><span class="sig-name descname"><span class="pre">getOccupancyKymograph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/CMEPostProcessing.html#getOccupancyKymograph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.CMEPostProcessing.getOccupancyKymograph" title="Link to this definition">#</a></dt>
 <dd><p>Compute the specie density(occupancy) among a slice of the simulation domain as a function over time for the given direciton</p>
@@ -522,14 +800,14 @@ effectively normalizing against cell size. Default: no averaging is performed</p
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jLM.CMEPostProcessing.getSpecieTrace">
-<span class="sig-prename descclassname"><span class="pre">jLM.CMEPostProcessing.</span></span><span class="sig-name descname"><span class="pre">getSpecieTrace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specie</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublingTime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/CMEPostProcessing.html#getSpecieTrace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.CMEPostProcessing.getSpecieTrace" title="Link to this definition">#</a></dt>
-<dd><p>Extract data for a particular specie for the specified replicate</p>
+<span class="sig-prename descclassname"><span class="pre">jLM.CMEPostProcessing.</span></span><span class="sig-name descname"><span class="pre">getSpecieTrace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specie</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublingTime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/CMEPostProcessing.html#getSpecieTrace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.CMEPostProcessing.getSpecieTrace" title="Link to this definition">#</a></dt>
+<dd><p>Extract data for a particular specie for the specified replicate(s)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>f</strong> – The HDF5 file handle to extract from or the name of a file to open</p></li>
 <li><p><strong>specie</strong> – The specie to extract data</p></li>
-<li><p><strong>replicate</strong> – The number of the replicate to extract from (default: 1)</p></li>
+<li><p><strong>replicate</strong> – The number of the replicate to extract from. If None (default), returns data for all replicates</p></li>
 <li><p><strong>doublingTime</strong> – An optional doubling time parameter that will normalize average each trace by
 time in the cell cycle assuming exponentially growing cell
 (2log2 * x/2^(t/DT)), effectively normalizing against cell size.
@@ -537,7 +815,11 @@ Default: no averaging is performed</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The species time trace in a numpy array</p>
+<dd class="field-even"><p>The species time trace in a numpy array
+If replicate is None: A dictionary with replicate numbers as keys and time traces as values</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If replicate is specified</p>
 </dd>
 </dl>
 </dd></dl>
@@ -563,6 +845,27 @@ Default: no averaging is performed</p></li>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The timestep times in a numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jLM.CMEPostProcessing.getTrajectory">
+<span class="sig-prename descclassname"><span class="pre">jLM.CMEPostProcessing.</span></span><span class="sig-name descname"><span class="pre">getTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specie</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/CMEPostProcessing.html#getTrajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.CMEPostProcessing.getTrajectory" title="Link to this definition">#</a></dt>
+<dd><p>Get trajectory data for a specific replicate and species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> – The HDF5 file handle to extract from or the name of a file to open</p></li>
+<li><p><strong>replicate</strong> – The replicate number (0-indexed for compatibility with your usage)</p></li>
+<li><p><strong>specie</strong> – The species name to extract</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The species trajectory data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -615,6 +918,22 @@ Default: no averaging is performed</p></li>
 <li><p><strong>species</strong> – A list of species to plot</p></li>
 <li><p><strong>kwargs</strong> – Additional arguments to be passed on to matplotlib.plot.  These are any arguments that are valid with matplotlib.plot</p></li>
 <li><p><strong>outfile</strong> – A filename to plot to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jLM.CMEPostProcessing.plotCMEReactionNetwork">
+<span class="sig-prename descclassname"><span class="pre">jLM.CMEPostProcessing.</span></span><span class="sig-name descname"><span class="pre">plotCMEReactionNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">withRxnNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collapseReversible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/CMEPostProcessing.html#plotCMEReactionNetwork"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.CMEPostProcessing.plotCMEReactionNetwork" title="Link to this definition">#</a></dt>
+<dd><p>Plot the reaction scheme as a network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> – An CMESimulation object</p></li>
+<li><p><strong>filename</strong> – A file to which to output</p></li>
+<li><p><strong>withRxnNodes</strong> – Plot the graph with reactions as nodes (default: false)</p></li>
+<li><p><strong>collapseReversible</strong> – Collapsee reversible reactions into one node (default: false)</p></li>
 </ul>
 </dd>
 </dl>
@@ -816,14 +1135,17 @@ Default: no averaging is performed</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.closeLMFile"><code class="docutils literal notranslate"><span class="pre">closeLMFile()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getAvgVarTrace"><code class="docutils literal notranslate"><span class="pre">getAvgVarTrace()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getHistogram"><code class="docutils literal notranslate"><span class="pre">getHistogram()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getNumTrajectories"><code class="docutils literal notranslate"><span class="pre">getNumTrajectories()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getOccupancyKymograph"><code class="docutils literal notranslate"><span class="pre">getOccupancyKymograph()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getPhaseSpace"><code class="docutils literal notranslate"><span class="pre">getPhaseSpace()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getSpecieTrace"><code class="docutils literal notranslate"><span class="pre">getSpecieTrace()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getSpecies"><code class="docutils literal notranslate"><span class="pre">getSpecies()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getTimesteps"><code class="docutils literal notranslate"><span class="pre">getTimesteps()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.getTrajectory"><code class="docutils literal notranslate"><span class="pre">getTrajectory()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.openLMFile"><code class="docutils literal notranslate"><span class="pre">openLMFile()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.plotAvgVar"><code class="docutils literal notranslate"><span class="pre">plotAvgVar()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.plotAvgVarFromFile"><code class="docutils literal notranslate"><span class="pre">plotAvgVarFromFile()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.plotCMEReactionNetwork"><code class="docutils literal notranslate"><span class="pre">plotCMEReactionNetwork()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.plotOccupancyKymograph"><code class="docutils literal notranslate"><span class="pre">plotOccupancyKymograph()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.plotPhaseSpace"><code class="docutils literal notranslate"><span class="pre">plotPhaseSpace()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.CMEPostProcessing.plotTrace"><code class="docutils literal notranslate"><span class="pre">plotTrace()</span></code></a></li>

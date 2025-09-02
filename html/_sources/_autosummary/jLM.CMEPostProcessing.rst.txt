@@ -8,33 +8,122 @@
 
    .. autosummary::
    
+      autocurve
       closeLMFile
+      color_name_to_rgb
+      color_name_to_rgba
+      community_to_membership
+      compare_communities
+      convex_hull
+      disjoint_union
       getAvgVarTrace
       getHistogram
+      getNumTrajectories
       getOccupancyKymograph
       getPhaseSpace
       getSpecieTrace
       getSpecies
       getTimesteps
+      getTrajectory
+      get_include
+      hsl_to_rgb
+      hsla_to_rgba
+      hsv_to_rgb
+      hsva_to_rgba
+      intersection
+      is_bigraphical
+      is_degree_sequence
+      is_graphical
+      is_graphical_degree_sequence
+      load
+      mean
+      median
       openLMFile
+      percentile
+      plot
       plotAvgVar
       plotAvgVarFromFile
+      plotCMEReactionNetwork
       plotOccupancyKymograph
       plotPhaseSpace
       plotTrace
       plotTraceFromFile
+      power_law_fit
+      quantile
+      read
+      rescale
+      rgb_to_hsl
+      rgb_to_hsv
+      rgba_to_hsla
+      rgba_to_hsva
+      save
       setLMLogConsole
       setLMLogFile
       setLMLoggerLevel
+      set_progress_handler
+      set_random_number_generator
+      set_status_handler
       showAvgVar
       showAvgVarFromFile
       showOccupancyKymograph
       showTrace
       showTraceFromFile
+      split_join_distance
+      summary
+      umap_compute_weights
+      union
+      write
    
    .. rubric:: Classes
 
    .. autosummary::
    
-      Axes3D
+      ARPACKOptions
+      AdvancedGradientPalette
+      BFSIter
+      BoundingBox
+      CairoGraphDrawer
+      ClusterColoringPalette
+      Clustering
+      CohesiveBlocks
+      Configuration
+      Cover
+      Cut
+      DFSIter
+      DefaultGraphDrawer
+      Dendrogram
+      DyadCensus
+      Edge
+      EdgeSeq
+      FittedPowerLaw
+      Flow
+      GradientPalette
+      Graph
+      GraphBase
+      GraphSummary
+      Histogram
+      Layout
+      Matching
+      MatplotlibGraphDrawer
+      Matrix
+      Palette
+      Plot
+      Point
+      PrecalculatedPalette
+      RainbowPalette
+      Rectangle
+      RunningMean
+      TriadCensus
+      UniqueIdGenerator
+      Vertex
+      VertexClustering
+      VertexCover
+      VertexDendrogram
+      VertexSeq
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      InternalError
    

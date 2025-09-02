@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>jLM.LMLogger &#8212; Lattice Microbes 2.5_dev documentation</title>
+    <title>jLM.LmInteract &#8212; Lattice Microbes 2.5_dev documentation</title>
   
   
   
@@ -41,11 +41,11 @@
     <script src="../_static/documentation_options.js?v=5d3ef798"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/jLM.LMLogger';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/jLM.LmInteract';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="jLM.Analysis" href="jLM.Analysis.html" />
-    <link rel="prev" title="jLM.Lattice" href="jLM.Lattice.html" />
+    <link rel="next" title="jLM.Lattice" href="jLM.Lattice.html" />
+    <link rel="prev" title="jLM.JupyterDisplay" href="jLM.JupyterDisplay.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="2.5" />
@@ -338,7 +338,7 @@
     
     <li class="breadcrumb-item"><a href="../API.html" class="nav-link">API Reference</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.LMLogger</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.LmInteract</span></li>
   </ul>
 </nav>
 </div>
@@ -355,57 +355,80 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-jLM.LMLogger">
-<span id="jlm-lmlogger"></span><h1>jLM.LMLogger<a class="headerlink" href="#module-jLM.LMLogger" title="Link to this heading">#</a></h1>
+  <section id="module-jLM.LmInteract">
+<span id="jlm-lminteract"></span><h1>jLM.LmInteract<a class="headerlink" href="#module-jLM.LmInteract" title="Link to this heading">#</a></h1>
+<p>SpatialModel mixins for interaction with LM</p>
 <p class="rubric">Functions</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.LMLogger.setLMLogConsole" title="jLM.LMLogger.setLMLogConsole"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLogConsole</span></code></a>([level])</p></td>
-<td><p>Set the logger to write to the console as the code is working</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#jLM.LMLogger.setLMLogFile" title="jLM.LMLogger.setLMLogFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLogFile</span></code></a>(filename[, level])</p></td>
-<td><p>Set up file handler to print log to file</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.LMLogger.setLMLoggerLevel" title="jLM.LMLogger.setLMLoggerLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLoggerLevel</span></code></a>(level)</p></td>
-<td><p>Set the level of the logger for the application</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">contextmanager</span></code>(func)</p></td>
+<td><p>&#64;contextmanager decorator.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<dl class="py function">
-<dt class="sig sig-object py" id="jLM.LMLogger.setLMLogConsole">
-<span class="sig-prename descclassname"><span class="pre">jLM.LMLogger.</span></span><span class="sig-name descname"><span class="pre">setLMLogConsole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/LMLogger.html#setLMLogConsole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LMLogger.setLMLogConsole" title="Link to this definition">#</a></dt>
-<dd><p>Set the logger to write to the console as the code is working</p>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.LmInteract.LmReadMixin" title="jLM.LmInteract.LmReadMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LmReadMixin</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.LmInteract.LmWriteMixin" title="jLM.LmInteract.LmWriteMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LmWriteMixin</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.LmInteract.LmReadMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.LmInteract.</span></span><span class="sig-name descname"><span class="pre">LmReadMixin</span></span><a class="reference internal" href="../_modules/jLM/LmInteract.html#LmReadMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LmInteract.LmReadMixin" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.LmInteract.LmReadMixin.setReplicate">
+<span class="sig-name descname"><span class="pre">setReplicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/LmInteract.html#LmReadMixin.setReplicate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LmInteract.LmReadMixin.setReplicate" title="Link to this definition">#</a></dt>
+<dd><p>Select replicate from HDF5 file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>level</strong> – The level of information to log</p>
+<dd class="field-odd"><p><strong>replicate</strong> (<em>int</em>) – Replicate index (1-based)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="jLM.LMLogger.setLMLogFile">
-<span class="sig-prename descclassname"><span class="pre">jLM.LMLogger.</span></span><span class="sig-name descname"><span class="pre">setLMLogFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/LMLogger.html#setLMLogFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LMLogger.setLMLogFile" title="Link to this definition">#</a></dt>
-<dd><p>Set up file handler to print log to file</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.LmInteract.LmWriteMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.LmInteract.</span></span><span class="sig-name descname"><span class="pre">LmWriteMixin</span></span><a class="reference internal" href="../_modules/jLM/LmInteract.html#LmWriteMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LmInteract.LmWriteMixin" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.LmInteract.LmWriteMixin.copyParticleLattice">
+<span class="sig-name descname"><span class="pre">copyParticleLattice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diffusion_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/LmInteract.html#LmWriteMixin.copyParticleLattice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LmInteract.LmWriteMixin.copyParticleLattice" title="Link to this definition">#</a></dt>
+<dd><p>Copy particle lattice from existing simulation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> – The name of the file to log information</p></li>
-<li><p><strong>level</strong> – The level of information to log</p></li>
+<dd class="field-odd"><p><strong>fname</strong> (<em>str</em>) – LM simulation H5 file</p>
+</dd>
+<dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>diffusion_model</strong> (<em>bool</em>) – Use the initial condition particle lattice</p></li>
+<li><p><strong>replicate</strong> (<em>int</em>) – LM simulation replicate</p></li>
+<li><p><strong>frame</strong> (<em>int</em>) – LM simulation particle lattice frame. Negative values
+index from end.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="jLM.LMLogger.setLMLoggerLevel">
-<span class="sig-prename descclassname"><span class="pre">jLM.LMLogger.</span></span><span class="sig-name descname"><span class="pre">setLMLoggerLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/LMLogger.html#setLMLoggerLevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LMLogger.setLMLoggerLevel" title="Link to this definition">#</a></dt>
-<dd><p>Set the level of the logger for the application</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>level</strong> – The level the logger should report (e.g. logger.WARNING, logger.INFO, etc.)</p>
-</dd>
-</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.LmInteract.LmWriteMixin.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/LmInteract.html#LmWriteMixin.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LmInteract.LmWriteMixin.finalize" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.LmInteract.LmWriteMixin.h5">
+<span class="sig-name descname"><span class="pre">h5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/LmInteract.html#LmWriteMixin.h5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.LmInteract.LmWriteMixin.h5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
@@ -421,20 +444,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="jLM.Lattice.html"
+       href="jLM.JupyterDisplay.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">jLM.Lattice</p>
+        <p class="prev-next-title">jLM.JupyterDisplay</p>
       </div>
     </a>
     <a class="right-next"
-       href="jLM.Analysis.html"
+       href="jLM.Lattice.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">jLM.Analysis</p>
+        <p class="prev-next-title">jLM.Lattice</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -457,9 +480,16 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LMLogger.setLMLogConsole"><code class="docutils literal notranslate"><span class="pre">setLMLogConsole()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LMLogger.setLMLogFile"><code class="docutils literal notranslate"><span class="pre">setLMLogFile()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LMLogger.setLMLoggerLevel"><code class="docutils literal notranslate"><span class="pre">setLMLoggerLevel()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LmInteract.LmReadMixin"><code class="docutils literal notranslate"><span class="pre">LmReadMixin</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LmInteract.LmReadMixin.setReplicate"><code class="docutils literal notranslate"><span class="pre">LmReadMixin.setReplicate()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LmInteract.LmWriteMixin"><code class="docutils literal notranslate"><span class="pre">LmWriteMixin</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LmInteract.LmWriteMixin.copyParticleLattice"><code class="docutils literal notranslate"><span class="pre">LmWriteMixin.copyParticleLattice()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LmInteract.LmWriteMixin.finalize"><code class="docutils literal notranslate"><span class="pre">LmWriteMixin.finalize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.LmInteract.LmWriteMixin.h5"><code class="docutils literal notranslate"><span class="pre">LmWriteMixin.h5()</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -467,7 +497,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/jLM.LMLogger.rst.txt"
+      <li><a href="../_sources/_autosummary/jLM.LmInteract.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

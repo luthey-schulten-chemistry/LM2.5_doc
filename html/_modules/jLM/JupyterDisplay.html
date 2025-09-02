@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jLM.JupyterDisplay &#8212; Lattice Microbes 2.5 documentation</title>
+    <title>jLM.JupyterDisplay &#8212; Lattice Microbes 2.5_dev documentation</title>
   
   
   
@@ -37,11 +37,10 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=1a347c9b"></script>
+    <script src="../../_static/documentation_options.js?v=5d3ef798"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jLM/JupyterDisplay';</script>
-    <link rel="canonical" href="https://forxhunter.github.io/LM2.5_doc/_modules/jLM/JupyterDisplay.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -108,7 +107,7 @@
   
   
   
-    <p class="title logo__title">Lattice Microbes 2.5 documentation</p>
+    <p class="title logo__title">Lattice Microbes</p>
   
 </a></div>
     
@@ -137,25 +136,42 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Visualization.html">
-    Visualization using VMD
+    Visualization
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../API.html">
-    Lattice Microbes API Reference
+    API Reference
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../Citations.html">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../Citations.html">
     Citations
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -174,14 +190,6 @@
 </button>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
     </div>
     
@@ -242,15 +250,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../jLM%20Examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../Visualization.html">
-    Visualization using VMD
+    Visualization
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../API.html">
-    Lattice Microbes API Reference
+    API Reference
   </a>
 </li>
 
@@ -268,18 +283,6 @@
       </div>
     
     
-    
-      <div class="sidebar-header-items__end">
-        
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
-      </div>
     
   </div>
   
@@ -547,7 +550,7 @@
         <span class="n">rxns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reactionJ2context</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reactionList</span> 
                                           <span class="k">if</span> <span class="n">sps</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">products</span> <span class="ow">or</span> <span class="n">sps</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">reactants</span><span class="p">])</span>
 
-        <span class="n">transitionTable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="n">transitionTable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
         <span class="n">transitionTable</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
         <span class="k">for</span> <span class="n">sidx</span><span class="p">,</span> <span class="n">r0idx</span><span class="p">,</span> <span class="n">r1idx</span><span class="p">,</span> <span class="n">rt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transitionRates</span><span class="p">:</span>
