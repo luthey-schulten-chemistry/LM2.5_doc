@@ -41,7 +41,6 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jLM/RDME';</script>
-    <link rel="canonical" href="https://forxhunter.github.io/LM2.5_doc/_modules/jLM/RDME.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -379,10 +378,19 @@
 <span class="c1"># OTHER DEALINGS WITH THE SOFTWARE.</span>
 <span class="c1"># </span>
 <span class="c1"># Author(s): Tyler M. Earnest, Zane Thornburg</span>
-<span class="c1"># </span>
+<span class="c1">#</span>
 
 <span class="sd">&quot;&quot;&quot;Spatial model&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">atexit</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+    <span class="n">use_tqdm</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">use_tqdm</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">BaseTypes</span> <span class="k">as</span> <span class="n">BT</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">T</span>
@@ -812,7 +820,9 @@
 
 <div class="viewcode-block" id="SpatialModel.run">
 <a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.SpatialModel.run">[docs]</a>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cudaDevices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solver</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">replicate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">cudaDevices</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">checkpointInterval</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">verbosity</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="n">sample_frame</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">max_frames</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the RDME simulation</span>
 
 <span class="sd">        Args:</span>
@@ -826,20 +836,43 @@
 <span class="sd">                List of CUDA device indexes</span>
 <span class="sd">            checkpointInterval (int):</span>
 <span class="sd">                Number of seconds between checkpoints</span>
+<span class="sd">            verbosity (int):</span>
+<span class="sd">                Verbosity level</span>
+<span class="sd">                1: FATAL</span>
+<span class="sd">                2: ERROR</span>
+<span class="sd">                3: WARNING</span>
+<span class="sd">                4: INFO</span>
+<span class="sd">                9: DEBUG</span>
+<span class="sd">                10: VERBOSE_DEBUG</span>
+<span class="sd">            sample_frame (bool):</span>
+<span class="sd">                Sample frames or not</span>
+<span class="sd">            max_frames (int):</span>
+<span class="sd">                Number of frames after sampling</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            :py:class:`jLM.File`:</span>
 <span class="sd">                Simulation result</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">lm</span>
+        
         <span class="n">solver</span> <span class="o">=</span> <span class="n">solver</span> <span class="ow">or</span> <span class="n">lm</span><span class="o">.</span><span class="n">MpdRdmeSolver</span><span class="p">()</span>
         <span class="n">cudaDevices</span> <span class="o">=</span> <span class="n">cudaDevices</span> <span class="ow">or</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
         <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">simulationFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">setParameter</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">))</span>
             <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">verbosity</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Setting verbosity level to </span><span class="si">{</span><span class="n">verbosity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="n">lm</span><span class="o">.</span><span class="n">setVerbosityLevel</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+        
         <span class="n">lm</span><span class="o">.</span><span class="n">runSolver</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">replicate</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">cudaDevices</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">checkpointInterval</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">File</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">latticeType</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">latticeType</span><span class="p">)</span></div>
+
+        <span class="k">return</span> <span class="n">File</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>
+                    <span class="n">latticeType</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">latticeType</span><span class="p">,</span>
+                    <span class="n">sample_frame</span> <span class="o">=</span> <span class="n">sample_frame</span><span class="p">,</span>
+                    <span class="n">max_frames</span>   <span class="o">=</span> <span class="n">max_frames</span><span class="p">)</span></div>
 </div>
 
 
@@ -903,7 +936,11 @@
 <a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.File">[docs]</a>
 <span class="k">class</span> <span class="nc">File</span><span class="p">(</span><span class="n">AN</span><span class="o">.</span><span class="n">TrajAnalysisMixin</span><span class="p">,</span> <span class="n">JD</span><span class="o">.</span><span class="n">FileJupyterMixin</span><span class="p">,</span> <span class="n">LM</span><span class="o">.</span><span class="n">LmReadMixin</span><span class="p">,</span> <span class="n">SpatialModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Load a previously defined simulation&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">latticeType</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span>
+                 <span class="n">replicate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                 <span class="n">latticeType</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">sample_frame</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                 <span class="n">max_frames</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Load a RDME simulation file</span>
 
 <span class="sd">        Args:</span>
@@ -913,33 +950,230 @@
 <span class="sd">                Replicate to load initially</span>
 <span class="sd">            latticeType (str):</span>
 <span class="sd">                &quot;Byte&quot; / &quot;Int&quot;</span>
+<span class="sd">            sample_frame (bool):</span>
+<span class="sd">                Sample frames or not</span>
+<span class="sd">            max_frames (int):</span>
+<span class="sd">                Number of frames after sampling</span>
 
 <span class="sd">        Note:</span>
 <span class="sd">            jLM includes some metadata in the Lattice Microbes HDF5 file which </span>
 <span class="sd">            is necessary to reload the model.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># self.vmd_precomp(fname)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">h5</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 
         <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+        <span class="n">latticeSpacing</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model/Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;latticeSpacing&#39;</span><span class="p">])</span>
+
         <span class="n">naturalDims</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model/Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;latticeZSize&#39;</span><span class="p">]),</span>
                        <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model/Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;latticeYSize&#39;</span><span class="p">]),</span>
                        <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model/Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;latticeXSize&#39;</span><span class="p">]))</span>
-        <span class="n">latticeSpacing</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Model/Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;latticeSpacing&#39;</span><span class="p">])</span>
 
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">naturalDims</span><span class="p">,</span> <span class="n">latticeSpacing</span><span class="p">,</span> <span class="n">latticeType</span><span class="o">=</span><span class="n">latticeType</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">naturalDims</span><span class="p">,</span> <span class="n">latticeSpacing</span><span class="p">,</span> <span class="n">latticeType</span> <span class="o">=</span> <span class="n">latticeType</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">TrajSpecies</span><span class="p">,</span><span class="n">idbase</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#: :py:class:`~jLM.BaseTypes.SimObjs`: List of species types</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">TrajRegion</span><span class="p">)</span>            <span class="c1">#: :py:class:`~jLM.BaseTypes.SimObjs`: List of regions</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">reactionList</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">Reaction</span><span class="p">)</span>            <span class="c1">#: :py:class:`~jLM.BaseTypes.SimObjs`: List of reactions</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rxnRateList</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">RateConst</span><span class="p">)</span>            <span class="c1">#: :py:class:`~jLM.BaseTypes.SimObjs`: List of reaction rates</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">diffRateList</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">DiffusionConst</span><span class="p">)</span>      <span class="c1">#: :py:class:`~jLM.BaseTypes.SimObjs`: List of diffusion constants</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>          <span class="c1">#: :py:class:`~jLM.BaseTypes.Namespace`: Convienient species access</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">reg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>          <span class="c1">#: :py:class:`~jLM.BaseTypes.Namespace`: Convienient region access</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rxnRateList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>          <span class="c1">#: :py:class:`~jLM.BaseTypes.Namespace`: Convienient reaction rate access</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">diffRateList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>         <span class="c1">#: :py:class:`~jLM.BaseTypes.Namespace`: Convienient diffusion constant access</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span>  <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">TrajSpecies</span><span class="p">,</span> <span class="n">idbase</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span>   <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">TrajRegion</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reactionList</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">Reaction</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rxnRateList</span>  <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">RateConst</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">diffRateList</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">SimObjs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">DiffusionConst</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">counts</span><span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_loadFromH5</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sp</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speciesList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regionList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rc</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rxnRateList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dc</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">diffRateList</span><span class="o">.</span><span class="n">getAutoNamespace</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">counts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loadFromH5</span><span class="p">(</span><span class="n">replicate</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">sample_frame</span> <span class="o">==</span> <span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reduce_trajectory_file</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">max_frames</span><span class="p">)</span>
+
+<div class="viewcode-block" id="File.vmd_precomp">
+<a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.File.vmd_precomp">[docs]</a>
+    <span class="k">def</span> <span class="nf">vmd_precomp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="n">hdf_file</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">traj_file</span><span class="p">:</span>
+            <span class="n">numberSpecies</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">traj_file</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">][</span><span class="s1">&#39;Reaction&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;numberSpecies&#39;</span><span class="p">])</span>
+            <span class="n">numberSiteTypes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">traj_file</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">][</span><span class="s1">&#39;Diffusion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;numberSiteTypes&#39;</span><span class="p">])</span>
+
+            <span class="n">maxTime</span>              <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">traj_file</span><span class="p">[</span><span class="s1">&#39;Parameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;maxTime&#39;</span><span class="p">])</span>
+            <span class="n">timestep</span>             <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">traj_file</span><span class="p">[</span><span class="s1">&#39;Parameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">])</span>
+            <span class="n">latticeWriteInterval</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">traj_file</span><span class="p">[</span><span class="s1">&#39;Parameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;latticeWriteInterval&#39;</span><span class="p">])</span>
+
+            <span class="n">frames</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">maxTime</span> <span class="o">/</span> <span class="p">(</span><span class="n">latticeWriteInterval</span> <span class="o">*</span> <span class="n">timestep</span><span class="p">))</span>
+            <span class="n">siteTypesLattice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">traj_file</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">][</span><span class="s1">&#39;Diffusion&#39;</span><span class="p">][</span><span class="s1">&#39;LatticeSites&#39;</span><span class="p">])</span>
+
+        <span class="n">maxSiteCounts</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numberSiteTypes</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="n">maxParticleCounts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numberSpecies</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">frames</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
+
+            <span class="n">num_cores</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">())</span>
+            <span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">num_cores</span><span class="p">,</span> <span class="n">initializer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_worker</span><span class="p">,</span> <span class="n">initargs</span> <span class="o">=</span> <span class="p">(</span><span class="n">file_name</span><span class="p">,))</span>
+
+            <span class="n">process_frame_partial</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_frame</span><span class="p">,</span>
+                                            <span class="n">siteTypesLattice</span> <span class="o">=</span> <span class="n">siteTypesLattice</span><span class="p">,</span>
+                                            <span class="n">numberSpecies</span>    <span class="o">=</span> <span class="n">numberSpecies</span><span class="p">,</span>
+                                            <span class="n">numberSiteTypes</span>  <span class="o">=</span> <span class="n">numberSiteTypes</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">use_tqdm</span><span class="p">:</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">pool</span><span class="o">.</span><span class="n">imap</span><span class="p">(</span><span class="n">process_frame_partial</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">frames</span><span class="p">)),</span>
+                                    <span class="n">total</span> <span class="o">=</span> <span class="n">frames</span><span class="p">,</span>
+                                    <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Processing frames&quot;</span><span class="p">,</span>
+                                    <span class="n">unit</span> <span class="o">=</span> <span class="s2">&quot;frame&quot;</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">process_frame_partial</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">frames</span><span class="p">))</span>
+
+            <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+            <span class="n">maxSiteCounts</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">maxParticleCounts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">traj_file</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+            <span class="n">trajs</span> <span class="o">=</span> <span class="n">traj_file</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="s1">&#39;0000001&#39;</span><span class="p">][</span><span class="s1">&#39;Lattice&#39;</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">use_tqdm</span><span class="p">:</span>
+                <span class="n">frame_iterator</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">frames</span><span class="p">),</span>
+                                      <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Processing frames&quot;</span><span class="p">,</span>
+                                      <span class="n">unit</span> <span class="o">=</span> <span class="s2">&quot;frame&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">frame_iterator</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">frame_iterator</span><span class="p">:</span>
+                <span class="n">frame_key</span>    <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">010d</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">frameLattice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">trajs</span><span class="p">[</span><span class="n">frame_key</span><span class="p">])</span>
+
+                <span class="n">species_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">frameLattice</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">minlength</span> <span class="o">=</span> <span class="n">numberSpecies</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">maxParticleCounts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">maxParticleCounts</span><span class="p">,</span> <span class="n">species_counts</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">site_type</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numberSiteTypes</span><span class="p">):</span>
+                    <span class="n">site_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">siteTypesLattice</span> <span class="o">==</span> <span class="n">site_type</span><span class="p">)</span>
+                    <span class="n">species_count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">site_mask</span><span class="p">)</span>
+                    <span class="n">maxSiteCounts</span><span class="p">[</span><span class="n">site_type</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxSiteCounts</span><span class="p">[</span><span class="n">site_type</span><span class="p">],</span> <span class="n">species_count</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">use_tqdm</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">frames</span> <span class="o">//</span> <span class="mi">20</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                    <span class="n">progress</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">frames</span> <span class="o">*</span> <span class="mi">100</span>
+
+        <span class="n">maxSiteCounts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">maxParticleCounts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_to_h5</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">maxParticleCounts</span><span class="p">,</span> <span class="n">maxSiteCounts</span><span class="p">)</span>
+        <span class="n">traj_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">return</span></div>
+
+
+<div class="viewcode-block" id="File.close_hdf_file">
+<a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.File.close_hdf_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">close_hdf_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">hdf_file</span>
+
+        <span class="k">if</span> <span class="n">hdf_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">hdf_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="File.init_worker">
+<a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.File.init_worker">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">hdf_file</span>
+
+        <span class="c1"># Open the trajectory file</span>
+        <span class="n">hdf_file</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Register a function to close the file when the worker exits</span>
+        <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_hdf_file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="File.process_frame">
+<a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.File.process_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_index</span><span class="p">,</span> <span class="n">siteTypesLattice</span><span class="p">,</span> <span class="n">numberSpecies</span><span class="p">,</span> <span class="n">numberSiteTypes</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">hdf_file</span>
+        <span class="n">trajs</span> <span class="o">=</span> <span class="n">hdf_file</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="s1">&#39;0000001&#39;</span><span class="p">][</span><span class="s1">&#39;Lattice&#39;</span><span class="p">]</span>
+
+        <span class="n">frame_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">frame_index</span><span class="si">:</span><span class="s2">010d</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">frameLattice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">trajs</span><span class="p">[</span><span class="n">frame_key</span><span class="p">])</span>
+
+        <span class="c1"># Calculate counts for each species</span>
+        <span class="n">species_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">frameLattice</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">minlength</span> <span class="o">=</span> <span class="n">numberSpecies</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Calculate counts for each site type</span>
+        <span class="n">site_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numberSiteTypes</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">site_type</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numberSiteTypes</span><span class="p">):</span>
+            <span class="n">site_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">siteTypesLattice</span> <span class="o">==</span> <span class="n">site_type</span><span class="p">)</span>
+            <span class="n">site_counts</span><span class="p">[</span><span class="n">site_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">site_mask</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">species_counts</span><span class="p">,</span> <span class="n">site_counts</span></div>
+
+
+<div class="viewcode-block" id="File.write_to_h5">
+<a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.File.write_to_h5">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_to_h5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">maxParticleCounts</span><span class="p">,</span> <span class="n">maxSiteCounts</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf_file</span><span class="p">:</span>
+            <span class="n">traj_h5file</span> <span class="o">=</span> <span class="n">hdf_file</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="s1">&#39;0000001&#39;</span><span class="p">]</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Delete existing datasets</span>
+                <span class="k">if</span> <span class="s1">&#39;MaxParticleCounts&#39;</span> <span class="ow">in</span> <span class="n">traj_h5file</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">traj_h5file</span><span class="p">[</span><span class="s1">&#39;MaxParticleCounts&#39;</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="s1">&#39;MaxSiteCounts&#39;</span> <span class="ow">in</span> <span class="n">traj_h5file</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">traj_h5file</span><span class="p">[</span><span class="s1">&#39;MaxSiteCounts&#39;</span><span class="p">]</span>
+
+                <span class="n">traj_h5file</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;MaxSiteCounts&#39;</span><span class="p">,</span>
+                                           <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">maxSiteCounts</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">))</span>
+                <span class="n">traj_h5file</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;MaxParticleCounts&#39;</span><span class="p">,</span>
+                                           <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">maxParticleCounts</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error writing to HDF5 file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="k">return</span></div>
+
+    
+<div class="viewcode-block" id="File.reduce_trajectory_file">
+<a class="viewcode-back" href="../../_autosummary/jLM.RDME.html#jLM.RDME.File.reduce_trajectory_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">reduce_trajectory_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">max_frames</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">traj_data</span><span class="p">:</span>
+            <span class="n">num_frames</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">traj_data</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="s1">&#39;0000001&#39;</span><span class="p">][</span><span class="s1">&#39;Lattice&#39;</span><span class="p">])</span>
+            <span class="n">stride</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_frames</span> <span class="o">/</span> <span class="n">max_frames</span><span class="p">)</span>
+            <span class="n">output_file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;reduced_</span><span class="si">{</span><span class="n">stride</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="c1"># Create the output file with userblock</span>
+            <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">output_file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">userblock_size</span> <span class="o">=</span> <span class="mi">512</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+                <span class="c1"># Copy all groups and datasets</span>
+                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">traj_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="n">traj_data</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+
+                <span class="c1"># Clear existing lattice data</span>
+                <span class="n">lattice_group</span> <span class="o">=</span> <span class="n">output_file</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="s1">&#39;0000001&#39;</span><span class="p">][</span><span class="s1">&#39;Lattice&#39;</span><span class="p">]</span>
+
+                <span class="k">for</span> <span class="n">dataset_name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">lattice_group</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                    <span class="k">del</span> <span class="n">lattice_group</span><span class="p">[</span><span class="n">dataset_name</span><span class="p">]</span>
+
+                <span class="c1"># Copy frames with stride</span>
+                <span class="n">new_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_frames</span><span class="p">,</span> <span class="n">stride</span><span class="p">):</span>
+                    <span class="n">new_index_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">new_index</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+                    <span class="n">old_index_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+                    <span class="n">output_file</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="s1">&#39;0000001&#39;</span><span class="p">][</span><span class="s1">&#39;Lattice&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span>
+                        <span class="n">new_index_string</span><span class="p">,</span>
+                        <span class="n">data</span> <span class="o">=</span> <span class="n">traj_data</span><span class="p">[</span><span class="s1">&#39;Simulations&#39;</span><span class="p">][</span><span class="s1">&#39;0000001&#39;</span><span class="p">][</span><span class="s1">&#39;Lattice&#39;</span><span class="p">][</span><span class="n">old_index_string</span><span class="p">]</span>
+                    <span class="p">)</span>
+
+                    <span class="n">new_index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Write LMH5 header</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_name</span><span class="p">,</span> <span class="s1">&#39;r+b&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;LMH5&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span></div>
+</div>
 
 </pre></div>
 

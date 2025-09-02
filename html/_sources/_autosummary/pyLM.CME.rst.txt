@@ -4,9 +4,21 @@
 .. automodule:: pyLM.CME
 
    
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      getReactionString
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+      visualizeRDMEInitialConditions
+      writeTable
+   
    .. rubric:: Classes
 
    .. autosummary::
    
       CMESimulation
+      tqdm
    

@@ -14,4 +14,7 @@
       readSBMLtoCME
       readSBMLtoRDME
       readSBMLtoRegion
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
    

@@ -1,133 +1,1031 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pySTDLM.Cells &mdash; Lattice Microbes 2.5/&lt;&lt;not /2025-09-01 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pySTDLM.Cells &#8212; Lattice Microbes 2.5 documentation</title>
   
-      <script src="../_static/documentation_options.js?v=3d937c15"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=1a347c9b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/pySTDLM.Cells';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pySTDLM.CmdUtils" href="pySTDLM.CmdUtils.html" />
-    <link rel="prev" title="pySTDLM.CellArranger" href="pySTDLM.CellArranger.html" /> 
-</head>
+    <link rel="prev" title="pySTDLM.CellArranger" href="pySTDLM.CellArranger.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.5" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Lattice Microbes
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Installation.html#advanced-build-configuration">Advanced Build Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization using VMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API.html">Lattice Microbes API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Citations.html">Citations</a></li>
-</ul>
 
-        </div>
-      </div>
-    </nav>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Lattice Microbes</a>
-      </nav>
+  
+    
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../API.html">Lattice Microbes API Reference</a></li>
-      <li class="breadcrumb-item active">pySTDLM.Cells</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/_autosummary/pySTDLM.Cells.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Lattice Microbes 2.5 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Citations.html">
+    Citations
+  </a>
+</li>
+
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Citations.html">
+    Citations
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../API.html" class="nav-link">Lattice Microbes API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pySTDLM.Cells</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="module-pySTDLM.Cells">
-<span id="pystdlm-cells"></span><h1>pySTDLM.Cells<a class="headerlink" href="#module-pySTDLM.Cells" title="Link to this heading">¶</a></h1>
-<p class="rubric">Classes</p>
-<table class="autosummary longtable docutils align-default">
+<span id="pystdlm-cells"></span><h1>pySTDLM.Cells<a class="headerlink" href="#module-pySTDLM.Cells" title="Link to this heading">#</a></h1>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoxCell</span></code>([p1, p2])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLogConsole</span></code>([level])</p></td>
+<td><p>Set the logger to write to the console as the code is working</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLogFile</span></code>(filename[, level])</p></td>
+<td><p>Set up file handler to print log to file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLMLoggerLevel</span></code>(level)</p></td>
+<td><p>Set the level of the logger for the application</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pySTDLM.Cells.BoxCell" title="pySTDLM.Cells.BoxCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoxCell</span></code></a>([p1, p2])</p></td>
 <td><p>A representation for a spherical cell.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CapsuleCell</span></code>([p1, p2, radius, length])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pySTDLM.Cells.CapsuleCell" title="pySTDLM.Cells.CapsuleCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CapsuleCell</span></code></a>([p1, p2, radius, length])</p></td>
 <td><p>A representation for a spherical cell.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CapsuleShellCell</span></code>([p1, p2, radius, length])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pySTDLM.Cells.CapsuleShellCell" title="pySTDLM.Cells.CapsuleShellCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CapsuleShellCell</span></code></a>([p1, p2, radius, length])</p></td>
 <td><p>A representation for a spherical cell.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CellShape</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pySTDLM.Cells.CellShape" title="pySTDLM.Cells.CellShape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CellShape</span></code></a>()</p></td>
 <td><p>Base class for a particular cell type for use in CellArranger (and later more)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">SphereCell</span></code>([origin, radius])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pySTDLM.Cells.SphereCell" title="pySTDLM.Cells.SphereCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SphereCell</span></code></a>([origin, radius])</p></td>
 <td><p>A representation for a spherical cell.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pySTDLM.Cells.</span></span><span class="sig-name descname"><span class="pre">BoxCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#BoxCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.BoxCell" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pySTDLM.Cells.CellShape" title="pySTDLM.Cells.CellShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">CellShape</span></code></a></p>
+<p>A representation for a spherical cell. This cell requires an attribute dictionary that includes “width”, “height”, “depth” and “membraneThickness”</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.addToSimulation">
+<span class="sig-name descname"><span class="pre">addToSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.BoxCell.addToSimulation" title="Link to this definition">#</a></dt>
+<dd><p>Add the cell to the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sim</strong> – An RDMESimulation object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.boundingBox">
+<span class="sig-name descname"><span class="pre">boundingBox</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.BoxCell.boundingBox" title="Link to this definition">#</a></dt>
+<dd><p>Return a bounding box for the cell</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.computeVolume">
+<span class="sig-name descname"><span class="pre">computeVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#BoxCell.computeVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.BoxCell.computeVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.createModelCell">
+<span class="sig-name descname"><span class="pre">createModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.BoxCell.createModelCell" title="Link to this definition">#</a></dt>
+<dd><p>Create model cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attrs</strong> – A dictionary of attributes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.getVolume">
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.BoxCell.getVolume" title="Link to this definition">#</a></dt>
+<dd><p>Volume occupied by cell</p>
+<p>When overriding this class, you must specify a “computeVolume()” function of no arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Volume in intrinsic units</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.internalAddToSim">
+<span class="sig-name descname"><span class="pre">internalAddToSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#BoxCell.internalAddToSim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.BoxCell.internalAddToSim" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.internalModelCell">
+<span class="sig-name descname"><span class="pre">internalModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#BoxCell.internalModelCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.BoxCell.internalModelCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.internalTranslateCell">
+<span class="sig-name descname"><span class="pre">internalTranslateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#BoxCell.internalTranslateCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.BoxCell.internalTranslateCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.setRegions">
+<span class="sig-name descname"><span class="pre">setRegions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">membrane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cytoplasm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.BoxCell.setRegions" title="Link to this definition">#</a></dt>
+<dd><p>Set regions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>membrane</strong> – The name of the region in which the membrane should be considered</p></li>
+<li><p><strong>cytoplasm</strong> – The name of the region in which the cytoplasm should be considered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.BoxCell.translateCell">
+<span class="sig-name descname"><span class="pre">translateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.BoxCell.translateCell" title="Link to this definition">#</a></dt>
+<dd><p>Shift a cell in space by the specified amount</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[</strong><strong>x</strong> (<a class="reference internal" href="lm.html#lm.point" title="lm.point"><em>point</em></a>) – translation in space</p></li>
+<li><p><strong>y</strong> – translation in space</p></li>
+<li><p><strong>z</strong><strong>]</strong> – translation in space</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pySTDLM.Cells.</span></span><span class="sig-name descname"><span class="pre">CapsuleCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pySTDLM.Cells.CellShape" title="pySTDLM.Cells.CellShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">CellShape</span></code></a></p>
+<p>A representation for a spherical cell. This cell requires an attribute dictionary that includes “radius”, “length”, and “membraneThickness”</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.addToSimulation">
+<span class="sig-name descname"><span class="pre">addToSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.addToSimulation" title="Link to this definition">#</a></dt>
+<dd><p>Add the cell to the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sim</strong> – An RDMESimulation object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.boundingBox">
+<span class="sig-name descname"><span class="pre">boundingBox</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.boundingBox" title="Link to this definition">#</a></dt>
+<dd><p>Return a bounding box for the cell</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.computeVolume">
+<span class="sig-name descname"><span class="pre">computeVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleCell.computeVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.computeVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.createModelCell">
+<span class="sig-name descname"><span class="pre">createModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.createModelCell" title="Link to this definition">#</a></dt>
+<dd><p>Create model cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attrs</strong> – A dictionary of attributes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.getVolume">
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.getVolume" title="Link to this definition">#</a></dt>
+<dd><p>Volume occupied by cell</p>
+<p>When overriding this class, you must specify a “computeVolume()” function of no arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Volume in intrinsic units</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.internalAddToSim">
+<span class="sig-name descname"><span class="pre">internalAddToSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleCell.internalAddToSim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.internalAddToSim" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.internalModelCell">
+<span class="sig-name descname"><span class="pre">internalModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleCell.internalModelCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.internalModelCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.internalTranslateCell">
+<span class="sig-name descname"><span class="pre">internalTranslateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleCell.internalTranslateCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.internalTranslateCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.setRegions">
+<span class="sig-name descname"><span class="pre">setRegions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">membrane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cytoplasm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.setRegions" title="Link to this definition">#</a></dt>
+<dd><p>Set regions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>membrane</strong> – The name of the region in which the membrane should be considered</p></li>
+<li><p><strong>cytoplasm</strong> – The name of the region in which the cytoplasm should be considered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleCell.translateCell">
+<span class="sig-name descname"><span class="pre">translateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleCell.translateCell" title="Link to this definition">#</a></dt>
+<dd><p>Shift a cell in space by the specified amount</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[</strong><strong>x</strong> (<a class="reference internal" href="lm.html#lm.point" title="lm.point"><em>point</em></a>) – translation in space</p></li>
+<li><p><strong>y</strong> – translation in space</p></li>
+<li><p><strong>z</strong><strong>]</strong> – translation in space</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pySTDLM.Cells.</span></span><span class="sig-name descname"><span class="pre">CapsuleShellCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleShellCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pySTDLM.Cells.CapsuleCell" title="pySTDLM.Cells.CapsuleCell"><code class="xref py py-class docutils literal notranslate"><span class="pre">CapsuleCell</span></code></a></p>
+<p>A representation for a spherical cell. This cell requires an attribute dictionary that includes “radius”, “length” and “membraneThickness”</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.addToSimulation">
+<span class="sig-name descname"><span class="pre">addToSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.addToSimulation" title="Link to this definition">#</a></dt>
+<dd><p>Add the cell to the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sim</strong> – An RDMESimulation object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.boundingBox">
+<span class="sig-name descname"><span class="pre">boundingBox</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.boundingBox" title="Link to this definition">#</a></dt>
+<dd><p>Return a bounding box for the cell</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.computeVolume">
+<span class="sig-name descname"><span class="pre">computeVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleShellCell.computeVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.computeVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.createModelCell">
+<span class="sig-name descname"><span class="pre">createModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.createModelCell" title="Link to this definition">#</a></dt>
+<dd><p>Create model cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attrs</strong> – A dictionary of attributes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.getVolume">
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.getVolume" title="Link to this definition">#</a></dt>
+<dd><p>Volume occupied by cell</p>
+<p>When overriding this class, you must specify a “computeVolume()” function of no arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Volume in intrinsic units</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.internalAddToSim">
+<span class="sig-name descname"><span class="pre">internalAddToSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleShellCell.internalAddToSim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.internalAddToSim" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.internalModelCell">
+<span class="sig-name descname"><span class="pre">internalModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CapsuleShellCell.internalModelCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.internalModelCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.internalTranslateCell">
+<span class="sig-name descname"><span class="pre">internalTranslateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.internalTranslateCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.setRegions">
+<span class="sig-name descname"><span class="pre">setRegions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">membrane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cytoplasm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.setRegions" title="Link to this definition">#</a></dt>
+<dd><p>Set regions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>membrane</strong> – The name of the region in which the membrane should be considered</p></li>
+<li><p><strong>cytoplasm</strong> – The name of the region in which the cytoplasm should be considered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CapsuleShellCell.translateCell">
+<span class="sig-name descname"><span class="pre">translateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.CapsuleShellCell.translateCell" title="Link to this definition">#</a></dt>
+<dd><p>Shift a cell in space by the specified amount</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[</strong><strong>x</strong> (<a class="reference internal" href="lm.html#lm.point" title="lm.point"><em>point</em></a>) – translation in space</p></li>
+<li><p><strong>y</strong> – translation in space</p></li>
+<li><p><strong>z</strong><strong>]</strong> – translation in space</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CellShape">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pySTDLM.Cells.</span></span><span class="sig-name descname"><span class="pre">CellShape</span></span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CellShape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CellShape" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for a particular cell type for use in CellArranger (and later more)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CellShape.addToSimulation">
+<span class="sig-name descname"><span class="pre">addToSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CellShape.addToSimulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CellShape.addToSimulation" title="Link to this definition">#</a></dt>
+<dd><p>Add the cell to the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sim</strong> – An RDMESimulation object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CellShape.boundingBox">
+<span class="sig-name descname"><span class="pre">boundingBox</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CellShape.boundingBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CellShape.boundingBox" title="Link to this definition">#</a></dt>
+<dd><p>Return a bounding box for the cell</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CellShape.createModelCell">
+<span class="sig-name descname"><span class="pre">createModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CellShape.createModelCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CellShape.createModelCell" title="Link to this definition">#</a></dt>
+<dd><p>Create model cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attrs</strong> – A dictionary of attributes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CellShape.getVolume">
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CellShape.getVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CellShape.getVolume" title="Link to this definition">#</a></dt>
+<dd><p>Volume occupied by cell</p>
+<p>When overriding this class, you must specify a “computeVolume()” function of no arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Volume in intrinsic units</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CellShape.setRegions">
+<span class="sig-name descname"><span class="pre">setRegions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">membrane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cytoplasm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CellShape.setRegions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CellShape.setRegions" title="Link to this definition">#</a></dt>
+<dd><p>Set regions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>membrane</strong> – The name of the region in which the membrane should be considered</p></li>
+<li><p><strong>cytoplasm</strong> – The name of the region in which the cytoplasm should be considered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.CellShape.translateCell">
+<span class="sig-name descname"><span class="pre">translateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#CellShape.translateCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.CellShape.translateCell" title="Link to this definition">#</a></dt>
+<dd><p>Shift a cell in space by the specified amount</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[</strong><strong>x</strong> (<a class="reference internal" href="lm.html#lm.point" title="lm.point"><em>point</em></a>) – translation in space</p></li>
+<li><p><strong>y</strong> – translation in space</p></li>
+<li><p><strong>z</strong><strong>]</strong> – translation in space</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pySTDLM.Cells.</span></span><span class="sig-name descname"><span class="pre">SphereCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#SphereCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.SphereCell" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pySTDLM.Cells.CellShape" title="pySTDLM.Cells.CellShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">CellShape</span></code></a></p>
+<p>A representation for a spherical cell. This cell requires an attribute dictionary that includes “radius” and “membraneThickness”</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.addToSimulation">
+<span class="sig-name descname"><span class="pre">addToSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.SphereCell.addToSimulation" title="Link to this definition">#</a></dt>
+<dd><p>Add the cell to the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sim</strong> – An RDMESimulation object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.boundingBox">
+<span class="sig-name descname"><span class="pre">boundingBox</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.SphereCell.boundingBox" title="Link to this definition">#</a></dt>
+<dd><p>Return a bounding box for the cell</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.computeVolume">
+<span class="sig-name descname"><span class="pre">computeVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#SphereCell.computeVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.SphereCell.computeVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.createModelCell">
+<span class="sig-name descname"><span class="pre">createModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.SphereCell.createModelCell" title="Link to this definition">#</a></dt>
+<dd><p>Create model cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attrs</strong> – A dictionary of attributes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.getVolume">
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.SphereCell.getVolume" title="Link to this definition">#</a></dt>
+<dd><p>Volume occupied by cell</p>
+<p>When overriding this class, you must specify a “computeVolume()” function of no arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Volume in intrinsic units</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.internalAddToSim">
+<span class="sig-name descname"><span class="pre">internalAddToSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#SphereCell.internalAddToSim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.SphereCell.internalAddToSim" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.internalModelCell">
+<span class="sig-name descname"><span class="pre">internalModelCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#SphereCell.internalModelCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.SphereCell.internalModelCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.internalTranslateCell">
+<span class="sig-name descname"><span class="pre">internalTranslateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/Cells.html#SphereCell.internalTranslateCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.Cells.SphereCell.internalTranslateCell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.setRegions">
+<span class="sig-name descname"><span class="pre">setRegions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">membrane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cytoplasm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.SphereCell.setRegions" title="Link to this definition">#</a></dt>
+<dd><p>Set regions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>membrane</strong> – The name of the region in which the membrane should be considered</p></li>
+<li><p><strong>cytoplasm</strong> – The name of the region in which the cytoplasm should be considered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pySTDLM.Cells.SphereCell.translateCell">
+<span class="sig-name descname"><span class="pre">translateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pySTDLM.Cells.SphereCell.translateCell" title="Link to this definition">#</a></dt>
+<dd><p>Shift a cell in space by the specified amount</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[</strong><strong>x</strong> (<a class="reference internal" href="lm.html#lm.point" title="lm.point"><em>point</em></a>) – translation in space</p></li>
+<li><p><strong>y</strong> – translation in space</p></li>
+<li><p><strong>z</strong><strong>]</strong> – translation in space</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pySTDLM.CellArranger.html" class="btn btn-neutral float-left" title="pySTDLM.CellArranger" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pySTDLM.CmdUtils.html" class="btn btn-neutral float-right" title="pySTDLM.CmdUtils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2025, Luthey-Schulten Lab.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pySTDLM.CellArranger.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pySTDLM.CellArranger</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="pySTDLM.CmdUtils.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pySTDLM.CmdUtils</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell"><code class="docutils literal notranslate"><span class="pre">BoxCell</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.addToSimulation"><code class="docutils literal notranslate"><span class="pre">BoxCell.addToSimulation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.boundingBox"><code class="docutils literal notranslate"><span class="pre">BoxCell.boundingBox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.computeVolume"><code class="docutils literal notranslate"><span class="pre">BoxCell.computeVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.createModelCell"><code class="docutils literal notranslate"><span class="pre">BoxCell.createModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.getVolume"><code class="docutils literal notranslate"><span class="pre">BoxCell.getVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.internalAddToSim"><code class="docutils literal notranslate"><span class="pre">BoxCell.internalAddToSim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.internalModelCell"><code class="docutils literal notranslate"><span class="pre">BoxCell.internalModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.internalTranslateCell"><code class="docutils literal notranslate"><span class="pre">BoxCell.internalTranslateCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.setRegions"><code class="docutils literal notranslate"><span class="pre">BoxCell.setRegions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.BoxCell.translateCell"><code class="docutils literal notranslate"><span class="pre">BoxCell.translateCell()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell"><code class="docutils literal notranslate"><span class="pre">CapsuleCell</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.addToSimulation"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.addToSimulation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.boundingBox"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.boundingBox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.computeVolume"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.computeVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.createModelCell"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.createModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.getVolume"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.getVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.internalAddToSim"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.internalAddToSim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.internalModelCell"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.internalModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.internalTranslateCell"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.internalTranslateCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.setRegions"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.setRegions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleCell.translateCell"><code class="docutils literal notranslate"><span class="pre">CapsuleCell.translateCell()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.addToSimulation"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.addToSimulation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.boundingBox"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.boundingBox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.computeVolume"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.computeVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.createModelCell"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.createModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.getVolume"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.getVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.internalAddToSim"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.internalAddToSim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.internalModelCell"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.internalModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.internalTranslateCell"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.internalTranslateCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.setRegions"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.setRegions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CapsuleShellCell.translateCell"><code class="docutils literal notranslate"><span class="pre">CapsuleShellCell.translateCell()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CellShape"><code class="docutils literal notranslate"><span class="pre">CellShape</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CellShape.addToSimulation"><code class="docutils literal notranslate"><span class="pre">CellShape.addToSimulation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CellShape.boundingBox"><code class="docutils literal notranslate"><span class="pre">CellShape.boundingBox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CellShape.createModelCell"><code class="docutils literal notranslate"><span class="pre">CellShape.createModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CellShape.getVolume"><code class="docutils literal notranslate"><span class="pre">CellShape.getVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CellShape.setRegions"><code class="docutils literal notranslate"><span class="pre">CellShape.setRegions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.CellShape.translateCell"><code class="docutils literal notranslate"><span class="pre">CellShape.translateCell()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell"><code class="docutils literal notranslate"><span class="pre">SphereCell</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.addToSimulation"><code class="docutils literal notranslate"><span class="pre">SphereCell.addToSimulation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.boundingBox"><code class="docutils literal notranslate"><span class="pre">SphereCell.boundingBox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.computeVolume"><code class="docutils literal notranslate"><span class="pre">SphereCell.computeVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.createModelCell"><code class="docutils literal notranslate"><span class="pre">SphereCell.createModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.getVolume"><code class="docutils literal notranslate"><span class="pre">SphereCell.getVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.internalAddToSim"><code class="docutils literal notranslate"><span class="pre">SphereCell.internalAddToSim()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.internalModelCell"><code class="docutils literal notranslate"><span class="pre">SphereCell.internalModelCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.internalTranslateCell"><code class="docutils literal notranslate"><span class="pre">SphereCell.internalTranslateCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.setRegions"><code class="docutils literal notranslate"><span class="pre">SphereCell.setRegions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.Cells.SphereCell.translateCell"><code class="docutils literal notranslate"><span class="pre">SphereCell.translateCell()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/pySTDLM.Cells.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Luthey-Schulten Lab.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

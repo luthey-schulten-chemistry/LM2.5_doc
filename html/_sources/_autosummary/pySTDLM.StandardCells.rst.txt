@@ -8,10 +8,37 @@
 
    .. autosummary::
    
+      angstrom
       buildDividingEColiCell
       buildEColiCell
       buildFilamentousEColiCell
       buildSphericalEColiCell
+      cm
+      day
+      getReactionString
+      hr
+      micron
+      microsecond
+      minute
+      mm
+      ms
+      nm
+      ns
       packFastGrowingEcoli
       packSlowGrowingEcoli
+      second
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+      visualizeRDMEInitialConditions
+      writeTable
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      IntRDMESimulation
+      RDMERegion
+      RDMESimulation
+      tqdm
    

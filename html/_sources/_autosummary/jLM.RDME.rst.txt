@@ -11,4 +11,6 @@
       File
       Sim
       SpatialModel
+      partial
+      tqdm
    

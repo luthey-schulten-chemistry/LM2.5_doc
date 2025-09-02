@@ -11,4 +11,20 @@
       addLacTwoStateSystem
       addMinDESystem
       addPTSPathway
+      getReactionString
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+      visualizeRDMEInitialConditions
+      writeTable
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CMESimulation
+      IntRDMESimulation
+      RDMERegion
+      RDMESimulation
+      tqdm
    

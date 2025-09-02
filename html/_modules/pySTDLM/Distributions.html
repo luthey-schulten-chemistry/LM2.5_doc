@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pySTDLM.Distributions &#8212; Lattice Microbes 2.5 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=1a347c9b"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pySTDLM/Distributions';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.5" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Lattice Microbes 2.5 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Citations.html">
+    Citations
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Citations.html">
+    Citations
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pySTDLM.Distributions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pySTDLM.Distributions</h1><div class="highlight"><pre>
+<span></span><span class="c1"># </span>
+<span class="c1"># University of Illinois Open Source License</span>
+<span class="c1"># Copyright 2008-2018 Luthey-Schulten Group,</span>
+<span class="c1"># All rights reserved.</span>
+<span class="c1"># </span>
+<span class="c1"># Developed by: Luthey-Schulten Group</span>
+<span class="c1">#                           University of Illinois at Urbana-Champaign</span>
+<span class="c1">#                           http://www.scs.uiuc.edu/~schulten</span>
+<span class="c1"># </span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy of</span>
+<span class="c1"># this software and associated documentation files (the Software), to deal with </span>
+<span class="c1"># the Software without restriction, including without limitation the rights to </span>
+<span class="c1"># use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies </span>
+<span class="c1"># of the Software, and to permit persons to whom the Software is furnished to </span>
+<span class="c1"># do so, subject to the following conditions:</span>
+<span class="c1"># </span>
+<span class="c1"># - Redistributions of source code must retain the above copyright notice, </span>
+<span class="c1"># this list of conditions and the following disclaimers.</span>
+<span class="c1"># </span>
+<span class="c1"># - Redistributions in binary form must reproduce the above copyright notice, </span>
+<span class="c1"># this list of conditions and the following disclaimers in the documentation </span>
+<span class="c1"># and/or other materials provided with the distribution.</span>
+<span class="c1"># </span>
+<span class="c1"># - Neither the names of the Luthey-Schulten Group, University of Illinois at</span>
+<span class="c1"># Urbana-Champaign, nor the names of its contributors may be used to endorse or</span>
+<span class="c1"># promote products derived from this Software without specific prior written</span>
+<span class="c1"># permission.</span>
+<span class="c1"># </span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR </span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, </span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL </span>
+<span class="c1"># THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR </span>
+<span class="c1"># OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, </span>
+<span class="c1"># ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR </span>
+<span class="c1"># OTHER DEALINGS WITH THE SOFTWARE.</span>
+<span class="c1"># </span>
+<span class="c1"># Author(s): Michael J. Hallock and Joseph R. Peterson</span>
+<span class="c1"># </span>
+<span class="c1">#</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pyLM</span>
+<span class="kn">from</span> <span class="nn">pyLM.LMLogger</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="c1">## @class ParticleGenerator</span>
+<div class="viewcode-block" id="ParticleGenerator">
+<a class="viewcode-back" href="../../_autosummary/pySTDLM.Distributions.html#pySTDLM.Distributions.ParticleGenerator">[docs]</a>
+<span class="k">class</span> <span class="nc">ParticleGenerator</span><span class="p">:</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;A particle generator that adds particles to a particular region of a simulation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        gen:</span>
+<span class="sd">            A PDF set for x,y,z that on the domain [-1,1] and range [0,1) where x is the range of interest</span>
+<span class="sd">        ptype:</span>
+<span class="sd">            The name of the particle</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gen</span><span class="p">,</span> <span class="n">ptype</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">generator</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+			<span class="n">LMLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Must pass a list of generators: [xgen,ygen,zgen]&quot;</span><span class="p">)</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Axial generator list expected&quot;</span><span class="p">)</span>	
+		<span class="bp">self</span><span class="o">.</span><span class="n">particlename</span> <span class="o">=</span> <span class="n">ptype</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">totalAdded</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">addedLast</span> <span class="o">=</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="ParticleGenerator.addParticlesToRegion">
+<a class="viewcode-back" href="../../_autosummary/pySTDLM.Distributions.html#pySTDLM.Distributions.ParticleGenerator.addParticlesToRegion">[docs]</a>
+	<span class="k">def</span> <span class="nf">addParticlesToRegion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">rdmesim</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">directions</span><span class="p">,</span> <span class="n">spatial</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Add a number of particles to a region based on Monte-Carlo sampling of the generator</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            rdmesim:</span>
+<span class="sd">                An RDME simulation object that has already been &quot;discretized&quot;</span>
+<span class="sd">            region:</span>
+<span class="sd">                A region name of the simulation to add particles to</span>
+<span class="sd">            number:</span>
+<span class="sd">                The number of the particle to add</span>
+<span class="sd">            directions:</span>
+<span class="sd">                A list of the form (x,y,z) where a 0 indicates a uniform distribution in </span>
+<span class="sd">                that direction and a 1 indicates the particles are sampled from the generator in </span>
+<span class="sd">                that direction </span>
+<span class="sd">            spatial (OPTIONAL):</span>
+<span class="sd">                A definition of a subsection of the domain that this generation should occur in </span>
+<span class="sd">                as a list of lists [[xl,yl,zl],[xh,yh,zh]], otherwise the generator is scaled </span>
+<span class="sd">                from (0,0,0) to domain extends (w,h,d)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+		<span class="c1"># bulletproofing</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rdmesim</span><span class="p">,</span> <span class="n">pyLM</span><span class="o">.</span><span class="n">RDME</span><span class="o">.</span><span class="n">RDMESimulation</span><span class="p">):</span>
+			<span class="n">LMLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;addParticlesToRegion requires that an RDMESimulation be specified, given type: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">rdmesim</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Expected RDMESimulation&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">rdmesim</span><span class="o">.</span><span class="n">hasBeenDiscretized</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+			<span class="n">LMLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Must discretize region before adding particles from a generator&quot;</span><span class="p">)</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Discretization required&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">LMLogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Must add at least one particle, given: </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+			<span class="k">return</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">directions</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+			<span class="n">LMLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Must specify a direction of form (x,y,z), given: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">directions</span><span class="p">)</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;3-tuple expected&quot;</span><span class="p">)</span>	
+	
+		<span class="c1"># Get the dimensions to normalize distribution to</span>
+		<span class="n">mins</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="p">[</span><span class="mf">0.</span><span class="p">]</span>
+		<span class="n">maxs</span><span class="o">=</span><span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">rdmesim</span><span class="o">.</span><span class="n">continuousDimensions</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">spatial</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">spatial</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+				<span class="n">LMLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;spatial argument must be list of list: [[x,y,z],[xh,yh,xh]]&quot;</span><span class="p">)</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;bounds expected&quot;</span><span class="p">)</span>	
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">spatial</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span><span class="mi">3</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">spatial</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span><span class="mi">3</span><span class="p">:</span>
+				<span class="n">LMLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;spatial must be list of lists: [[x,y,z],[xh,yh,xh]]&quot;</span><span class="p">)</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;bounds expected&quot;</span><span class="p">)</span>	
+			<span class="n">mins</span><span class="o">=</span><span class="n">spatial</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">maxs</span><span class="o">=</span><span class="n">spatial</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">addedLast</span><span class="o">=</span><span class="mi">0</span>
+		<span class="c1"># Get the particle number</span>
+		<span class="n">ptype</span><span class="o">=</span><span class="n">rdmesim</span><span class="o">.</span><span class="n">particleMap</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">particlename</span><span class="p">]</span>		
+		<span class="n">stype</span> <span class="o">=</span> <span class="n">rdmesim</span><span class="o">.</span><span class="n">siteTypes</span><span class="p">[</span><span class="n">region</span><span class="p">]</span>
+		<span class="n">lat</span> <span class="o">=</span> <span class="n">rdmesim</span><span class="o">.</span><span class="n">lattice</span>
+		<span class="n">latspace</span><span class="o">=</span><span class="n">rdmesim</span><span class="o">.</span><span class="n">latticeSpacing</span>
+	
+		<span class="n">dels</span> <span class="o">=</span> <span class="p">[</span><span class="n">maxs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">mins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+		<span class="c1"># start adding particles</span>
+		<span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">addedLast</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+			<span class="c1"># generate randoms</span>
+			<span class="n">xlocal</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+			<span class="n">ylocal</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+			<span class="n">zlocal</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">directions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="n">good</span><span class="o">=</span><span class="kc">False</span>
+				<span class="k">while</span> <span class="ow">not</span> <span class="n">good</span><span class="p">:</span>
+					<span class="n">rlocal</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+					<span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generator</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">xlocal</span><span class="p">)</span>
+					<span class="n">LMLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;x trying: </span><span class="si">%f</span><span class="s2"> with: </span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">rlocal</span><span class="p">,</span><span class="n">loc</span><span class="p">))</span>
+					<span class="k">if</span> <span class="n">rlocal</span> <span class="o">&lt;</span> <span class="n">loc</span><span class="p">:</span>
+						<span class="n">good</span><span class="o">=</span><span class="kc">True</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">xlocal</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">directions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="n">good</span><span class="o">=</span><span class="kc">False</span>
+				<span class="k">while</span> <span class="ow">not</span> <span class="n">good</span><span class="p">:</span>
+					<span class="n">rlocal</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+					<span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generator</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">ylocal</span><span class="p">)</span>
+					<span class="n">LMLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;y trying: </span><span class="si">%f</span><span class="s2"> with: </span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">rlocal</span><span class="p">,</span><span class="n">loc</span><span class="p">))</span>
+					<span class="k">if</span> <span class="n">rlocal</span> <span class="o">&lt;</span> <span class="n">loc</span><span class="p">:</span>
+						<span class="n">good</span><span class="o">=</span><span class="kc">True</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">ylocal</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">directions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="n">good</span><span class="o">=</span><span class="kc">False</span>
+				<span class="k">while</span> <span class="ow">not</span> <span class="n">good</span><span class="p">:</span>
+					<span class="n">rlocal</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+					<span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generator</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">zlocal</span><span class="p">)</span>
+					<span class="n">LMLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;z trying: </span><span class="si">%f</span><span class="s2"> with: </span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">rlocal</span><span class="p">,</span><span class="n">loc</span><span class="p">))</span>
+					<span class="k">if</span> <span class="n">rlocal</span> <span class="o">&lt;</span> <span class="n">loc</span><span class="p">:</span>
+						<span class="n">good</span><span class="o">=</span><span class="kc">True</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">zlocal</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+		
+			<span class="n">LMLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;trying (</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">xlocal</span><span class="p">,</span> <span class="n">ylocal</span><span class="p">,</span> <span class="n">zlocal</span><span class="p">))</span>
+	
+			<span class="c1"># convert to ints</span>
+			<span class="n">xint</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xlocal</span><span class="o">*</span><span class="n">dels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">latspace</span><span class="p">)</span>
+			<span class="n">yint</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ylocal</span><span class="o">*</span><span class="n">dels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">latspace</span><span class="p">)</span>
+			<span class="n">zint</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">zlocal</span><span class="o">*</span><span class="n">dels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">latspace</span><span class="p">)</span>
+			<span class="n">LMLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;loc (</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">xint</span><span class="p">,</span> <span class="n">yint</span><span class="p">,</span> <span class="n">zint</span><span class="p">))</span>
+
+			<span class="k">if</span> <span class="n">lat</span><span class="o">.</span><span class="n">getSiteType</span><span class="p">(</span><span class="n">xint</span><span class="p">,</span><span class="n">yint</span><span class="p">,</span><span class="n">zint</span><span class="p">)</span> <span class="o">==</span> <span class="n">stype</span><span class="p">:</span>
+				<span class="c1"># TODO: Add bulletproofing if a exception of type (InvalidSiteException,InvalidParticleException) is raised</span>
+				<span class="n">LMLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Added a particle of type </span><span class="si">%s</span><span class="s2"> to (</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">particlename</span><span class="p">,</span> <span class="n">xint</span><span class="p">,</span> <span class="n">yint</span><span class="p">,</span> <span class="n">zint</span><span class="p">)</span>
+				<span class="n">lat</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">xint</span><span class="p">,</span><span class="n">yint</span><span class="p">,</span><span class="n">zint</span><span class="p">,</span> <span class="n">ptype</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">addedLast</span> <span class="o">+=</span> <span class="mi">1</span>
+
+		<span class="c1"># Count total number added</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">totalAdded</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">addedLast</span>
+		<span class="n">rdmesim</span><span class="o">.</span><span class="n">customAddedParticleList</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">particlename</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">totalAdded</span><span class="p">))</span>
+		<span class="k">return</span></div>
+</div>
+
+
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Luthey-Schulten Lab.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -4,13 +4,26 @@
 .. automodule:: pySTDLM.CellArranger
 
    
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+   
    .. rubric:: Classes
 
    .. autosummary::
    
+      BoxCell
+      CapsuleCell
+      CapsuleShellCell
       CellArranger
+      CellShape
       LooseGridArranger
       RandomArranger
       RandomSphericalArranger
+      SphereCell
       TightGridArranger
    

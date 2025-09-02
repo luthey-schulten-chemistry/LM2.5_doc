@@ -1,133 +1,621 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pySTDLM.StandardReactions &mdash; Lattice Microbes 2.5/&lt;&lt;not /2025-09-01 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pySTDLM.StandardReactions &#8212; Lattice Microbes 2.5 documentation</title>
   
-      <script src="../_static/documentation_options.js?v=3d937c15"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=1a347c9b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/pySTDLM.StandardReactions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pySTDLM.StandardReactionSystems" href="pySTDLM.StandardReactionSystems.html" />
-    <link rel="prev" title="pySTDLM.StandardCells" href="pySTDLM.StandardCells.html" /> 
-</head>
+    <link rel="prev" title="pySTDLM.StandardCells" href="pySTDLM.StandardCells.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.5" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Lattice Microbes
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Installation.html#advanced-build-configuration">Advanced Build Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization using VMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API.html">Lattice Microbes API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Citations.html">Citations</a></li>
-</ul>
 
-        </div>
-      </div>
-    </nav>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Lattice Microbes</a>
-      </nav>
+  
+    
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../API.html">Lattice Microbes API Reference</a></li>
-      <li class="breadcrumb-item active">pySTDLM.StandardReactions</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/_autosummary/pySTDLM.StandardReactions.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Lattice Microbes 2.5 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Citations.html">
+    Citations
+  </a>
+</li>
+
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Citations.html">
+    Citations
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../API.html" class="nav-link">Lattice Microbes API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pySTDLM.StandardReactions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="module-pySTDLM.StandardReactions">
-<span id="pystdlm-standardreactions"></span><h1>pySTDLM.StandardReactions<a class="headerlink" href="#module-pySTDLM.StandardReactions" title="Link to this heading">¶</a></h1>
+<span id="pystdlm-standardreactions"></span><h1>pySTDLM.StandardReactions<a class="headerlink" href="#module-pySTDLM.StandardReactions" title="Link to this heading">#</a></h1>
 <p class="rubric">Functions</p>
-<table class="autosummary longtable docutils align-default">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">addMembraneTransporter</span></code>(sim, transporter, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pySTDLM.StandardReactions.addMembraneTransporter" title="pySTDLM.StandardReactions.addMembraneTransporter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addMembraneTransporter</span></code></a>(sim, transporter, ...)</p></td>
 <td><p>Adds a membrane transport system to an RDME system</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">addMichaelisMenten</span></code>(sim, reactant, enzyme, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pySTDLM.StandardReactions.addMichaelisMenten" title="pySTDLM.StandardReactions.addMichaelisMenten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addMichaelisMenten</span></code></a>(sim, reactant, enzyme, ...)</p></td>
 <td><p>Adds a Michaelis Menten Reaction</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">addPassiveTransport</span></code>(sim, specie, dRate[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pySTDLM.StandardReactions.addPassiveTransport" title="pySTDLM.StandardReactions.addPassiveTransport"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addPassiveTransport</span></code></a>(sim, specie, dRate[, ...])</p></td>
 <td><p>Adds a passive transport system to an RDME system</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">addReversibleMichaelisMenten</span></code>(sim, reactant, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pySTDLM.StandardReactions.addReversibleMichaelisMenten" title="pySTDLM.StandardReactions.addReversibleMichaelisMenten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addReversibleMichaelisMenten</span></code></a>(sim, reactant, ...)</p></td>
 <td><p>Add a Reversible Michaelis Menten Reaction</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">createExpressionModel</span></code>(sim, gb, kt, kd, kr[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pySTDLM.StandardReactions.createExpressionModel" title="pySTDLM.StandardReactions.createExpressionModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">createExpressionModel</span></code></a>(sim, gb, kt, kd, kr[, ...])</p></td>
 <td><p>Create a set of gene/mRNA/protein reactions based on a genebank file and a set of rates assuming constitutive expression</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="pySTDLM.StandardReactions.addMembraneTransporter">
+<span class="sig-prename descclassname"><span class="pre">pySTDLM.StandardReactions.</span></span><span class="sig-name descname"><span class="pre">addMembraneTransporter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transporter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dRate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cytoplasm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intoRegion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'membrane'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/StandardReactions.html#addMembraneTransporter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.StandardReactions.addMembraneTransporter" title="Link to this definition">#</a></dt>
+<dd><p>Adds a membrane transport system to an RDME system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> – An RDMESimulation to add the transporter system to</p></li>
+<li><p><strong>transporter</strong> – Name of the transporter particle</p></li>
+<li><p><strong>number</strong> – The number of transporter molecules</p></li>
+<li><p><strong>name1</strong> – Name of the transported particle in region1</p></li>
+<li><p><strong>name2</strong> – Name of the transported particle in region2</p></li>
+<li><p><strong>dRate</strong> – The rate of diffusion from region1&lt;-&gt;intoRegion and region2&lt;-&gt;intoRegion</p></li>
+<li><p><strong>kf</strong> – The forward reaction rate</p></li>
+<li><p><strong>kr</strong> – The reverse reaction rate</p></li>
+<li><p><strong>region1</strong> – The region on the first side of the membrane</p></li>
+<li><p><strong>region2</strong> – The region on the second side of the membrane</p></li>
+<li><p><strong>intoRegion</strong> – The region representing the membrane</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The simulation object so this can be a chained call</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pySTDLM.StandardReactions.addMichaelisMenten">
+<span class="sig-prename descclassname"><span class="pre">pySTDLM.StandardReactions.</span></span><span class="sig-name descname"><span class="pre">addMichaelisMenten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reactant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enzyme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cytoplasm'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/StandardReactions.html#addMichaelisMenten"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.StandardReactions.addMichaelisMenten" title="Link to this definition">#</a></dt>
+<dd><p>Adds a Michaelis Menten Reaction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> – The RDME or CME reaction</p></li>
+<li><p><strong>reactant</strong> – The reactant that reacts with the enzyme</p></li>
+<li><p><strong>enzyme</strong> – The enzyme catalyzing the reaction</p></li>
+<li><p><strong>product</strong> – The product of the reaction</p></li>
+<li><p><strong>k1f</strong> – The forward reaction rate</p></li>
+<li><p><strong>k1b</strong> – The backward reaction rate</p></li>
+<li><p><strong>k2</strong> – The second forward rate</p></li>
+<li><p><strong>region</strong> – The region in which the reaction should occur (RDME only)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The simulation object so this can be a chained call</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pySTDLM.StandardReactions.addPassiveTransport">
+<span class="sig-prename descclassname"><span class="pre">pySTDLM.StandardReactions.</span></span><span class="sig-name descname"><span class="pre">addPassiveTransport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specie</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dRate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cytoplasm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'membrane'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/StandardReactions.html#addPassiveTransport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.StandardReactions.addPassiveTransport" title="Link to this definition">#</a></dt>
+<dd><p>Adds a passive transport system to an RDME system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> – An RDMESimulation to add the passive transport to</p></li>
+<li><p><strong>specie</strong> – The species that can diffuse across the membrane</p></li>
+<li><p><strong>dRate</strong> – The rate of diffusion across the membrane</p></li>
+<li><p><strong>region1</strong> – The region on the first side of the membrane</p></li>
+<li><p><strong>region2</strong> – The region on the second side of the membrane</p></li>
+<li><p><strong>region3</strong> – The region representing the membrane</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The simulation object so this can be a chained call</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pySTDLM.StandardReactions.addReversibleMichaelisMenten">
+<span class="sig-prename descclassname"><span class="pre">pySTDLM.StandardReactions.</span></span><span class="sig-name descname"><span class="pre">addReversibleMichaelisMenten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reactant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enzyme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k3f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k3b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cytoplasm'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/StandardReactions.html#addReversibleMichaelisMenten"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.StandardReactions.addReversibleMichaelisMenten" title="Link to this definition">#</a></dt>
+<dd><p>Add a Reversible Michaelis Menten Reaction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> – The RDME or CME reaction</p></li>
+<li><p><strong>reactant</strong> – The reactant that reacts with the enzyme</p></li>
+<li><p><strong>enzyme</strong> – The enzyme catalyzing the reaction</p></li>
+<li><p><strong>product</strong> – The product of the reaction</p></li>
+<li><p><strong>k1f</strong> – The forward reaction rate</p></li>
+<li><p><strong>k1b</strong> – The backward reaction rate</p></li>
+<li><p><strong>k2f</strong> – The second forward rate</p></li>
+<li><p><strong>k2b</strong> – the second backward rate</p></li>
+<li><p><strong>k3f</strong> – The third forward rate</p></li>
+<li><p><strong>k3b</strong> – the third backward rate</p></li>
+<li><p><strong>region</strong> – the region in which the reaction should occur (RDME only)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The simulation object so this can be a chained call</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pySTDLM.StandardReactions.createExpressionModel">
+<span class="sig-prename descclassname"><span class="pre">pySTDLM.StandardReactions.</span></span><span class="sig-name descname"><span class="pre">createExpressionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kdil</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySTDLM/StandardReactions.html#createExpressionModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pySTDLM.StandardReactions.createExpressionModel" title="Link to this definition">#</a></dt>
+<dd><p>Create a set of gene/mRNA/protein reactions based on a genebank file and a set of rates assuming constitutive expression</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> – The RDME or CME simulation</p></li>
+<li><p><strong>gb</strong> – The genbank filename. File should be readable by BioPython.</p></li>
+<li><p><strong>kt</strong> – mRNA transcription rate dictionary { locusTag -&gt; rate }</p></li>
+<li><p><strong>kd</strong> – mRNA degradation rate dictionary { locusTag -&gt; rate }</p></li>
+<li><p><strong>kr</strong> – Protein transcription rate dictionary {locusTag -&gt; rate }</p></li>
+<li><p><strong>kdil</strong> – Protein dillution/degradation rate dictionary {locusTag -&gt; rate} (Optional; Default “None”, meaning no dillution reaction will be specified)</p></li>
+<li><p><strong>regions</strong> – Regions for the reactions to occur. Degradation is allowed in both regions. {locusTag -&gt; (transcriptionRegion, translationRegion)} (required for RDMESimulations)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>qualifiers[“dna_id”-&gt;(str,int),”rna_id”-&gt;(str,int), “protein_id”-&gt;(str,int)]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SeqIO representation of the Genbank file with qualifiers added</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pySTDLM.StandardCells.html" class="btn btn-neutral float-left" title="pySTDLM.StandardCells" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pySTDLM.StandardReactionSystems.html" class="btn btn-neutral float-right" title="pySTDLM.StandardReactionSystems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2025, Luthey-Schulten Lab.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pySTDLM.StandardCells.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pySTDLM.StandardCells</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="pySTDLM.StandardReactionSystems.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pySTDLM.StandardReactionSystems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.StandardReactions.addMembraneTransporter"><code class="docutils literal notranslate"><span class="pre">addMembraneTransporter()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.StandardReactions.addMichaelisMenten"><code class="docutils literal notranslate"><span class="pre">addMichaelisMenten()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.StandardReactions.addPassiveTransport"><code class="docutils literal notranslate"><span class="pre">addPassiveTransport()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.StandardReactions.addReversibleMichaelisMenten"><code class="docutils literal notranslate"><span class="pre">addReversibleMichaelisMenten()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pySTDLM.StandardReactions.createExpressionModel"><code class="docutils literal notranslate"><span class="pre">createExpressionModel()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/pySTDLM.StandardReactions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Luthey-Schulten Lab.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

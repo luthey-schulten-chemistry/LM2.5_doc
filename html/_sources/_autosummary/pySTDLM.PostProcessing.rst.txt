@@ -23,9 +23,18 @@
       plotPhaseSpace
       plotTrace
       plotTraceFromFile
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
       showAvgVar
       showAvgVarFromFile
       showOccupancyKymograph
       showTrace
       showTraceFromFile
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Axes3D
    

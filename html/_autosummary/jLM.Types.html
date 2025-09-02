@@ -1,149 +1,897 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>jLM.Types &mdash; Lattice Microbes 2.5/&lt;&lt;not /2025-09-01 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jLM.Types &#8212; Lattice Microbes 2.5 documentation</title>
   
-      <script src="../_static/documentation_options.js?v=3d937c15"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=1a347c9b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/jLM.Types';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="jLM.BaseTypes" href="jLM.BaseTypes.html" />
-    <link rel="prev" title="jLM.Solvers" href="jLM.Solvers.html" /> 
-</head>
+    <link rel="prev" title="jLM.Solvers" href="jLM.Solvers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.5" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Lattice Microbes
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Installation.html#advanced-build-configuration">Advanced Build Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization using VMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API.html">Lattice Microbes API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Citations.html">Citations</a></li>
-</ul>
 
-        </div>
-      </div>
-    </nav>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Lattice Microbes</a>
-      </nav>
+  
+    
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../API.html">Lattice Microbes API Reference</a></li>
-      <li class="breadcrumb-item active">jLM.Types</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/_autosummary/jLM.Types.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Lattice Microbes 2.5 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Citations.html">
+    Citations
+  </a>
+</li>
+
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Visualization.html">
+    Visualization using VMD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../API.html">
+    Lattice Microbes API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Citations.html">
+    Citations
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../API.html" class="nav-link">Lattice Microbes API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jLM.Types</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="module-jLM.Types">
-<span id="jlm-types"></span><h1>jLM.Types<a class="headerlink" href="#module-jLM.Types" title="Link to this heading">¶</a></h1>
+<span id="jlm-types"></span><h1>jLM.Types<a class="headerlink" href="#module-jLM.Types" title="Link to this heading">#</a></h1>
 <p>Simulation objects. Species, Reaction, etc.</p>
 <p class="rubric">Classes</p>
-<table class="autosummary longtable docutils align-default">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuilderReaction</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.Types.BuilderReaction" title="jLM.Types.BuilderReaction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuilderReaction</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Chemical reaction, in the context of simulation construction</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuilderRegion</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.Types.BuilderRegion" title="jLM.Types.BuilderRegion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuilderRegion</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Compartment, in the context of simulation construction</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuilderSpecies</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.Types.BuilderSpecies" title="jLM.Types.BuilderSpecies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuilderSpecies</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Chemical species, in the context of simulation construction</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiffusionConst</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.Types.DiffusionConst" title="jLM.Types.DiffusionConst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiffusionConst</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Diffusion constant</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">RateConst</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.Types.RateConst" title="jLM.Types.RateConst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RateConst</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Reaction rate constant</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reaction</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.Types.Reaction" title="jLM.Types.Reaction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reaction</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Chemical reaction</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Region</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Region</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Simulation compartment</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Species</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.Types.Species" title="jLM.Types.Species"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Species</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Chemical species</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrajRegion</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jLM.Types.TrajRegion" title="jLM.Types.TrajRegion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrajRegion</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Compartment, in the context of trajectory analysis</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrajSpecies</span></code>(sim, idx, *args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#jLM.Types.TrajSpecies" title="jLM.Types.TrajSpecies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrajSpecies</span></code></a>(sim, idx, *args, **kwargs)</p></td>
 <td><p>Chemical species, in the context of trajectory analysis</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.BuilderReaction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">BuilderReaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderReaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderReaction" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jLM.Types.Reaction" title="jLM.Types.Reaction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reaction</span></code></a></p>
+<p>Chemical reaction, in the context of simulation construction</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderReaction.assignToRegion">
+<span class="sig-name descname"><span class="pre">assignToRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderReaction.assignToRegion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderReaction.assignToRegion" title="Link to this definition">#</a></dt>
+<dd><p>Assign to a region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>region</strong> (<a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a>) – Target region</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">BuilderRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderRegion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderRegion" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a></p>
+<p>Compartment, in the context of simulation construction</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.addReaction">
+<span class="sig-name descname"><span class="pre">addReaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderRegion.addReaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderRegion.addReaction" title="Link to this definition">#</a></dt>
+<dd><p>Add a reaction to this region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> – Either a Reaction instance or the parameters needed to create a
+reaction</p></li>
+<li><p><strong>*kwargs</strong> – kwargs necessary to create new reaction</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.diffusionRate">
+<span class="sig-name descname"><span class="pre">diffusionRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderRegion.diffusionRate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderRegion.diffusionRate" title="Link to this definition">#</a></dt>
+<dd><p>Set diffusion rate for all particles</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> (<a class="reference internal" href="#jLM.Types.DiffusionConst" title="jLM.Types.DiffusionConst"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffusionConst</span></code></a>) – Diffusion rate</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – If str given for rate and the DiffusionConst does not exist,
+create it with this value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.placeSpeciesConcentration">
+<span class="sig-name descname"><span class="pre">placeSpeciesConcentration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderRegion.placeSpeciesConcentration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderRegion.placeSpeciesConcentration" title="Link to this definition">#</a></dt>
+<dd><p>Distribute a concentration of species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sps</strong> (<a class="reference internal" href="#jLM.Types.Species" title="jLM.Types.Species"><code class="xref py py-class docutils literal notranslate"><span class="pre">Species</span></code></a>) – Species type</p></li>
+<li><p><strong>conc</strong> (<em>float</em>) – Concentration</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.placeSpeciesNumber">
+<span class="sig-name descname"><span class="pre">placeSpeciesNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderRegion.placeSpeciesNumber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderRegion.placeSpeciesNumber" title="Link to this definition">#</a></dt>
+<dd><p>Distribute a number of species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sps</strong> (<a class="reference internal" href="#jLM.Types.Species" title="jLM.Types.Species"><code class="xref py py-class docutils literal notranslate"><span class="pre">Species</span></code></a>) – Species type</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.transitionRateIn">
+<span class="sig-name descname"><span class="pre">transitionRateIn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderRegion.transitionRateIn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderRegion.transitionRateIn" title="Link to this definition">#</a></dt>
+<dd><p>Set diffusion rate for all particles entering this region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> (<a class="reference internal" href="#jLM.Types.DiffusionConst" title="jLM.Types.DiffusionConst"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffusionConst</span></code></a>) – Diffusion rate</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – If str given for rate and the DiffusionConst does not exist,
+create it with this value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.transitionRateOut">
+<span class="sig-name descname"><span class="pre">transitionRateOut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderRegion.transitionRateOut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderRegion.transitionRateOut" title="Link to this definition">#</a></dt>
+<dd><p>Set diffusion rate for all particles leaving this region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> (<a class="reference internal" href="#jLM.Types.DiffusionConst" title="jLM.Types.DiffusionConst"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffusionConst</span></code></a>) – Diffusion rate</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – If str given for rate and the DiffusionConst does not exist,
+create it with this value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.NAV">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NAV</span></span><a class="headerlink" href="#jLM.Types.BuilderRegion.NAV" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jLM.Types.BuilderRegion.volume">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#jLM.Types.BuilderRegion.volume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.BuilderSpecies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">BuilderSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderSpecies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderSpecies" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jLM.Types.Species" title="jLM.Types.Species"><code class="xref py py-class docutils literal notranslate"><span class="pre">Species</span></code></a></p>
+<p>Chemical species, in the context of simulation construction</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderSpecies.diffusionRate">
+<span class="sig-name descname"><span class="pre">diffusionRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderSpecies.diffusionRate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderSpecies.diffusionRate" title="Link to this definition">#</a></dt>
+<dd><p>Set the diffusion rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region</strong> (<a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a>) – Region</p></li>
+<li><p><strong>rate</strong> (<a class="reference internal" href="#jLM.Types.DiffusionConst" title="jLM.Types.DiffusionConst"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffusionConst</span></code></a>) – Diffusion rate</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – If str given for rate and the DiffusionConst does not exist,
+create it with this value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderSpecies.placeConcentrationInto">
+<span class="sig-name descname"><span class="pre">placeConcentrationInto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderSpecies.placeConcentrationInto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderSpecies.placeConcentrationInto" title="Link to this definition">#</a></dt>
+<dd><p>Distribute a concentration within a region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region</strong> (<a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a>) – Target region</p></li>
+<li><p><strong>conc</strong> (<em>float</em>) – Concentration in mol/L</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderSpecies.placeNumberInto">
+<span class="sig-name descname"><span class="pre">placeNumberInto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderSpecies.placeNumberInto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderSpecies.placeNumberInto" title="Link to this definition">#</a></dt>
+<dd><p>Distribute a number within a region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region</strong> (<a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a>) – Target region</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – number</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderSpecies.placeParticle">
+<span class="sig-name descname"><span class="pre">placeParticle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderSpecies.placeParticle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderSpecies.placeParticle" title="Link to this definition">#</a></dt>
+<dd><p>Place in a subvolume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x-coordinate</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y-coordinate</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – z-coordinate</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of particles</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderSpecies.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jLM.Types.BuilderSpecies.show" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.BuilderSpecies.transitionRate">
+<span class="sig-name descname"><span class="pre">transitionRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regionFrom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regionTo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#BuilderSpecies.transitionRate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.BuilderSpecies.transitionRate" title="Link to this definition">#</a></dt>
+<dd><p>Set the diffusion rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>regionFrom</strong> (<a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a>) – Source region</p></li>
+<li><p><strong>regionTo</strong> (<a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a>) – Destination region</p></li>
+<li><p><strong>rate</strong> (<a class="reference internal" href="#jLM.Types.DiffusionConst" title="jLM.Types.DiffusionConst"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffusionConst</span></code></a>) – Diffusion rate</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – If str given for rate and the DiffusionConst does not exist,
+create it with this value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.DiffusionConst">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">DiffusionConst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#DiffusionConst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.DiffusionConst" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="jLM.BaseTypes.html#jLM.BaseTypes.SimObj" title="jLM.BaseTypes.SimObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimObj</span></code></a></p>
+<p>Diffusion constant</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.RateConst">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">RateConst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#RateConst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.RateConst" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="jLM.BaseTypes.html#jLM.BaseTypes.SimObj" title="jLM.BaseTypes.SimObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimObj</span></code></a></p>
+<p>Reaction rate constant</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jLM.Types.RateConst.stochasticRate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stochasticRate</span></span><a class="headerlink" href="#jLM.Types.RateConst.stochasticRate" title="Link to this definition">#</a></dt>
+<dd><p>Return the stochastic rate constant <span class="math notranslate nohighlight">\(k_{det}*N_A*V_sv^{1-o}\)</span></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.Reaction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">Reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#Reaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.Reaction" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="jLM.BaseTypes.html#jLM.BaseTypes.SimObj" title="jLM.BaseTypes.SimObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimObj</span></code></a></p>
+<p>Chemical reaction</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.Region">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">Region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#Region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.Region" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="jLM.BaseTypes.html#jLM.BaseTypes.SimObj" title="jLM.BaseTypes.SimObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimObj</span></code></a></p>
+<p>Simulation compartment</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jLM.Types.Region.NAV">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NAV</span></span><a class="headerlink" href="#jLM.Types.Region.NAV" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jLM.Types.Region.volume">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#jLM.Types.Region.volume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.Species">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">Species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#Species"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.Species" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="jLM.BaseTypes.html#jLM.BaseTypes.SimObj" title="jLM.BaseTypes.SimObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimObj</span></code></a></p>
+<p>Chemical species</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.Species.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#Species.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.Species.show" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.TrajRegion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">TrajRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#TrajRegion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.TrajRegion" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jLM.Types.Region" title="jLM.Types.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a></p>
+<p>Compartment, in the context of trajectory analysis</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.TrajRegion.getNumberTrajectoryFromRegion">
+<span class="sig-name descname"><span class="pre">getNumberTrajectoryFromRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#TrajRegion.getNumberTrajectoryFromRegion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.TrajRegion.getNumberTrajectoryFromRegion" title="Link to this definition">#</a></dt>
+<dd><p>Get number trajectory a species spec for this region</p>
+<p>See <a class="reference internal" href="jLM.RDME.html#jLM.RDME.File.getNumberTrajectoryFromRegion" title="jLM.RDME.File.getNumberTrajectoryFromRegion"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getNumberTrajectoryFromRegion()</span></code></a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jLM.Types.TrajRegion.NAV">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NAV</span></span><a class="headerlink" href="#jLM.Types.TrajRegion.NAV" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jLM.Types.TrajRegion.volume">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#jLM.Types.TrajRegion.volume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jLM.Types.TrajSpecies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jLM.Types.</span></span><span class="sig-name descname"><span class="pre">TrajSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#TrajSpecies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.TrajSpecies" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jLM.Types.Species" title="jLM.Types.Species"><code class="xref py py-class docutils literal notranslate"><span class="pre">Species</span></code></a></p>
+<p>Chemical species, in the context of trajectory analysis</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.TrajSpecies.getLatticeHistogram">
+<span class="sig-name descname"><span class="pre">getLatticeHistogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#TrajSpecies.getLatticeHistogram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.TrajSpecies.getLatticeHistogram" title="Link to this definition">#</a></dt>
+<dd><p>Get lattice histogram for this species</p>
+<p>See <a class="reference internal" href="jLM.RDME.html#jLM.RDME.File.getLatticeHistogram" title="jLM.RDME.File.getLatticeHistogram"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getLatticeHistogram()</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.TrajSpecies.getLatticeTrajectory">
+<span class="sig-name descname"><span class="pre">getLatticeTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#TrajSpecies.getLatticeTrajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.TrajSpecies.getLatticeTrajectory" title="Link to this definition">#</a></dt>
+<dd><p>Get lattice trajectory for this species</p>
+<p>See <a class="reference internal" href="jLM.RDME.html#jLM.RDME.File.getLatticeTrajectory" title="jLM.RDME.File.getLatticeTrajectory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getLatticeTrajectory()</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.TrajSpecies.getNumberTrajectory">
+<span class="sig-name descname"><span class="pre">getNumberTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#TrajSpecies.getNumberTrajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.TrajSpecies.getNumberTrajectory" title="Link to this definition">#</a></dt>
+<dd><p>Get particle number trajectory for this species</p>
+<p>See <a class="reference internal" href="jLM.RDME.html#jLM.RDME.File.getNumberTrajectory" title="jLM.RDME.File.getNumberTrajectory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getNumberTrajectory()</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.TrajSpecies.getNumberTrajectoryFromRegion">
+<span class="sig-name descname"><span class="pre">getNumberTrajectoryFromRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/jLM/Types.html#TrajSpecies.getNumberTrajectoryFromRegion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jLM.Types.TrajSpecies.getNumberTrajectoryFromRegion" title="Link to this definition">#</a></dt>
+<dd><p>Get number trajectory for a region spec for this species</p>
+<p>See <a class="reference internal" href="jLM.RDME.html#jLM.RDME.File.getNumberTrajectoryFromRegion" title="jLM.RDME.File.getNumberTrajectoryFromRegion"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getNumberTrajectoryFromRegion()</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jLM.Types.TrajSpecies.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jLM.Types.TrajSpecies.show" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="jLM.Solvers.html" class="btn btn-neutral float-left" title="jLM.Solvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="jLM.BaseTypes.html" class="btn btn-neutral float-right" title="jLM.BaseTypes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2025, Luthey-Schulten Lab.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="jLM.Solvers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jLM.Solvers</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="jLM.BaseTypes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jLM.BaseTypes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderReaction"><code class="docutils literal notranslate"><span class="pre">BuilderReaction</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderReaction.assignToRegion"><code class="docutils literal notranslate"><span class="pre">BuilderReaction.assignToRegion()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion"><code class="docutils literal notranslate"><span class="pre">BuilderRegion</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.addReaction"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.addReaction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.diffusionRate"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.diffusionRate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.placeSpeciesConcentration"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.placeSpeciesConcentration()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.placeSpeciesNumber"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.placeSpeciesNumber()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.transitionRateIn"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.transitionRateIn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.transitionRateOut"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.transitionRateOut()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.NAV"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.NAV</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderRegion.volume"><code class="docutils literal notranslate"><span class="pre">BuilderRegion.volume</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderSpecies"><code class="docutils literal notranslate"><span class="pre">BuilderSpecies</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderSpecies.diffusionRate"><code class="docutils literal notranslate"><span class="pre">BuilderSpecies.diffusionRate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderSpecies.placeConcentrationInto"><code class="docutils literal notranslate"><span class="pre">BuilderSpecies.placeConcentrationInto()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderSpecies.placeNumberInto"><code class="docutils literal notranslate"><span class="pre">BuilderSpecies.placeNumberInto()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderSpecies.placeParticle"><code class="docutils literal notranslate"><span class="pre">BuilderSpecies.placeParticle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderSpecies.show"><code class="docutils literal notranslate"><span class="pre">BuilderSpecies.show()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.BuilderSpecies.transitionRate"><code class="docutils literal notranslate"><span class="pre">BuilderSpecies.transitionRate()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.DiffusionConst"><code class="docutils literal notranslate"><span class="pre">DiffusionConst</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.RateConst"><code class="docutils literal notranslate"><span class="pre">RateConst</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.RateConst.stochasticRate"><code class="docutils literal notranslate"><span class="pre">RateConst.stochasticRate</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.Reaction"><code class="docutils literal notranslate"><span class="pre">Reaction</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.Region"><code class="docutils literal notranslate"><span class="pre">Region</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.Region.NAV"><code class="docutils literal notranslate"><span class="pre">Region.NAV</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.Region.volume"><code class="docutils literal notranslate"><span class="pre">Region.volume</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.Species"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.Species.show"><code class="docutils literal notranslate"><span class="pre">Species.show()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajRegion"><code class="docutils literal notranslate"><span class="pre">TrajRegion</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajRegion.getNumberTrajectoryFromRegion"><code class="docutils literal notranslate"><span class="pre">TrajRegion.getNumberTrajectoryFromRegion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajRegion.NAV"><code class="docutils literal notranslate"><span class="pre">TrajRegion.NAV</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajRegion.volume"><code class="docutils literal notranslate"><span class="pre">TrajRegion.volume</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajSpecies"><code class="docutils literal notranslate"><span class="pre">TrajSpecies</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajSpecies.getLatticeHistogram"><code class="docutils literal notranslate"><span class="pre">TrajSpecies.getLatticeHistogram()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajSpecies.getLatticeTrajectory"><code class="docutils literal notranslate"><span class="pre">TrajSpecies.getLatticeTrajectory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajSpecies.getNumberTrajectory"><code class="docutils literal notranslate"><span class="pre">TrajSpecies.getNumberTrajectory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajSpecies.getNumberTrajectoryFromRegion"><code class="docutils literal notranslate"><span class="pre">TrajSpecies.getNumberTrajectoryFromRegion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jLM.Types.TrajSpecies.show"><code class="docutils literal notranslate"><span class="pre">TrajSpecies.show()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/jLM.Types.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Luthey-Schulten Lab.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

@@ -4,6 +4,17 @@
 .. automodule:: pyLM.RDME
 
    
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      getReactionString
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+      visualizeRDMEInitialConditions
+      writeTable
+   
    .. rubric:: Classes
 
    .. autosummary::
@@ -11,4 +22,5 @@
       IntRDMESimulation
       RDMERegion
       RDMESimulation
+      tqdm
    

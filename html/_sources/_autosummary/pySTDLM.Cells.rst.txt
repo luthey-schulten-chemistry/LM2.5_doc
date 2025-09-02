@@ -4,6 +4,14 @@
 .. automodule:: pySTDLM.Cells
 
    
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      setLMLogConsole
+      setLMLogFile
+      setLMLoggerLevel
+   
    .. rubric:: Classes
 
    .. autosummary::
