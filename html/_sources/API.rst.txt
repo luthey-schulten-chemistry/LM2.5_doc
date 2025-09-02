@@ -3,9 +3,5 @@ Lattice Microbes API Reference
 
 .. include:: jLM.rst
 .. include:: LM.rst
-include:: pyLM.rst
-
-include:: pySTDLM.rst
-
 
 
