@@ -1,135 +1,37 @@
 Introduction
 ============
 
-Overview of Lattice Microbes and jLM
-------------------------------------
+Studying cellular processes, which show inherently noisy non-deterministic
+behavior, with single molecule resolution on timescales of biological relevance
+such as the lifetime of a cell, requires considerable computational effort
+[EARN2018]_.  Lattice Microbes [ROBE2009]_ [ROBE2013]_ is software developed to
+sample realizations of the spatially homogeneous and heterogeneous stochastic
+Master equations, with thousands of reactions among hundreds of molecular
+species.  The software uses graphics processing units (GPUs) to exploit the
+natural parallelism afforded by the Master equations to access timescales
+orders-of-magnitude larger than other particle- and grid-based software for
+sampling stochastic cellular processes.  While Lattice Microbes was originally
+designed for simulating single *E. coli* cells on one GPU, the desire to
+simulate cellular consortia and larger species like yeast, drove the
+development of a new version of Lattice Microbes that utilizes multiple GPUs to
+share the work [HALL2014]_. In addition to larger simulations, multiple GPUs
+allow small simulations to be completed more quickly.
 
-Lattice Microbes (LM) is a GPU-accelerated stochastic simulation platform. The 
-latest published version can be found at `Lattice Microbes on Luthey-Schulten 
-Lab GitHub <https://github.com/Luthey-Schulten-Lab/Lattice_Microbes>`_.
+Capabilities
+------------
 
-LM is designed to simulate stochastic processes in biological cells using the 
-spatially homogeneous Chemical Master Equation (CME) and heterogeneous Reaction 
-Diffusion Master Equation (RDME). With "hooking", one can also incorporate custom 
-events, including metabolic reactions simulated with Ordinary Differential 
-Equation (ODE), and chromosome dynamics with Brownian Dynamics (BD).
+Simulation modes
+~~~~~~~~~~~~~~~~
 
-jLM is a Python-based Problem Solving Environment (PSE) designed to integrate with 
-Jupyter Notebooks. It was developed in 2018 as a successor to pyLM (from 2013, 
-*now outdated*). jLM sits on top of a SWIG interface that allows the C++ backend 
-to be accessed from the Python terminal. Using jLM allows users to set up, run, 
-and post-process simulations within a single script, while the calculations are 
-still executed in C++. The jLM application programming interface (API) can be found 
-at `Lattice Microbes API Reference <https://forxhunter.github.io/LM2.5_doc/API.html>`_.
-
-.. figure:: pictures/jLM_Schematic.png
-   :width: 700px
-   :height: 400px
-   :align: center
-
-   Schematic diagram of the LM architecture
-
-A general workflow of jLM within LM is shown below. jLM supports both CME and RDME 
-simulations. Designed to work with Jupyter Notebooks, jLM offers a suite of functions 
-to visualize RDME simulation elements such as spatial regions, species, and reactions 
-during setup. In *hookSimulation()*, various algorithms can be incorporated into 
-CME or RDME simulations to implement hybrid algorithms.
-
-.. figure:: pictures/jLM_Flowchart.png
-   :width: 700px
-   :height: 700px
-   :align: center
-
-   Workflow of jLM
-
-Stochastic Modeling of Cellular Processes
------------------------------------------
-
-**The discreteness and stochasticity of chemical kinetics play a role when the number 
-of reactants is significantly low**. For the species in genetic information processes, 
-most mRNAs have a number of 1 or 2, which is significantly smaller than ATP of counts 
-:math:`10^6`. Based on the initial volume of JCVI-syn3A (200 nm radius, 0.035 fL, 1 particle 
-count equals 50 nM), mRNA concentrations are 50 or 100 nM, and ATP is roughly 5 mM. Therefore, 
-it is necessary to simulate the kinetics in genetic information processes (GIP) and 
-protein complex assembly with stochastic CME or RDME and metabolism with deterministic ODE.
-
-CME and RDME are algorithms for simulating homogeneous and heterogeneous stochastic 
-chemical reaction kinetics, respectively. Ordinary Differential Equation (ODE) is 
-suitable for macroscopic and homogeneous systems, such as metabolic networks in minimal 
-cells. Brownian Dynamics (BD) is used for modeling the dynamics of chromosome polymers 
-in a continuum.
-
-.. figure:: pictures/algorithms.png
-   :width: 700px
-   :height: 700px
-   :align: center
-
-   Stochastic/Deterministic and Homogenous/Heterogeneous Simulation Algorithms
-
-Chemical Master Equation (CME)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In CME, the system state :math:`\mathbf{x}` is a vector representing the count of all 
-species. The transition between states occurs via the firing of a single chemical reaction 
-:math:`r` with stoichiometry :math:`\mathbf{S_r}`, out of all reactions :math:`R`. The 
-probability that reaction :math:`r` fires in the next time step :math:`dt` is :math:`a_r(\mathbf{x})dt`, 
-where :math:`a_r(\mathbf{x})` is the so-called *propensity* of reaction :math:`r` under 
-the system state :math:`\mathbf{x}`.
-
-Propensities are calculated as shown in :numref:`fig-unit-conversion`, where macroscopic 
-ODE rate constants are first converted into stochastic rate constants, and then used to 
-calculate the propensity via the law of mass action. Here, :math:`V` is the system volume, 
-:math:`N_A` is Avogadro’s number, and :math:`n_A`, :math:`n_B` are the absolute counts 
-of particles A and B.
+Lattice Microbes can be used to simulate trajectories following either a
+chemical master equation (CME),
 
 .. math::
     \frac{\mathrm{d}P(\mathbf{x},t)}{\mathrm{d}t} 
     = \sum_{r}^{R} [-a_r({{\mathbf{x}}}) P({{\mathbf{x}}},t) 
-    + a_r({{\mathbf{x}}}_\nu-\mathbf{S_r}) P({{\mathbf{x}}}-\mathbf{S_r},t)]
+    + a_r({{\mathbf{x}}}_\nu-\mathbf{S_r}) P({{\mathbf{x}}}-\mathbf{S_r},t)],
 
-.. _fig-unit-conversion:
-
-.. figure:: pictures/unit_conversion.png
-   :width: 600px
-   :height: 100px
-   :align: center
-
-   Zeroth, First and Second Order reactions in ODE and CME
-
-Thus, the Chemical Master Equation states that the derivative of the probability 
-:math:`P(\mathbf{x},t)` of being in state :math:`\mathbf{x}` with respect to time 
-:math:`t` is the sum of all probability inflows (transitions into :math:`\mathbf{x}`) 
-minus the outflows (transitions out of :math:`\mathbf{x}`):
-
- - Inflow: :math:`\sum_{r}^{R} a_r(\mathbf{x}-\mathbf{S_r}) P(\mathbf{x}-\mathbf{S_r},t)`
-
- - Outflow: :math:`\sum_{r}^{R} a_r(\mathbf{x}) P(\mathbf{x},t)`
-
-As with ODEs, CMEs for complex systems are generally not analytically solvable. 
-Therefore, the Gillespie Algorithm—also known as the Stochastic Simulation Algorithm 
-(SSA)—is commonly used to sample many trajectories that capture the system’s stochastic 
-evolution. Unlike numerical algorithms for ODEs, such as the well-known *LSODA*, 
-the Gillespie Algorithm determines both the time until the next reaction and which 
-reaction occurs by sampling **from random numbers**. You are encouraged to refer 
-to `Wiki Gillespie <https://en.wikipedia.org/wiki/Gillespie_algorithm>`_ and `Stochastic 
-Simulation of Chemical Kinetics <https://labs.engineering.asu.edu/acs/wp-content/uploads/sites/33/2016/08/GillespieOverview2007.pdf>`_ 
-by Daniel T. Gillespie to know more details.
-
-.. figure:: pictures/Gillespie.png
-   :width: 700px
-   :height: 400px
-   :align: center
-
-   Gillespie Algorithm
-
-Reaction Diffusion Master Equation (RDME)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The RDME is used to simulate spatially heterogeneous systems by dividing the volume 
-into subvolumes, usually a 3D cubic lattice. Within each lattice site, reactions are 
-assumed to be well-stirred and are governed by individual CMEs (first summation below). 
-The second summation accounts for diffusion by describing the flow of probability 
-between neighboring lattice sites.
+or a reaction-diffusion master equation (RDME),
 
 .. math::
     \frac{\mathrm{d} P(\mathbf{x},t)}{\mathrm{d}t} 
@@ -139,3 +41,24 @@ between neighboring lattice sites.
     [-d^{\alpha} x_{\nu}^{\alpha} P({{\mathbf{x}}},t) + 
     d^{\alpha} (x_{\nu+\xi}^{\alpha}+1) 
     P({{\mathbf{x}}}+1_{\nu+\xi}^{\alpha}-1_{\nu}^{\alpha},t)]
+
+using a variety of methods.  Both CME and RDME simulations support a number of
+different reaction types including zeroth, first, second, and second order self
+reactions. Additionally, the Python interfaces to LM allow for interactive
+construction of the simulation geometry in RDME simulations.
+
+Through the use of custom solvers, different simulation methods can be combined
+to simulate cellular processes spanning different length and concentration scales.
+
+Execution modes
+~~~~~~~~~~~~~~~
+
+TODO
+
+Command line
+
+Python: pyLM
+
+Python: jLM
+
+

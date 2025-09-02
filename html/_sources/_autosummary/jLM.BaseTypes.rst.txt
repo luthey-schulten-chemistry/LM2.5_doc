@@ -4,17 +4,10 @@
 .. automodule:: jLM.BaseTypes
 
    
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      abstractmethod
-   
    .. rubric:: Classes
 
    .. autosummary::
    
-      ABCMeta
       Namespace
       SimObj
       SimObjs

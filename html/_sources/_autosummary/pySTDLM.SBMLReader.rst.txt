@@ -1,0 +1,17 @@
+﻿pySTDLM.SBMLReader
+==================
+
+.. automodule:: pySTDLM.SBMLReader
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      getRate
+      importSBMLModel
+      importSBMLModelL3V1
+      readSBMLtoCME
+      readSBMLtoRDME
+      readSBMLtoRegion
+   

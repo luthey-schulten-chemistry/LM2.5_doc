@@ -1,0 +1,17 @@
+﻿pySTDLM.StandardCells
+=====================
+
+.. automodule:: pySTDLM.StandardCells
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      buildDividingEColiCell
+      buildEColiCell
+      buildFilamentousEColiCell
+      buildSphericalEColiCell
+      packFastGrowingEcoli
+      packSlowGrowingEcoli
+   

@@ -1,0 +1,13 @@
+﻿pySTDLM.CmdUtils
+================
+
+.. automodule:: pySTDLM.CmdUtils
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      estimateGPUMemory
+      peekFile
+   
