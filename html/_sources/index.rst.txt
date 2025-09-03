@@ -1,12 +1,29 @@
 Lattice Microbes
 ================
-Studying cellular processes at single-molecule resolution on the timescale of an entire cell cycle requires immense computational resources due to the inherently noisy and non-deterministic nature of the underlying biochemistry [EARN2018]. The Lattice Microbes software package [ROBE2009] [ROBE2013]_ was developed to address this challenge by sampling realizations of the stochastic chemical Master equation, both in spatially homogeneous and heterogeneous contexts, across thousands of reactions and hundreds of molecular species. By harnessing graphics processing units (GPUs), Lattice Microbes exploits the natural parallelism of the Master equation, enabling simulations that extend to biologically relevant timescales far beyond those accessible with other particle- or grid-based approaches.
 
-Originally designed to simulate the life cycle of a single E. coli cell on a single GPU, Lattice Microbes was subsequently expanded to support multi-GPU execution, thereby accommodating larger organisms such as yeast and accelerating ensemble simulations [HALL2014]. These computational advances have now culminated in a landmark achievement: the first full whole-cell dynamical models of the minimal bacterium JCVI-syn3A. In these studies, fundamental cellular behaviors emerge directly from multi-scale simulations of a living minimal cell [THORNBURG2022]. By integrating cryo-electron tomography, genome-scale metabolic networks, and stochastic–deterministic hybrid methods, the model recapitulates transcription–translation coupling, multiple DNA replication events, genome-wide mRNA half-lives, and experimentally observed doubling behavior.
+Lattice Microbes is a high-performance simulation package for modeling stochastic biochemical kinetics in living cells. By leveraging GPUs, LM accelerates sampling of the chemical master equation (CME) and the reaction–diffusion master equation (RDME), enabling studies that range from well-mixed reaction networks to spatially resolved cellular environments. LM supports thousands of reactions among hundreds of species, integrates with Python for interactive model construction, and allows hybrid approaches to connect processes across length and concentration scales. Researchers use LM to explore how molecular interactions and spatial organization give rise to emergent cellular behaviors in both prokaryotic and eukaryotic systems.
 
-More recently, this framework has been extended to achieve the first in silico simulation of an entire 100-minute cell cycle in four dimensions, capturing genetic information processes, metabolism, growth, and division, with each replicate cell exhibiting unique stochastic trajectories [THORNBURG2025a]. Furthermore, the explicit incorporation of 21 essential macromolecular complexes—including RNA polymerase, ribosome, degradosome, ABC transporters, and ATP synthase—provides mechanistic insight into how assembly kinetics, metabolic constraints, and spatial organization shape cellular physiology [FU2025].
+Lattice Microbes can simulate trajectories following either a chemical master equation (CME),
 
-Taken together, these advances demonstrate how the combination of high-performance GPU computing and data-integrated stochastic modeling in Lattice Microbes has transformed our ability to predict emergent behaviors in living systems—from the simplest synthetic cells to the complex regulation of eukaryotic networks [WU2025]_.
+.. math::
+\frac{\mathrm{d}P(\mathbf{x},t)}{\mathrm{d}t}
+= \sum_{r}^{R} \Big[-a_r(\mathbf{x}) P(\mathbf{x},t)
++ a_r(\mathbf{x}-\mathbf{S_r}) P(\mathbf{x}-\mathbf{S_r},t)\Big],
+
+or a reaction–diffusion master equation (RDME),
+
+.. math::
+\frac{\mathrm{d} P(\mathbf{x},t)}{\mathrm{d}t}
+=& \sum_{\nu}^{V}\sum_{r}^{R} \Big[-a_r(\mathbf{x}\nu) P(\mathbf{x}\nu,t)
++ a_r(\mathbf{x}\nu-\mathbf{S_r}) P(\mathbf{x}\nu-\mathbf{S_r},t)\Big] \
+&+ \sum_{\nu}^{V}\sum_{\xi}^{\pm\hat{i},\hat{j},\hat{k}}\sum_{\alpha}^{N}
+\Big[-d^{\alpha} x_{\nu}^{\alpha} P(\mathbf{x},t)
++ d^{\alpha} (x_{\nu+\xi}^{\alpha}+1)
+P(\mathbf{x}+1_{\nu+\xi}^{\alpha}-1_{\nu}^{\alpha},t)\Big],
+
+using a variety of solvers. Both CME and RDME simulations support multiple reaction types (zeroth, first, and second order), and the Python interface enables interactive construction of geometries for spatial simulations.
+
+
 
 For help and general discussion please submit your problems in the github repository issues section.
 `issues <https://github.com/Luthey-Schulten-Lab/Lattice_Microbes/issues>`_.
@@ -15,7 +32,7 @@ For help and general discussion please submit your problems in the github reposi
    :maxdepth: 2
    :caption: Contents:
 
-   Introduction
+   Progress
    Installation
    jLM Examples
    Visualization

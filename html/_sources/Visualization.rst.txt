@@ -1,4 +1,4 @@
-Visualization using VMD
+Visualization
 ======================
 
 `Visual Molecular Dynamics <http://www.ks.uiuc.edu/Research/vmd/>`_ can be used
