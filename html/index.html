@@ -326,19 +326,18 @@
 <p>Lattice Microbes is a high-performance simulation package for modeling stochastic biochemical kinetics in living cells. By leveraging GPUs, LM accelerates sampling of the chemical master equation (CME) and the reaction–diffusion master equation (RDME), enabling studies that range from well-mixed reaction networks to spatially resolved cellular environments. LM supports thousands of reactions among hundreds of species, integrates with Python for interactive model construction, and allows hybrid approaches to connect processes across length and concentration scales. Researchers use LM to explore how molecular interactions and spatial organization give rise to emergent cellular behaviors in both prokaryotic and eukaryotic systems.</p>
 <p>Lattice Microbes can simulate trajectories following either a chemical master equation (CME),</p>
 <div class="math notranslate nohighlight">
-\[\]</div>
-<p>frac{mathrm{d}P(mathbf{x},t)}{mathrm{d}t}
-= sum_{r}^{R} Big[-a_r(mathbf{x}) P(mathbf{x},t)
-+ a_r(mathbf{x}-mathbf{S_r}) P(mathbf{x}-mathbf{S_r},t)Big],</p>
+\[\frac{\mathrm{d}P(\mathbf{x},t)}{\mathrm{d}t}
+= \sum_{r}^{R} \Big[-a_r(\mathbf{x}) P(\mathbf{x},t)
++ a_r(\mathbf{x}-\mathbf{S_r}) P(\mathbf{x}-\mathbf{S_r},t)\Big],\]</div>
 <p>or a reaction–diffusion master equation (RDME),</p>
 <div class="math notranslate nohighlight">
-\[\]</div>
-<p>frac{mathrm{d} P(mathbf{x},t)}{mathrm{d}t}
-=&amp; sum_{nu}^{V}sum_{r}^{R} Big[-a_r(mathbf{x}nu) P(mathbf{x}nu,t)
-+ a_r(mathbf{x}nu-mathbf{S_r}) P(mathbf{x}nu-mathbf{S_r},t)Big] &amp;+ sum_{nu}^{V}sum_{xi}^{pmhat{i},hat{j},hat{k}}sum_{alpha}^{N}
-Big[-d^{alpha} x_{nu}^{alpha} P(mathbf{x},t)
-+ d^{alpha} (x_{nu+xi}^{alpha}+1)
-P(mathbf{x}+1_{nu+xi}^{alpha}-1_{nu}^{alpha},t)Big],</p>
+\[\begin{split}\frac{\mathrm{d} P(\mathbf{x},t)}{\mathrm{d}t}
+&amp;= \sum_{\nu}^{V}\sum_{r}^{R} \Big[-a_r(\mathbf{x}_\nu) P(\mathbf{x}_\nu,t)
++ a_r(\mathbf{x}_\nu-\mathbf{S_r}) P(\mathbf{x}_\nu-\mathbf{S_r},t)\Big] \\
+&amp;\quad+ \sum_{\nu}^{V}\sum_{\xi}^{\pm\hat{i},\pm\hat{j},\pm\hat{k}}\sum_{\alpha}^{N}
+\Big[-d^{\alpha} x_{\nu}^{\alpha} P(\mathbf{x},t)
++ d^{\alpha} (x_{\nu+\xi}^{\alpha}+1)
+P(\mathbf{x}+1_{\nu+\xi}^{\alpha}-1_{\nu}^{\alpha},t)\Big],\end{split}\]</div>
 <p>using a variety of solvers. Both CME and RDME simulations support multiple reaction types (zeroth, first, and second order), and the Python interface enables interactive construction of geometries for spatial simulations.</p>
 <p>For help and general discussion please submit your problems in the github repository issues section.
 <a class="reference external" href="https://github.com/Luthey-Schulten-Lab/Lattice_Microbes/issues">issues</a>.</p>
