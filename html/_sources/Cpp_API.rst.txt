@@ -151,14 +151,22 @@ Threading Classes
 Utility Classes
 ---------------
 
-.. doxygenclass:: lm::io::SimulationFile
+.. doxygenclass:: lm::io::hdf5::SimulationFile
    :project: LatticeMicrobes
    :members:
+   :outline:
+   :undoc-members:
+   :show-inheritance:
 
-.. doxygenclass:: lm::core::Timer
+.. doxygenclass:: Timer
    :project: LatticeMicrobes
    :members:
+   :outline:
+   :undoc-members:
 
-.. doxygenclass:: lm::core::SignalHandler
+.. doxygenclass:: lm::main::SignalHandler
    :project: LatticeMicrobes
    :members:
+   :outline:
+   :undoc-members:
+   :show-inheritance:
