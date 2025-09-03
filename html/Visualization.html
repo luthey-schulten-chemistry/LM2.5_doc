@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visualization &#8212; Lattice Microbes 2.5_dev documentation</title>
+    <title>Visualization using VMD &#8212; Lattice Microbes 2.5_dev documentation</title>
   
   
   
@@ -41,7 +41,6 @@
     <script src="_static/documentation_options.js?v=5d3ef798"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Visualization';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -148,7 +147,7 @@
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
-    Visualization
+    Visualization using VMD
   </a>
 </li>
 
@@ -264,7 +263,7 @@
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
-    Visualization
+    Visualization using VMD
   </a>
 </li>
 
@@ -336,7 +335,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Visualization</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Visualization using VMD</span></li>
   </ul>
 </nav>
 </div>
@@ -353,43 +352,59 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="visualization">
-<h1>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h1>
+  <section id="visualization-using-vmd">
+<h1>Visualization using VMD<a class="headerlink" href="#visualization-using-vmd" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="http://www.ks.uiuc.edu/Research/vmd/">Visual Molecular Dynamics</a> can be used
 to visualize RDME simulation output. If LM was built and installed with VMD
 support, the required molfile plugin to load LM trajectories will be installed
 automatically. VMD has excellent <a class="reference external" href="http://www.ks.uiuc.edu/Research/vmd/current/docs.html">documentation</a>,  so only LM specific
 features of the plugin will be discussed here.</p>
-<p>After loading a trajectory, both the site type lattice and the RDME particles
-will be displayed as points. Since this will be cluttered and hard to
-interpret, the <code class="docutils literal notranslate"><span class="pre">atomselect</span></code> syntax used in the Representations dialog can be
-used to select which components of the simulation to display. The lattice
-geometry can be visualized using the selector <code class="docutils literal notranslate"><span class="pre">segname</span> <span class="pre">SITE</span></code>, where as the
-chemical particles can be visualized using <code class="docutils literal notranslate"><span class="pre">segname</span> <span class="pre">RDME</span></code>. For example, for a
-cell <span class="math notranslate nohighlight">\(1\;\mu\mathrm{m}\)</span> thick with its  longest dimension aligned with
-the <span class="math notranslate nohighlight">\(z\)</span> axis, the <code class="docutils literal notranslate"><span class="pre">atomselect</span></code> syntax to show only the bottom part of
-the cell is</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>segname SITE and name membrane and y &lt; 5000
+<p>As noted in the Installation section, LM needs to be built, installed and run inside
+a conda environment, which is created by a .yml file in Lattice-Microbes/conda_envs.
+Suppose we’ve used Lattice-Microbes/conda_envs/lm_precomp.yml to create a conda environment
+py37_lm. We can then type the two lines below to launch VMD:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>py37_lm
+vmd
 </pre></div>
 </div>
-<p>where the name of the membrane site type is <code class="docutils literal notranslate"><span class="pre">membrane</span></code>, and we display only
-the bottom <span class="math notranslate nohighlight">\(500\;\mathrm{nm}\)</span> of the  cell. Note that units in VMD are in
-Ångstroms, not nanometers.</p>
-<p>Consider the system</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{A} + \mathrm{B} &amp;\to \mathrm{AB}\\
-\mathrm{A} + \mathrm{C} &amp;\to \mathrm{AC}\end{split}\]</div>
-<p>To view only the dimers in the simulation volume, one could write</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>segname RDME and (name AB or name AC)
-</pre></div>
-</div>
-<p>or instead use a regular expression</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>segname RDME and name &quot;A[BC]&quot;
-</pre></div>
-</div>
-<p>By combining multiple representations with different <code class="docutils literal notranslate"><span class="pre">atomselect</span></code> statements
-and drawing methods, it is possible to quickly create interactively
-visualizations in VMD which allow the dynamics of interest to be investigated.</p>
+<p>Upon a successful launch, we should be able to get the windows in the picture below.
+The window on the left is the <strong>display window</strong>, where our simulation trajectory visualization
+eventually shows up. The window on the bottom right is the <strong>control window</strong>, where
+we can load trajectory files and adjust visualization properties.</p>
+<a class="reference internal image-reference" href="_images/vmd_launch.png"><img alt="_images/vmd_launch.png" class="align-center" src="_images/vmd_launch.png" style="width: 700px; height: 400px;" />
+</a>
+<p>Assume we have an RDME simulation output file <em>gpu1byte.lm</em>. To load it, we can click the
+<em>File</em> dropdown and select <em>New Molecule…</em> in the <strong>control window</strong>, as shown below.</p>
+<a class="reference internal image-reference" href="_images/load_files.png"><img alt="_images/load_files.png" class="align-center" src="_images/load_files.png" style="width: 700px; height: 400px;" />
+</a>
+<p>A <strong>Molecule File Browser</strong> window shown below will pop up, and we should select <em>Browse…</em>.
+In the pop-up window on the right, we can then navigate to <em>gpu1byte.lm</em> and click <em>OK</em>.
+Finally, we should click <em>Load</em> in the <strong>Molecule File Browser</strong> window on the left.</p>
+<a class="reference internal image-reference" href="_images/browse.png"><img alt="_images/browse.png" class="align-center" src="_images/browse.png" style="width: 700px; height: 400px;" />
+</a>
+<p>Upon a successful load, we should be able to see the cell in the <strong>display window</strong> shown below.</p>
+<a class="reference internal image-reference" href="_images/load_success.png"><img alt="_images/load_success.png" class="align-center" src="_images/load_success.png" style="width: 700px; height: 700px;" />
+</a>
+<p>To adjust visualization parameters, we can select <em>Representations…</em> in the <em>Graphics</em> dropdown
+of the <strong>control window</strong>.</p>
+<a class="reference internal image-reference" href="_images/representation.png"><img alt="_images/representation.png" class="align-center" src="_images/representation.png" style="width: 700px; height: 400px;" />
+</a>
+<p>In the pop-up window, we can first go to the <em>Selections</em> tab, select the type of molecules we
+want to see from the <em>Singlewords</em> menu, and then click <em>Apply</em>.</p>
+<a class="reference internal image-reference" href="_images/selection.png"><img alt="_images/selection.png" class="align-center" src="_images/selection.png" style="width: 300px; height: 700px;" />
+</a>
+<p>We can then go to the <em>Draw style</em> tab, select our desired <em>Coloring Method</em> and <em>Drawing Method</em>,
+and click <em>Apply</em> at the bottom.</p>
+<a class="reference internal image-reference" href="_images/drawing.png"><img alt="_images/drawing.png" class="align-center" src="_images/drawing.png" style="width: 300px; height: 700px;" />
+</a>
+<p>We can also adjust the orientations of the axes in the <strong>display window</strong>, by going to <em>Axes</em>
+in the <em>Display</em> dropdown of the <strong>control window</strong>.</p>
+<a class="reference internal image-reference" href="_images/axis.png"><img alt="_images/axis.png" class="align-center" src="_images/axis.png" style="width: 700px; height: 400px;" />
+</a>
+<p>If we want to change the location of axes and thus choose <em>UpperLeft</em>, the <strong>display window</strong> will
+look like below:</p>
+<a class="reference internal image-reference" href="_images/different_location.png"><img alt="_images/different_location.png" class="align-center" src="_images/different_location.png" style="width: 700px; height: 700px;" />
+</a>
 </section>
 
 

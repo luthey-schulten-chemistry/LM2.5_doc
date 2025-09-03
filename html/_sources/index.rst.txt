@@ -1,17 +1,15 @@
 Lattice Microbes
 ================
+Studying cellular processes at single-molecule resolution on the timescale of an entire cell cycle requires immense computational resources due to the inherently noisy and non-deterministic nature of the underlying biochemistry [EARN2018]. The Lattice Microbes software package [ROBE2009] [ROBE2013]_ was developed to address this challenge by sampling realizations of the stochastic chemical Master equation, both in spatially homogeneous and heterogeneous contexts, across thousands of reactions and hundreds of molecular species. By harnessing graphics processing units (GPUs), Lattice Microbes exploits the natural parallelism of the Master equation, enabling simulations that extend to biologically relevant timescales far beyond those accessible with other particle- or grid-based approaches.
 
-`Lattice Microbes <http://www.scs.illinois.edu/schulten/lm>`_ is a software
-package for efficiently sampling trajectories from the chemical and
-reaction-diffusion master equations (CME/RDME) on high performance computing
-(HPC) infrastructure using both exact and approximate methods [ROBE2013]_,
-[HALL2014]_. pyLM is a problem solving environment written in Python that
-provides an easy to use and highly customizable simulation construction tools
-for complex biological scenarios [PETE2013]_. jLM is an alternative Python
-interface to Lattice Microbes designed to integrate with Jupyter notebooks.
+Originally designed to simulate the life cycle of a single E. coli cell on a single GPU, Lattice Microbes was subsequently expanded to support multi-GPU execution, thereby accommodating larger organisms such as yeast and accelerating ensemble simulations [HALL2014]. These computational advances have now culminated in a landmark achievement: the first full whole-cell dynamical models of the minimal bacterium JCVI-syn3A. In these studies, fundamental cellular behaviors emerge directly from multi-scale simulations of a living minimal cell [THORNBURG2022]. By integrating cryo-electron tomography, genome-scale metabolic networks, and stochastic–deterministic hybrid methods, the model recapitulates transcription–translation coupling, multiple DNA replication events, genome-wide mRNA half-lives, and experimentally observed doubling behavior.
 
-For help and general discussion please sign up for the Lattice Microbes
-`mailing list <https://lists.illinois.edu/lists/info/latticemicrobes-users>`_.
+More recently, this framework has been extended to achieve the first in silico simulation of an entire 100-minute cell cycle in four dimensions, capturing genetic information processes, metabolism, growth, and division, with each replicate cell exhibiting unique stochastic trajectories [THORNBURG2025a]. Furthermore, the explicit incorporation of 21 essential macromolecular complexes—including RNA polymerase, ribosome, degradosome, ABC transporters, and ATP synthase—provides mechanistic insight into how assembly kinetics, metabolic constraints, and spatial organization shape cellular physiology [FU2025].
+
+Taken together, these advances demonstrate how the combination of high-performance GPU computing and data-integrated stochastic modeling in Lattice Microbes has transformed our ability to predict emergent behaviors in living systems—from the simplest synthetic cells to the complex regulation of eukaryotic networks [WU2025]_.
+
+For help and general discussion please submit your problems in the github repository issues section.
+`issues <https://github.com/Luthey-Schulten-Lab/Lattice_Microbes/issues>`_.
 
 .. toctree::
    :maxdepth: 2

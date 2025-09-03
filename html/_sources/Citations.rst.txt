@@ -26,3 +26,28 @@ Citations
    "Simulation of reaction diffusion processes over biologically-relevant size and
    time scales using multi-GPU workstations." *Parallel Comput.* 40:86-99, 2014.
    `doi:10.1016/j.parco.2014.03.009 <https://doi.org/10.1016/j.parco.2014.03.009>`_
+
+.. [THORNBURG2022] Z.R. Thornburg, D.M. Bianchi, T.A. Brier, B.R. Gilbert,
+   T.M. Earnest, M.C.R. Melo, N. Safronova, J.P. Sáenz, A.T. Cook,
+   K.S. Wise, C.A. Hutchison III, H.O. Smith, J.I. Glass, and
+   Z. Luthey-Schulten. "Fundamental behaviors emerge from simulations of a living
+   minimal cell." *Cell*, 185(2):345-360.e28, 2022.
+   `doi:10.1016/j.cell.2021.12.025 <https://doi.org/10.1016/j.cell.2021.12.025>`_
+
+.. [THORNBURG2025a] Z.R. Thornburg, A. Maytin, J. Kwon, T.A. Brier,
+   B.R. Gilbert, E. Fu, Y.-L. Gao, J. Quenneville, T. Wu, H. Li,
+   T. Long, W. Pezeshkian, L. Sun, J.I. Glass, A. Mehta, T. Ha,
+   and Z. Luthey-Schulten. "Bringing the Genetically Minimal Cell to Life on a
+   Computer in 4D." *bioRxiv*, 2025.
+   `doi:10.1101/2025.06.10.658899 <https://doi.org/10.1101/2025.06.10.658899>`_
+
+.. [FU2025] E. Fu, Z.R. Thornburg, T.A. Brier, R. Wei, B. Yuan,
+   B.R. Gilbert, S. Wang, and Z. Luthey-Schulten. "Assembly of Macromolecular
+   Complexes in the Whole-Cell Model of a Minimal Cell." *bioRxiv*, 2025.
+   `doi:10.1101/2025.07.02.662439 <https://doi.org/10.1101/2025.07.02.662439>`_
+
+.. [WU2025] T. Wu, M.-C. Spindler, E. Earnest, A.T. Apsley, H. Li,
+   Z.R. Thornburg, J. Mahamid, and Z. Luthey-Schulten. "Spatial Heterogeneity Alters
+   the Dynamics of the Yeast Galactose Switch: Insights from 4D RDME–ODE Hybrid
+   Simulations." *bioRxiv*, 2025.
+   (Preprint)
