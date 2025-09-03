@@ -1,0 +1,164 @@
+C++ API
+=================
+
+This section provides direct access to the C++ source code documentation using Doxygen and breathe.
+
+Core Functions
+--------------
+
+.. doxygenfunction:: runSimulation
+   :project: LatticeMicrobes
+   :outline:
+   :members:
+
+.. doxygenfunction:: runSolver
+   :project: LatticeMicrobes
+   :outline:
+   :members:
+
+Lattice Classes
+---------------
+
+.. doxygenclass:: lm::rdme::Lattice
+   :project: LatticeMicrobes
+   :members:
+   :outline:
+   :undoc-members:
+   :show-inheritance:
+
+.. doxygenclass:: lm::rdme::ByteLattice
+   :project: LatticeMicrobes
+   :members:
+   :outline:
+   :undoc-members:
+   :show-inheritance:
+
+.. doxygenclass:: lm::rdme::IntLattice
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::rdme::CudaByteLattice
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::rdme::CudaIntLattice
+   :project: LatticeMicrobes
+   :members:
+
+Solver Classes
+--------------
+
+.. doxygenclass:: lm::me::MESolver
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::me::CMESolver
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::me::GillespieDSolver
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::me::NextReactionSolver
+   :project: LatticeMicrobes
+   :members:
+
+RDME Solver Classes
+-------------------
+
+.. doxygenclass:: lm::rdme::RDMESolver
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::rdme::MpdRdmeSolver
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::rdme::IntMpdRdmeSolver
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::rdme::MGPUMpdRdmeSolver
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::rdme::MGPUIntMpdRdmeSolver
+   :project: LatticeMicrobes
+   :members:
+
+Shape Classes
+-------------
+
+.. doxygenclass:: lm::builder::Shape
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::Sphere
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::Cylinder
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::Capsule
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::Cuboid
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::Cone
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::Hemisphere
+   :project: LatticeMicrobes
+   :members:
+
+Builder Classes
+---------------
+
+.. doxygenclass:: lm::builder::LatticeBuilder
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::bounding_box
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::builder::point
+   :project: LatticeMicrobes
+   :members:
+
+Threading Classes
+-----------------
+
+.. doxygenclass:: lm::thread::WorkerManager
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::thread::Worker
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::thread::Thread
+   :project: LatticeMicrobes
+   :members:
+
+Utility Classes
+---------------
+
+.. doxygenclass:: lm::io::SimulationFile
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::core::Timer
+   :project: LatticeMicrobes
+   :members:
+
+.. doxygenclass:: lm::core::SignalHandler
+   :project: LatticeMicrobes
+   :members:

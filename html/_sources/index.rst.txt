@@ -37,4 +37,5 @@ For help and general discussion please submit your problems in the github reposi
    jLM Examples
    Visualization
    API
+   Cpp_API
    Citations
