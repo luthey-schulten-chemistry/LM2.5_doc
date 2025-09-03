@@ -12,7 +12,6 @@ of whole cell models.
     pySTDLM.Cells
     pySTDLM.CmdUtils
     pySTDLM.Distributions
-    pySTDLM.NetworkVisualization
     pySTDLM.OnTheFly
     pySTDLM.PostProcessing
     pySTDLM.SBMLReader

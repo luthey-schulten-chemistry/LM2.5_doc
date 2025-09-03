@@ -25,3 +25,4 @@ For a quick introduction to jLM, please see the `example notebook
     jLM.Analysis
     jLM.Template
     jLM.TexFmt
+
